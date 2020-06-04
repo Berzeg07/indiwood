@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .header__item {
+        &:first-child {
+            width: 25%;
+            padding-left: 56px;
+            background: #4e4e3f;
+            display: flex;
+            align-items: center;
+        }
+
+        &:nth-child(2) {
+            width: 51%;
+            background: white;
+        }
+
+        &:last-child {
+            width: 24%;
+            padding-right: 44px;
+            background: white;
+            color: #93856f;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media(max-width: 1799px) {
+                width: 22%;
+            }
+        }
+    }
+}
+
+.logo {
+    color: white;
+    margin-right: 79px;
+}
+
+.logo__name {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.logo__article {
+    font-size: 14px;
+}
+
+.burger {
+    cursor: pointer;
+}
+
+.main-nav {
+    ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            width: 23%;
+            text-align: center;
+
+            a {
+                display: inline-block;
+                padding: 25px 0;
+                width: 100%;
+                font-size: 14px;
+                text-transform: uppercase;
+                color: #000000;
+
+                &:hover {
+                    background: #EBEBEB;
+                }
+            }
+        }
+    }
+}
+
+.phone {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.work-time {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.phone-block {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 29px;
+        height: 29px;
+        background: url("../img/whatsup.png") no-repeat center;
+    }
+}
+
+.recall {
+    width: 237px;
+    height: 40px;
+    text-transform: uppercase;
+    border: 1px solid #93856f;
+    border-radius: 30px;
+    color: #93856f;
+    background: white;
+    @media(max-width: 1799px) {
+        width: 85px;
+        height: 35px;
+        background: url("../img/phone-icon.png") no-repeat center;
+
+        span {
+            display: none;
+        }
+    }
+}

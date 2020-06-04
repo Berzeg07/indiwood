@@ -34,6 +34,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Avenir";
+    src: url("../fonts/Avenir-Medium/Avenir-Medium.eot");
+    src: local('☺'), url("../fonts/Avenir-Medium/Avenir-Medium.woff") format('woff'), url("../fonts/Avenir-Medium/Avenir-Medium.ttf") format('truetype');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
+
 // @font-face {
 //     font-family: "Avenir";
 //     src: url("../fonts/Avenir-Book/Avenir-Book.eot");
