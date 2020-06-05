@@ -4,38 +4,45 @@ $(document).ready(function(){
 
 });
 
- var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
-      spaceBetween: 50,
-      slidesPerView: 4,
-      loop: true,
-      freeMode: true,
-      loopedSlides: 5, //looped slides should be the same
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-      breakpoints: {
-      	500: {
-      		slidesPerView: 3,
-      		spaceBetween: 60
+var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
+	spaceBetween: 30,
+	slidesPerView: 5,
+	loop: true,
+	centeredSlides: true,
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+	centeredSlides: true,
+	hashNavigation: {
+		watchState: true,
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+	},
+	breakpoints: {
+		599: {
+      		slidesPerView: 2.5,
+		},
+		767: {
+      		slidesPerView: 4,
       	},
-      	768: {
-      		slidesPerView: 5,
-      		spaceBetween: 30
+      	992: {
+      		slidesPerView: 3.5,
+      		slidesOffsetBefore: -110
+      	},
+      	1200: {
+      		slidesPerView: 4.5,
       	}
       }
-    });
+  });
 
-    var galleryTop = new Swiper('.gallery-top1', {
-      spaceBetween: 10,
-      loop:true,
-      loopedSlides: 5, //looped slides should be the same
-      navigation: {
-        nextEl: '.gallery-top1 .swiper-button-next',
-        prevEl: '.gallery-top1 .swiper-button-prev',
-      },
-      thumbs: {
-        swiper: galleryThumbs1,
-      },
-    });
+var galleryTop = new Swiper('.gallery-top1', {
+	spaceBetween: 10,
+	loop:true,
+	navigation: {
+		nextEl: '.gallery-top1 .swiper-button-next',
+		prevEl: '.gallery-top1 .swiper-button-prev',
+	},
+	thumbs: {
+		swiper: galleryThumbs1,
+	},
+});
