@@ -519,3 +519,266 @@
         margin-bottom: 15px;
     }
 }
+
+.content {
+    display: flex;
+}
+
+.product-info,
+.sidebar {
+    width: 25%;
+}
+
+.scroll-block {
+    width: 50%;
+}
+
+.sidebar {
+    background: #4e4e3f;
+    color: white;
+    padding-left: 55px;
+}
+
+.product-info,
+.sidebar {
+    padding-top: 125px;
+}
+
+.sidebar__title {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 150px;
+}
+
+.product-info {
+    padding-left: 39px;
+    padding-right: 64px;
+}
+
+.sidebar-list {
+    li {
+        margin-bottom: 14px;
+
+        a {
+            font-size: 18px;
+        }
+    }
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.product-price {
+    font-size: 23px;
+
+    span {
+        font-size: 16px;
+    }
+}
+
+.product-info__price {
+    margin-bottom: 33px;
+}
+
+.product-type {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.select-wrap {
+    width: 223px;
+    margin-bottom: 15px;
+
+    .selectric {
+        border: 1px solid #343434;
+        font-size: 16px;
+        border-radius: 30px;
+        padding-left: 20px;
+
+        .button {
+            &:after {
+                display: none;
+            }
+            background: url("../img/arrow.png") no-repeat center;
+        }
+    }
+
+    .selectric-items {
+        border: 1px solid #343434;
+    }
+}
+
+.product-info__btn-wrap {
+    padding-top: 78px;
+    padding-bottom: 86px;
+}
+
+.order-btn {
+    width: 318px;
+    height: 50px;
+    background: #343434;
+}
+
+.select-wrap_color {
+    .selectric {
+        text-transform: uppercase;
+    }
+}
+
+.product-info__article {
+    margin-bottom: 29px;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.product-list {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.product-image {
+    position: relative;
+
+    img {
+        display: block;
+    }
+}
+
+.product-image__article {
+    position: absolute;
+    top: 125px;
+    left: 116px;
+}
+
+.product-thumb {
+    border-left: 1px solid #9E9E9E;
+    margin-bottom: 0px;
+
+    img {
+        display: block;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    li {
+        position: relative;
+
+        .product-thumb__item {
+            width: 50%;
+            padding: 7px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 93%;
+                height: 1px;
+                background: #9E9E9E;
+            }
+        }
+        &:last-child{
+            .product-thumb__item::after{
+                display: none;
+            }
+        }
+    }
+}
+
+.product-thumb__show {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: 0.5s;
+}
+
+.product-thumb__show, .product-thumb__hidden{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.product-thumb__show.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.product-thumb__item-left {
+    border-right: 1px solid #9E9E9E;
+}
+
+.product-thumb__item-right {
+    position: relative;
+}
+
+.loop {
+    position: absolute;
+    cursor: pointer;
+    bottom: 40px;
+    right: 40px;
+    width: 32px;
+    height: 32px;
+    background: url("../img/loop.png") no-repeat center;
+}
+
+.product-color {
+    display: flex;
+    justify-content: space-around;
+    padding: 130px 0;
+
+    li {
+        text-align: center;
+    }
+}
+
+.product-color__img {
+    border-radius: 10em;
+    overflow: hidden;
+    height: 110px;
+    width: 110px;
+    margin-bottom: 25px;
+}
+
+.loop-close {
+    width: 30px;
+    height: 30px;
+    background: url("../img/close-block.png") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+    cursor: pointer;
+}
+
+.product-color__title {
+    font-weight: 500;
+}
+
+.product-thumb__hidden {
+    position: relative;
+    padding: 7px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+
+    img {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        height: 100%;
+        object-fit: fill;
+    }
+}
+
+.product-thumb__hidden.show {
+    visibility: visible;
+    opacity: 1;
+}

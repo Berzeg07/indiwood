@@ -1,5 +1,17 @@
 $(document).ready(function() {
 
+    $('.loop').click(function() {
+        $(this).parents('li').find('.product-thumb__show').addClass('hidden');
+        $(this).parents('li').find('.product-thumb__hidden').addClass('show');
+    });
+
+    $('.loop-close').click(function() {
+        $(this).parents('li').find('.product-thumb__show').removeClass('hidden');
+        $(this).parents('li').find('.product-thumb__hidden').removeClass('show');
+    });
+
+    $('.select-cat').selectric();
+
     var swiperBanner = new Swiper('.banner-slider', {
         spaceBetween: 30,
         effect: 'fade',
@@ -18,7 +30,7 @@ $(document).ready(function() {
 
     var scrollTop = $(window).scrollTop();
 
-    if(scrollTop > 0){
+    if (scrollTop > 0) {
         $('.header').removeClass('header-opacity');
     }
 
@@ -32,12 +44,12 @@ $(document).ready(function() {
         });
     });
 
-    $('.burger').click(function(){
+    $('.burger').click(function() {
         $(this).toggleClass('is-active');
         $('.dropdown-menu').toggleClass('is-active');
     });
 
-    $('.close-menu').click(function(){
+    $('.close-menu').click(function() {
         $('.burger').removeClass('is-active');
         $('.dropdown-menu').removeClass('is-active');
     });
