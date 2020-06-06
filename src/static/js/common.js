@@ -5,8 +5,8 @@ $(document).ready(function(){
 });
 
 var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
-	spaceBetween: 30,
-	slidesPerView: 5,
+	spaceBetween: 50,
+	slidesPerView: 8.5,
 	loop: true,
 	centeredSlides: true,
 	watchSlidesVisibility: true,
@@ -20,20 +20,24 @@ var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
 	},
 	breakpoints: {
 		599: {
-      		slidesPerView: 2.5,
+			slidesPerView: 2.5,
 		},
 		767: {
-      		slidesPerView: 4,
-      	},
-      	992: {
-      		slidesPerView: 3.5,
-      		slidesOffsetBefore: -110
-      	},
-      	1200: {
-      		slidesPerView: 4.5,
-      	}
-      }
-  });
+			slidesPerView: 4,
+		},
+		992: {
+			slidesPerView: 3.5,
+			slidesOffsetBefore: -110
+		},
+		1199: {
+			slidesPerView: 4.5,
+		},
+		1919: {
+			spaceBetween: 50,
+			slidesPerView: 5
+		}
+	}
+});
 
 var galleryTop = new Swiper('.gallery-top1', {
 	spaceBetween: 10,

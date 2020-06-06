@@ -13,7 +13,7 @@
 .clculate__title {
 	text-align: center;
 	font-size: 14px;
-	font-weight: 800;
+	font-weight: 400;
 	font-family: "Avenir";
 	text-transform: uppercase;
 
@@ -21,6 +21,12 @@
 
 	@media (min-width : 768px) {
 		font-size: 18px;
+	}
+
+	@media (min-width : 1200px) {
+		text-align: left;
+		margin-left: 63px;
+		font-size: 20px;
 	}
 }
 
@@ -35,6 +41,11 @@
 		display: flex;
 		justify-content: center;
 		margin-bottom: 31px;
+	}
+
+	@media (min-width : 1200px) {
+		margin: 0;
+		margin-left: 63px;
 	}
 }
 
@@ -62,6 +73,11 @@
 		font-size: 14px;
 		width: 191px;
 	}
+
+	@media (min-width : 1200px) {
+		font-size: 10px;
+		width: 144px;
+	}
 }
 
 .calculate__select .button {
@@ -75,6 +91,19 @@
 		height: 15px;
 		top: 7px;
 		left: -40px;
+
+
+		@media (min-width : 1200px) {
+			left: -15px;
+		}
+
+	}
+
+}
+
+.terras-calculate {
+	@media (min-width : 1200px) {
+		margin-top: -85px;
 	}
 }
 
@@ -105,6 +134,12 @@
 		font-size: 18px;
 		margin-bottom: 65px;
 	}
+
+	@media (min-width : 1200px) {
+		font-size: 16px;
+
+		margin-bottom: 75px;
+	}
 }
 
 
@@ -115,6 +150,10 @@
 /*Верхний 1й слайдер*/
 .gallery-top1 {
 	max-width: 700px;
+
+	@media (min-width : 1200px) {
+		max-width: 750px;
+	}
 }
 
 .gallery-top1 h3 {
@@ -156,6 +195,10 @@
 		@media (min-width : 768px) {
 			font-size: 16px;
 		}
+
+		@media (min-width : 1200px) {
+			font-size: 12px;
+		}
 	}
 
 	.button {
@@ -175,6 +218,11 @@
 
 	@media (min-width : 768px) {
 		width: 168px;
+	}
+
+	@media (min-width : 1200px) {
+		width: 147px;
+		border-radius: 20px;
 	}
 }
 
@@ -242,6 +290,11 @@
 		background-size: 14px 15px;
 		background-position: 8px 11px;
 	}
+
+	@media (min-width : 1200px) {
+		left: 0;
+		position: absolute;
+	}
 }
 
 .terras-calculate__up-button {
@@ -288,15 +341,20 @@
 
 	font-family: "Avenir";
 	font-size: 9px;
-	font-weight: 800;
+	font-weight: 400;
 
 	span {
 		display: none;
+
+		@media (min-width : 1200px) {
+			display: inline-block;
+			text-transform: uppercase;
+		}
 	}
 
 	a {
-			color: #ffffff;
-		}
+		color: #ffffff;
+	}
 
 	li {
 		opacity: 0.22;
@@ -312,10 +370,14 @@
 		max-width: 620px;
 	}
 
+	@media (min-width : 1200px) {
+		max-width: 1100px;
+	}
+
 }
 
 .terras-calculate__tabs .terras-calculate__tabs_active {
-		opacity: 1;
+	opacity: 1;
 }
 
 .gallery-thumbs1-column {
@@ -326,11 +388,24 @@
 	@media (min-width : 768px) {
 		width: 180px;
 	}
+
+	@media (min-width : 1200px) {
+		width: 160px;
+	}
 }
 
 .gallery-thumbs1 .swiper-scrollbar {
 	background-color: #5e5e5e;
 	height: 1px;
+
+	display: none;
+
+
+	@media (min-width : 1920px) {
+		display: block;
+		width: 100%;
+		margin-left: -20px;
+	}
 }
 
 .gallery-thumbs1 .swiper-scrollbar-drag {
@@ -342,7 +417,14 @@
 }
 
 .gallery-thumbs1 {
+	@media (min-width : 1200px) {
+		width: 960px;
+		margin: 0 auto;
+	}
 
+	@media (min-width : 1920px) {
+		width: 100%;
+	}
 }
 
 
@@ -357,11 +439,19 @@
 		color: #ffffff;
 		font-family: "Avenir";
 		font-size: 9px;
-		font-weight: 500;
+		font-weight: 400;
 		text-transform: uppercase;
 
 		@media (min-width : 768px) {
 			font-size: 14px;
+		}
+
+		@media (min-width : 1200px) {
+			display: none;
+		}
+
+		@media (min-width : 1920px) {
+			display: block;
 		}
 	}
 }
