@@ -6,12 +6,10 @@ $(document).ready(function(){
 
 var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
 	spaceBetween: 50,
-	slidesPerView: 8.5,
 	loop: true,
 	centeredSlides: true,
 	watchSlidesVisibility: true,
 	watchSlidesProgress: true,
-	centeredSlides: true,
 	hashNavigation: {
 		watchState: true,
 	},
@@ -35,6 +33,11 @@ var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
 		1919: {
 			spaceBetween: 50,
 			slidesPerView: 5
+		},
+		2000: {
+			slidesPerView: 7.5,
+			slidesOffsetBefore: -60,
+			centeredSlides: false
 		}
 	}
 });

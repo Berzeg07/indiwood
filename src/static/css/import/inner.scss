@@ -257,7 +257,7 @@
 .gallery-top1 .swiper-button-next {
 	background-image: url('../img/calculate-next.png');
 	background-size: 10px 12px;
-	background-position: 10px 9px;
+	background-position: 6px 6px;
 
 	width: 23px;
 	height: 22px;
@@ -276,7 +276,7 @@
 .gallery-top1 .swiper-button-prev {
 	background-image: url('../img/calculate-prev.png');
 	background-size: 10px 12px;
-	background-position: 10px 9px;
+	background-position: 6px 6px;
 
 	width: 23px;
 	height: 22px;
@@ -405,6 +405,7 @@
 		display: block;
 		width: 100%;
 		margin-left: -20px;
+		height: 2px;
 	}
 }
 
