@@ -36,6 +36,8 @@
 	width: 139px;
 	margin: 0 auto;
 	margin-bottom: 23px;
+	position: relative;
+	z-index: 2;
 
 	@media (min-width : 768px) {
 		display: flex;

@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$('.calculate__select select').selectric();
 	$('.terras-calculate__select select').selectric();
-
 });
 
 var galleryThumbs1 = new Swiper('.gallery-thumbs1', {
