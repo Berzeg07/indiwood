@@ -581,6 +581,13 @@
 	transition: 0.5s easy all;
 }
 
+
+.fence-slider_up-two h3{
+	@media (min-width : 1200px) {
+		margin-bottom: 80px;
+	}
+}
+
 .fence-slider_up-two .fence-top1-column {
 	margin-bottom: 20px;
 
