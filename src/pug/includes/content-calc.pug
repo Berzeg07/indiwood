@@ -1,23 +1,26 @@
 <section class="calculate">
-	<h1 class="clculate__title">Калькулятор</h1>
+	<div class="calculate__block">
+		<h1 class="calculate__title calculate__title_other">Калькулятор</h1>
 
-	<div class=" calculate__select">
-		<select tabindex="0">
-			<option value="Террас">Террас</option>
-			<option value="Заборов">Заборов</option>
-		</select>
+		<div class=" calculate__select" >
+			<select tabindex="0">
+				<option value="Террас">Террас</option>
+				<option value="Заборов">Заборов</option>
+			</select>
+		</div>
 	</div>
 
 
 	<!-- Terras-calculate -->
-	<div class="terras-calculate">
+	<div class="terras-calculate" hidden>
 
-		<div class="terras-calculate__up">
+		<div class="calculate-up">
 			<h2>01. Выберите модель и размер доски</h2>
 
+			<!-- TERRAS-SLIDER-FIRST-UP -->
 			<div class="terras-slider__first-up">
 
-				<div class="swiper-container gallery-top1">
+				<div class="swiper-container terras-slider-up-one">
 					<div class="swiper-wrapper">
 
 						<div class="swiper-slide">
@@ -29,7 +32,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -43,7 +46,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -57,7 +60,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -71,7 +74,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -85,7 +88,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -99,7 +102,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -113,7 +116,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -127,7 +130,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -141,7 +144,7 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
@@ -155,27 +158,27 @@
 								</select>
 							</div>
 
-							<div class="gallery-top1-column">
+							<div class="terras-top1-column">
 								<img src="img/slider1-big.png" alt="slider1">
 							</div>
 						</div>
-
 
 					</div>
-					<!-- Add Arrows -->
+
 					<div class="swiper-button-next swiper-button-white"></div>
 					<div class="swiper-button-prev swiper-button-white"></div>
 				</div>
-			</div><!-- slider-first -->
 
-			<button class="terras-calculate__up-button" type="button">Далее</button>
+			</div><!-- end terras-slider-first-up -->
+
+			<button class="calculate-up-button" type="button">Далее</button>
 
 
-		</div><!-- end terras-calculate__up -->
+		</div><!-- end calculate-up -->
 
-		<div class="terras-calculate__tabs">
+		<div class="calculate-tabs">
 			<ul>
-				<li class="terras-calculate__tabs_active"><a href="#">01 / <span>Модель</span></a></li>
+				<li class="calculate-tabs_active"><a href="#">01 / <span>Модель</span></a></li>
 				<li><a href="#">02 / <span>Цвет</span></a></li>
 				<li><a href="#">03 / <span>Текстура</span></a></li>
 				<li><a href="#">04 / <span>Способ укладки</span></a></li>
@@ -185,92 +188,504 @@
 		</div><!-- end terras-calculate__tabs -->
 
 
+		<!-- terras-calculate__down -->
 		<div class="terras-calculate__down">
 
-			<div class="terras-calculate__first-down">
-				<div class="swiper-container gallery-thumbs1">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
 
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
+			<div class="swiper-container calculate-gallery-thumbs gallery-thumbs-one">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
 						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="gallery-thumbs1-column">
-								<img src="img/slider1-small.png" alt="slider1-down">
-							</div>
-							<span>Unodeck vintage</span>
-						</div>
+						<span>Unodeck vintage</span>
 					</div>
 
-					<!-- Add Scrollbar -->
-					<div class="swiper-scrollbar"></div>
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/slider1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck vintage</span>
+					</div>
 				</div>
-			</div><!-- end slider-first -->
+
+				<!-- Add Scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div>
 
 
 		</div><!-- end terras-calculate__down -->
 
 
+
 	</div><!-- end terras-calculate -->
 
 
-</section>
+
+
+
+
+	<!-- FENCE CALCULATE -->
+	<div class="fence-calculate fence-calculate_top" >
+
+		<div class="calculate-up">
+			<h2>01. Укажите модель</h2>
+
+			<div class="swiper-container calculate-gallery-top fence-slider_up-one" data-item="1">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<div class="terras-calculate__select">
+							<h3>Unodeck forte</h3>
+							<select tabindex="0">
+								<option value="150x24">140x12</option>
+								<option value="150x24">140x12</option>
+							</select>
+						</div>
+
+						<div class="fence-top1-column">
+							<img src="img/fence1.png" alt="slider1">
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="terras-calculate__select">
+							<h3>Unodeck patio</h3>
+							<select tabindex="0">
+								<option value="150x24">140x12</option>
+								<option value="150x24">140x12</option>
+							</select>
+						</div>
+
+						<div class="fence-top1-column">
+							<img src="img/fence2.png" alt="slider1">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div><!-- end slider-up -->
+
+
+
+			<div class="swiper-container calculate-gallery-top fence-slider_up-two" data-item="2">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<h3 class="calculate-subtitle">Nut</h3>
+
+						<div class="fence-top1-column">
+							<img src="img/fence2.png" alt="slider1">
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<h3 class="calculate-subtitle">Venge</h3>
+
+						<div class="fence-top1-column">
+							<img src="img/fence2.png" alt="slider1">
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<h3 class="calculate-subtitle">Grey</h3>
+
+						<div class="fence-top1-column">
+							<img src="img/fence2.png" alt="slider1">
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<h3 class="calculate-subtitle">Grey</h3>
+
+						<div class="fence-top1-column">
+							<img src="img/fence2.png" alt="slider1">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div><!-- end slider-up -->
+
+
+
+			<div class="swiper-container calculate-gallery-top fence-slider_up-three" data-item="3">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<h3>Патио</h3>
+
+						<div class="fence-top1-column">
+							<img src="img/fence1.png" alt="slider1">
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="terras-calculate__select">
+							<h3>Состаренное дерево</h3>
+						</div>
+
+						<div class="fence-top1-column">
+							<img src="img/fence2.png" alt="slider1">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div><!-- end slider-up -->
+
+			<div class="swiper-container calculate-gallery-top fence-slider_up-four" data-item="4">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<div class="fence-top-four">
+							<img src="img/fence-four.png" alt="slider1">
+						</div>
+
+						<div class="fence-top-four-block">
+							<div class="fence-top-four-width">
+								<label>
+									<span>A =</span> <input type="text" value="10"> <span>М</span>
+								</label>
+								<label>
+									<span>B =</span> <input type="text" value="20"> <span>М</span>
+								</label>
+							</div>
+
+							<div class="fence-top-four-column">
+								<div class="fence-top-four-door">
+									<h3>Нужны ли ворота?</h3>
+
+									<div class="fence-top-four-select">
+										<span class="fence-top-four-gate_active">Да</span>
+										<span>Нет</span>
+									</div>
+								</div>
+
+								<div class="fence-top-four-door">
+									<h3>Нужны ли калитка?</h3>
+
+									<div class="fence-top-four-select">
+										<span class="fence-top-wicket_active">Да</span>
+										<span>Нет</span>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="fence-top-four">
+							<img src="img/fence-four.png" alt="slider1">
+						</div>
+
+						<div class="fence-top-four-block">
+							<div class="fence-top-four-width">
+								<label>
+									<span>A =</span> <input type="text" value="10"> <span>М</span>
+								</label>
+								<label>
+									<span>B =</span> <input type="text" value="20"> <span>М</span>
+								</label>
+							</div>
+
+							<div class="fence-top-four-column">
+								<div class="fence-top-four-door">
+									<h3>Нужны ли ворота?</h3>
+
+									<div class="fence-top-four-select">
+										<span class="fence-top-four-gate_active">Да</span>
+										<span>Нет</span>
+									</div>
+								</div>
+
+								<div class="fence-top-four-door">
+									<h3>Нужны ли калитка?</h3>
+
+									<div class="fence-top-four-select">
+										<span class="fence-top-wicket_active">Да</span>
+										<span>Нет</span>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+
+				</div>
+
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div><!-- end slider-up -->
+
+			<div class="swiper-container calculate-gallery-top fence-slider_up-five" data-item="5">
+
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<h3 class="calculate-subtitle">Откатные</h3>
+
+						<div class="fence-top1-column">
+							<div class="fence-five-door_block">
+								<span class="fence-five-door_b">B</span>
+
+								<div class="fence-five-door_calc">
+									<span>—</span>
+									<span>3,5</span>
+									<span>М</span>
+									<span>+</span>
+								</div>
+							</div>
+
+							<picture>
+								<source srcset="img/fence-five.png" media="(min-width: 1920px)" />
+								<img src="img/fence-five-tablet.png" alt="slider1">
+							</picture>
+						</div>
+
+					</div>
+
+					<div class="swiper-slide">
+						<h3 class="calculate-subtitle">Двухстворчатые</h3>
+
+
+
+						<div class="fence-top1-column">
+							<div class="fence-five-door_block">
+								<span class="fence-five-door_b">B</span>
+
+								<div class="fence-five-door_calc">
+									<span>—</span>
+									<span>3,5</span>
+									<span>М</span>
+									<span>+</span>
+								</div>
+							</div>
+
+
+							<picture>
+								<source srcset="img/fence-five.png" media="(min-width: 1920px)" />
+								<img src="img/fence-five-tablet.png" alt="slider1">
+							</picture>
+						</div>
+					</div>
+
+
+
+
+				</div><!-- end slider-up -->
+
+
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div><!-- end block-u -->
+
+			<button class="calculate-up-button" type="button">Далее</button>
+
+			<div class="calculate-tabs">
+				<ul>
+					<li class="calculate-tabs_active" data-item="1"><a href="#">01 / <span>Модель</span></a></li>
+					<li data-item="2"><a href="#">02 / <span>Цвет</span></a></li>
+					<li data-item="3"><a href="#">03 / <span>Текстура</span></a></li>
+					<li data-item="4"><a href="#">04 / <span>Длина и ширина</span></a></li>
+					<li data-item="5"><a href="#">05 / <span>Ворота</span></a></li>
+				</ul>
+			</div><!-- end terras-calculate__tabs -->
+
+			<div class="swiper-container calculate-gallery-thumbs fence-gallery_thumbs-one" data-item="1">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence1-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck forte</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence2-small.png" alt="slider1-down">
+						</div>
+						<span>Unodeck pation</span>
+					</div>
+
+				</div>
+
+				<!-- Add Scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div><!--end slider down -->
+
+			<div class="swiper-container calculate-gallery-thumbs fence-gallery_thumbs-two" data-item="2">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence2-small.png" alt="slider1-down">
+						</div>
+						<span>Nut</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence-venge-small.png" alt="slider1-down">
+						</div>
+						<span>Venge</span>
+					</div>
+
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence-grey-small.png" alt="slider1-down">
+						</div>
+						<span>Grey</span>
+					</div>
+
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence-grey-small2.png" alt="slider1-down">
+						</div>
+						<span>Grey</span>
+					</div>
+
+
+
+				</div>
+
+				<!-- Add Scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div><!--end slider down -->
+
+			<div class="swiper-container calculate-gallery-thumbs fence-gallery_thumbs-three" data-item="3">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence1-small.png" alt="slider1-down">
+						</div>
+						<span>Патио</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence2-small.png" alt="slider1-down">
+						</div>
+						<span>Состаренное дерево</span>
+					</div>
+
+				</div>
+
+				<!-- Add Scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div><!--end slider down -->
+
+			<div class="fence-four-down calculate-gallery-thumbs" data-item="4"></div>
+
+			<div class="swiper-container calculate-gallery-thumbs fence-gallery_thumbs-five" data-item="5">
+				<div class="swiper-wrapper">
+
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence-five-small1.png" alt="slider1-down">
+						</div>
+						<span>Откатные</span>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="gallery-thumbs1-column">
+							<img src="img/fence-five-small2.png" alt="slider1-down">
+						</div>
+						<span>Двухстворчатые</span>
+					</div>
+
+
+				</div>
+
+				<!-- Add Scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div><!--end slider down -->
+
+
+		</div><!--  end fence calculate  -->
+
+
+
+
+	</section>
