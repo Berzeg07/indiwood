@@ -1,13 +1,61 @@
 $(document).ready(function() {
 
-    $('.loop').click(function() {
-        $(this).parents('li').find('.product-thumb__show').addClass('hidden');
-        $(this).parents('li').find('.product-thumb__hidden').addClass('show');
+    var swiper = new Swiper('.scroll-slider', {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        mousewheel: true,
     });
 
+    var swiper = new Swiper('.product-list-slider', {
+        slidesPerView: 4,
+        spaceBetween: 15,
+        breakpoints: {
+            767: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+            },
+            499: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            }
+        }
+    });
+
+    var swiper = new Swiper('.gallery-indiwood', {
+        slidesPerView: 3,
+        spaceBetween: 50,
+        //   centeredSlides: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+            },
+            1199: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            }
+        }
+    });
+
+    $('.loop').click(function() {
+        $(this).parents('li').find('.product-thumb__show').css({
+            'display': 'none'
+        });
+        $(this).parents('li').find('.product-thumb__hidden').fadeIn();
+    });
     $('.loop-close').click(function() {
-        $(this).parents('li').find('.product-thumb__show').removeClass('hidden');
-        $(this).parents('li').find('.product-thumb__hidden').removeClass('show');
+        $(this).parents('li').find('.product-thumb__show').fadeIn();
+        $(this).parents('li').find('.product-thumb__hidden').css({
+            'display': 'none'
+        });
     });
 
     $('.select-cat').selectric();
@@ -25,6 +73,14 @@ $(document).ready(function() {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
+        },
+    });
+
+    var swiperBanner = new Swiper('.product-slider-mob', {
+        spaceBetween: 15,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
         },
     });
 
