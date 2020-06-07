@@ -1061,3 +1061,322 @@
         display: none;
     }
 }
+
+.application-block {
+    padding-top: 150px;
+}
+
+.application-block__title {
+    margin-bottom: 60px;
+}
+
+.application-block__btn {
+    width: 285px;
+}
+
+.btn-block {
+    text-align: center;
+}
+
+.block-article_compact {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto 64px;
+    text-align: center;
+}
+
+.btn-block_application {
+    margin-bottom: 103px;
+}
+
+.photo-list {
+    max-width: 1740px;
+    width: 100%;
+    margin: 0 auto;
+    @media(min-width: 1200px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.photo-list__item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.photo-list_aplication {
+    .photo-list__item {
+        @media(min-width: 1200px) {
+            width: 50%;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.photo-list_service {
+    @media(min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .photo-list__item {
+        @media(min-width: 768px) {
+            width: 49.3%;
+            margin-bottom: 10px;
+        }
+
+        &:first-child {
+            @media(min-width: 768px) and (max-width: 1199px) {
+                width: 100%;
+            }
+        }
+        @media(min-width: 1200px) {
+            width: 33.33%;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.photo-list__content {
+    background: #727260;
+    color: white;
+    padding: 30px 20px;
+    @media(min-width: 1600px) {
+        padding: 70px 66px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        @media(min-width: 1200px) and (max-width: 1599px) {
+            font-size: 12px;
+        }
+        @media(min-width: 1500px) and (max-width: 1899px) {
+            font-size: 14px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.photo-list__article {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+
+    li {
+        &:first-child {
+            font-weight: 500;
+            font-size: 18px;
+            padding-bottom: 25px;
+        }
+
+        &:nth-child(2) {
+            font-size: 24px;
+            text-transform: uppercase;
+            padding-bottom: 40px;
+            @media(max-width: 767px) {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.photo-list__btn {
+    width: 213px;
+    height: 40px;
+    background: none;
+    border: 1px solid white;
+}
+
+.photo-list__img {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.5;
+    }
+}
+
+.calc-title {
+    font-family: "Optima";
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding-top: 100px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    @media(max-width: 767px) {
+        font-size: 18px;
+        padding-top: 50px;
+    }
+}
+
+.btn-block_calc {
+    margin-bottom: 340px;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -250px;
+        width: 1px;
+        height: 160px;
+        background: black;
+    }
+}
+
+.service-block {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin-bottom: 150px;
+    @media(max-width: 1199px) {
+        padding-bottom: 70px;
+        margin-bottom: 70px;
+        padding-top: 70px;
+    }
+}
+
+.line-bottom {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 95%;
+        background: black;
+    }
+}
+
+.service-block__title {
+    margin-bottom: 140px;
+    @media(max-width: 1199px) {
+        margin-bottom: 50px;
+    }
+}
+
+.gallery-indiwood__img {
+    margin-bottom: 64px;
+}
+
+.gallery-indiwood__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.gallery-indiwood__sub-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.gallery-indiwood__cont {
+    text-align: center;
+    @media(min-width: 1200px) {
+        text-align: left;
+        display: flex;
+        padding-left: 25px;
+
+        li {
+            &:first-child {
+                width: 170px;
+                margin-right: 40px;
+            }
+
+            &:last-child {
+                max-width: 335px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.gallery-indiwood__article {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.gallery-indiwood {
+    padding-bottom: 80px;
+
+    .gallery-indiwood__nav {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 49px;
+        height: 49px;
+        border-radius: 10em;
+        border: 1px solid black;
+    }
+
+    .swiper-button-next {
+        background: url("../img/next-bl.png") no-repeat center top 17px;
+    }
+
+    .swiper-button-prev {
+        background: url("../img/prev-bl.png") no-repeat center top 17px;
+    }
+}
+
+.gallery-block__title {
+    margin-bottom: 30px;
+    @media(min-width: 1200px) {
+        margin-bottom: 140px;
+    }
+}
+
+.gallery-block {
+    padding-bottom: 44px;
+    margin-bottom: 50px;
+    @media(min-width: 1200px){
+        margin-bottom: 200px;
+    }
+}
