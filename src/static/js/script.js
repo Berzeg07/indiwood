@@ -1,5 +1,32 @@
 $(document).ready(function() {
 
+    var galleryTeamThumbs = new Swiper('.team-gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 3,
+        // freeMode: true,
+        centeredSlides: false,
+        loop: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        hashNavigation: {
+            watchState: true,
+        },
+    });
+
+    var galleryTeam = new Swiper('.team-gallery', {
+        spaceBetween: 10,
+        loop:true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryTeamThumbs,
+        }
+    });
+
+
+
     var swiper = new Swiper('.scroll-slider', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -28,6 +55,7 @@ $(document).ready(function() {
     var swiper = new Swiper('.gallery-indiwood', {
         slidesPerView: 3,
         spaceBetween: 50,
+        // slidesPerView: 'auto',
         //   centeredSlides: true,
         navigation: {
             nextEl: '.swiper-button-next',
