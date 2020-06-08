@@ -1,17 +1,17 @@
 <section class="calculate">
-	<div class="calculate__block">
+	<div class="calculate__block" hidden>
 		<h1 class="calculate__title calculate__title_other">Калькулятор</h1>
 
 		<div class=" calculate__select" >
 			<select tabindex="0">
-				<option value="Террас">Террас</option>
 				<option value="Заборов">Заборов</option>
+				<option value="Террас">Террас</option>
 			</select>
 		</div>
 	</div>
 
 
-	<!-- Terras-calculate -->
+	<!-- TERRAS-CALCULATE -->
 	<div class="terras-calculate" hidden>
 
 		<div class="calculate-up">
@@ -271,9 +271,6 @@
 
 
 		</div><!-- end terras-calculate__down -->
-
-
-
 	</div><!-- end terras-calculate -->
 
 
@@ -282,12 +279,12 @@
 
 
 	<!-- FENCE CALCULATE -->
-	<div class="fence-calculate fence-calculate_top" >
+	<div class="fence-calculate fence-calculate_top">
 
 		<div class="calculate-up">
 			<h2>01. Укажите модель</h2>
 
-			<div class="swiper-container calculate-gallery-top fence-slider_up-one" data-item="1">
+			<div class="swiper-container calculate-gallery-top fence-slider_up-one" data-item="1" data-title="01. Укажите модель">
 				<div class="swiper-wrapper">
 
 
@@ -327,7 +324,7 @@
 
 
 
-			<div class="swiper-container calculate-gallery-top fence-slider_up-two" data-item="2">
+			<div class="swiper-container calculate-gallery-top fence-slider_up-two" data-item="2" data-title="02. Выберите цвет">
 				<div class="swiper-wrapper">
 
 
@@ -371,7 +368,7 @@
 
 
 
-			<div class="swiper-container calculate-gallery-top fence-slider_up-three" data-item="3">
+			<div class="swiper-container calculate-gallery-top fence-slider_up-three" data-item="3" data-title="03. Выберите текстуру доски">
 				<div class="swiper-wrapper">
 
 
@@ -399,7 +396,7 @@
 				<div class="swiper-button-prev swiper-button-white"></div>
 			</div><!-- end slider-up -->
 
-			<div class="swiper-container calculate-gallery-top fence-slider_up-four" data-item="4">
+			<div class="swiper-container calculate-gallery-top fence-slider_up-four" data-item="4" data-title="04. Укажите высоту и метраж забора">
 				<div class="swiper-wrapper">
 
 
@@ -490,7 +487,7 @@
 				<div class="swiper-button-prev swiper-button-white"></div>
 			</div><!-- end slider-up -->
 
-			<div class="swiper-container calculate-gallery-top fence-slider_up-five" data-item="5">
+			<div class="swiper-container calculate-gallery-top fence-slider_up-five" data-item="5" data-title="05. Укажите ширину ворот">
 
 				<div class="swiper-wrapper">
 
@@ -503,10 +500,10 @@
 								<span class="fence-five-door_b">B</span>
 
 								<div class="fence-five-door_calc">
-									<span>—</span>
-									<span>3,5</span>
+									<span class="minus">—</span>
+									<span class="answer">3,5</span>
 									<span>М</span>
-									<span>+</span>
+									<span class="plus">+</span>
 								</div>
 							</div>
 
@@ -528,10 +525,10 @@
 								<span class="fence-five-door_b">B</span>
 
 								<div class="fence-five-door_calc">
-									<span>—</span>
-									<span>3,5</span>
+									<span class="minus">—</span>
+									<span class="answer">3,5</span>
 									<span>М</span>
-									<span>+</span>
+									<span class="plus">+</span>
 								</div>
 							</div>
 
@@ -684,8 +681,17 @@
 
 
 		</div><!--  end fence calculate  -->
+	</div>
 
 
 
 
-	</section>
+
+
+
+
+	</div><!-- end fence form -->
+
+
+
+</section>

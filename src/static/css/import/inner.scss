@@ -1,5 +1,7 @@
 .calculate {
-	background-image: radial-gradient(0px 0px at 0% 0%, #727256 0%, #39392b 100%);
+	background-image: url('../img/calculate_background.png'),
+	radial-gradient(0px 0px at 0% 0%, #727256 0%, #39392b 100%);
+
 	padding: 27px 0 20px;
 	color: #ffffff;
 
@@ -364,7 +366,7 @@
 
 .calculate__block {
 	@media (min-width : 1200px) {
-		margin-bottom: -85px;
+		margin-bottom: -125px;
 	}
 }
 
@@ -614,6 +616,10 @@
 
 	@media (min-width : 992px) {
 		max-width: 940px;
+	}
+
+	@media (min-width : 1200px) {
+		max-width: 1200px;
 	}
 }
 
@@ -983,3 +989,236 @@
 	position: relative;
 	transition: all 0.5s ease;
 }
+
+/*FORM FENCE
+============================================*/
+.fence-form {
+	font-family: "Avenir";
+	font-weight: 300;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.fence-form h1 {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+.fence-form__buttons {
+	display: flex;
+	align-items: center;
+
+	margin-bottom: 32px;
+}
+
+.fence-form__back {
+	width: 52px;
+	height: 35px;
+	border: 1px solid #ffffff;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 20px;
+	margin-right: 12px;
+
+	span {
+		display: none;
+	}
+
+	img {
+		width: 6px;
+		height: 11px;
+	}
+}
+
+.fence-form__again {
+	text-transform: uppercase;
+	font-size: 13px;
+	width: 167px;
+	height: 35px;
+	border: 1px solid #ffffff;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 35px;
+}
+
+.fence-form__img {
+	width: 226px;
+	height: 151px;
+}
+
+.fence-form__square {
+	margin-top: -20px;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+.fence-form__square span {
+	margin-right: 5px;
+}
+
+.fence-form__square sup {
+	font-size: 8px;
+}
+
+.fence-form__name {
+	text-transform: uppercase;
+	margin-bottom: 45px;
+}
+
+.fence-form__name h2{
+	font-size: 12px;
+	margin-bottom: 12px;
+}
+
+.fence-form__name p{
+	font-size: 11px;
+	text-align: center;
+}
+
+.fence-form__options {
+	font-size: 13px;
+	text-align: center;
+	width: 257px;
+	text-transform: uppercase;
+	line-height: 20px;
+	font-family: "Avenir";
+	font-weight: 300;
+	margin-bottom: 164px;
+}
+
+.fence-form__checkbox {
+	margin-top: -110px;
+	margin-bottom: 44px;
+}
+
+.fence-form__checkbox label {
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	padding-left: 40px;
+	width: 292px;
+	margin: 0 auto;
+	height: 35px;
+	line-height: 35px;
+	box-shadow: 4px 4px 16px rgba(46, 46, 37, 0);
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	background-color: #51513d;
+	margin-bottom: 5px;
+	position: relative;
+	border-radius: 5px;
+	font-size: 14px;
+
+
+	&::after {
+		content: '';
+
+		width: 18px;
+		height: 18px;
+		background-color: #434331;
+
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 27px;
+
+		cursor: pointer;
+	}
+
+	&::before {
+		content: '';
+
+		width: 12px;
+		height: 7px;
+		background-image: url('../img/arrow-down_white.png');
+		background-size: cover;
+		display: block;
+
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 30px;
+		z-index: 2;
+
+		display: none;
+	}
+}
+
+.fence-form__checkbox input{
+	visibility: hidden;
+	opacity: 0;
+}
+
+.fence-form__checkbox input:checked + label::before{
+	display: block;
+}
+
+.fence-form__checkbox li:last-child label{
+	margin-bottom: 0;
+}
+
+.fence-form__form {
+	background-color: #39392b;
+}
+
+.fence-form__bottom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.fence-form__bottom button {
+	width: 292px;
+	margin: 0 auto;
+	height: 40px;
+	background-color: #93856f;
+	font-size: 13px;
+	line-height: 40px;
+	border-radius: 20px;
+	color: #ffffff;
+	text-transform: uppercase;
+	margin-bottom: 32px;
+}
+
+.fence-form__bottom a {
+	width: 22px;
+	height: 12px;
+	margin: 0 auto;
+	margin-bottom: 65px;
+}
+
+.fence-form__subname {
+	color: #93856f;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 23px;
+}
+
+.fence-form__subname h3 {
+	font-size: 18px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+
+.fence-form__subname p {
+	font-size: 14px;
+}
+
+.fence-form__sum {
+	color: #93856f;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 30px;
+
+	span {
+		font-size: 20px;
+		margin-right: 27px;
+	}
+}
+

@@ -85,13 +85,10 @@ var fenceGalleryThumbs2 = new Swiper('.fence-gallery_thumbs-two', {
 	spaceBetween: 30,
 	slidesPerView: 4,
 	loop: true,
-	centeredSlides: true,
 	watchSlidesVisibility: true,
-	slidesOffsetBefore: -90,
-	// watchSlidesProgress: false,
-	// hashNavigation: {
-	// 	watchState: true,
-	// },
+	watchSlidesProgress: true,
+	slidesOffsetBefore: 0,
+
 	scrollbar: {
 		el: '.swiper-scrollbar',
 	},
@@ -102,15 +99,17 @@ var fenceGalleryThumbs2 = new Swiper('.fence-gallery_thumbs-two', {
 			slidesOffsetBefore: -40,
 		},
 		767: {
-			slidesPerView:4,
+			slidesPerView:3,
+			slidesOffsetBefore: 0,
 		},
 		991: {
-			spaceBetween: 80,
+			spaceBetween: 0,
 			slidesPerView: 3.5,
 			slidesOffsetBefore: -70,
 		},
 		1199: {
-			slidesPerView: 4
+			slidesPerView: 4,
+			slidesOffsetBefore: -70,
 		}
 	}
 });
@@ -202,6 +201,34 @@ let buttonFence = document.querySelector('.fence-calculate .calculate-up-button'
 let galleryTop = document.querySelectorAll('.calculate-gallery-top');
 let galleryBottom = document.querySelectorAll('.calculate-gallery-thumbs');
 let num = 1;
+let minus = document.querySelectorAll('.fence-five-door_calc .minus');
+let plus = document.querySelectorAll('.fence-five-door_calc .plus');
+
+
+minus.forEach((item) => {
+	item.addEventListener('click', minusNum);
+});
+
+plus.forEach((item) => {
+	item.addEventListener('click', plusNum);
+});
+
+
+function minusNum() {
+	let answer = this.parentElement.querySelector('.answer');
+	let newAnswer = answer.innerHTML.split(',').join('.');
+
+	if (Number(newAnswer) >= 0.1) {
+		answer.innerHTML = (Number(newAnswer)-0.1).toFixed(1).split('.').join(',');
+	}
+}
+
+function plusNum() {
+	let answer = this.parentElement.querySelectorAll('.answer');
+	let newAnswer = answer.innerHTML.split(',').join('.');
+	answer.innerHTML = (Number(newAnswer)+0.1).toFixed(1).split('.').join(',');
+
+}
 
 tabsLink.forEach((item) => {
 	item.addEventListener('click', function(e) {
@@ -212,8 +239,10 @@ tabsLink.forEach((item) => {
 buttonFence.onclick = function() {
 	if(num == 5) {
 		num = 1;
+		document.querySelector('.calculate__block').style.display = 'block'
 	} else {
 		num += 1;
+		document.querySelector('.calculate__block').style.display = 'none'
 	}
 
 
@@ -221,6 +250,7 @@ buttonFence.onclick = function() {
 		if(item.getAttribute('data-item') == num) {
 			item.classList.remove('hide');
 			item.classList.add('show');
+			document.querySelector('.fence-calculate_top h2').innerHTML = item.getAttribute('data-title');
 		} else {
 			item.classList.remove('show');
 			item.classList.add('hide');
