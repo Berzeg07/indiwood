@@ -82,15 +82,16 @@ var fenceGalleryTop = new Swiper('.fence-slider_up-one', {
 
 
 var fenceGalleryThumbs2 = new Swiper('.fence-gallery_thumbs-two', {
-	spaceBetween: 80,
+	spaceBetween: 30,
 	slidesPerView: 4,
 	loop: true,
-	centeredSlides: false,
+	centeredSlides: true,
 	watchSlidesVisibility: true,
-	watchSlidesProgress: true,
-	hashNavigation: {
-		watchState: true,
-	},
+	slidesOffsetBefore: -90,
+	// watchSlidesProgress: false,
+	// hashNavigation: {
+	// 	watchState: true,
+	// },
 	scrollbar: {
 		el: '.swiper-scrollbar',
 	},
@@ -215,7 +216,6 @@ buttonFence.onclick = function() {
 		num += 1;
 	}
 
-	console.log(num);
 
 	galleryTop.forEach((item) => {
 		if(item.getAttribute('data-item') == num) {
