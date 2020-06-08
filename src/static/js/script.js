@@ -2,20 +2,31 @@ $(document).ready(function() {
 
     var galleryTeamThumbs = new Swiper('.team-gallery-thumbs', {
         spaceBetween: 10,
-        slidesPerView: 3,
+        slidesPerView: 6,
         // freeMode: true,
-        centeredSlides: false,
-        loop: true,
+        // slidesPerView: 2,
+    	// loop: true,
+    	centeredSlides: false,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
         hashNavigation: {
             watchState: true,
         },
+        breakpoints: {
+            767: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            991: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            }
+        }
     });
 
     var galleryTeam = new Swiper('.team-gallery', {
         spaceBetween: 10,
-        loop:true,
+        // loop:true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
