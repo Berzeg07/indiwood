@@ -1,5 +1,5 @@
 <section class="calculate">
-	<div class="calculate__block" hidden>
+	<div class="calculate__block">
 		<h1 class="calculate__title calculate__title_other">Калькулятор</h1>
 
 		<div class=" calculate__select" >
@@ -290,8 +290,8 @@
 
 					<div class="swiper-slide">
 						<div class="terras-calculate__select">
-							<h3>Unodeck forte</h3>
-							<select tabindex="0">
+							<h3 class="js-title1">Unodeck forte</h3>
+							<select tabindex="0" class="js-size1">
 								<option value="150x24">140x12</option>
 								<option value="150x24">140x12</option>
 							</select>
@@ -304,8 +304,8 @@
 
 					<div class="swiper-slide">
 						<div class="terras-calculate__select">
-							<h3>Unodeck patio</h3>
-							<select tabindex="0">
+							<h3 class="js-title1">Unodeck patio</h3>
+							<select tabindex="0" class="js-size1">
 								<option value="150x24">140x12</option>
 								<option value="150x24">140x12</option>
 							</select>
@@ -408,10 +408,10 @@
 						<div class="fence-top-four-block">
 							<div class="fence-top-four-width">
 								<label>
-									<span>A =</span> <input type="text" value="10"> <span>М</span>
+									<span>A =</span> <input type="text" value="10" class="fence-a"> <span>М</span>
 								</label>
 								<label>
-									<span>B =</span> <input type="text" value="20"> <span>М</span>
+									<span>B =</span> <input type="text" value="20" class="fence-b"> <span>М</span>
 								</label>
 							</div>
 
@@ -419,13 +419,13 @@
 								<div class="fence-top-four-door">
 									<h3>Нужны ли ворота?</h3>
 
-									<div class="fence-top-four-select">
+									<div class="fence-top-four-select js-gate">
 										<span class="fence-top-four-gate_active">Да</span>
 										<span>Нет</span>
 									</div>
 								</div>
 
-								<div class="fence-top-four-door">
+								<div class="fence-top-four-door js-wicket">
 									<h3>Нужны ли калитка?</h3>
 
 									<div class="fence-top-four-select">
@@ -438,47 +438,6 @@
 
 						</div>
 					</div>
-
-					<div class="swiper-slide">
-						<div class="fence-top-four">
-							<img src="img/fence-four.png" alt="slider1">
-						</div>
-
-						<div class="fence-top-four-block">
-							<div class="fence-top-four-width">
-								<label>
-									<span>A =</span> <input type="text" value="10"> <span>М</span>
-								</label>
-								<label>
-									<span>B =</span> <input type="text" value="20"> <span>М</span>
-								</label>
-							</div>
-
-							<div class="fence-top-four-column">
-								<div class="fence-top-four-door">
-									<h3>Нужны ли ворота?</h3>
-
-									<div class="fence-top-four-select">
-										<span class="fence-top-four-gate_active">Да</span>
-										<span>Нет</span>
-									</div>
-								</div>
-
-								<div class="fence-top-four-door">
-									<h3>Нужны ли калитка?</h3>
-
-									<div class="fence-top-four-select">
-										<span class="fence-top-wicket_active">Да</span>
-										<span>Нет</span>
-									</div>
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-
-
 
 
 				</div>
@@ -550,7 +509,7 @@
 				<div class="swiper-button-prev swiper-button-white"></div>
 			</div><!-- end block-u -->
 
-			<button class="calculate-up-button" type="button">Далее</button>
+			<button class="calculate-up-button" type="button" data-num="1">Далее</button>
 
 			<div class="calculate-tabs">
 				<ul>
@@ -683,15 +642,103 @@
 		</div><!--  end fence calculate  -->
 	</div>
 
-
-
-
-
-
-
-
-	</div><!-- end fence form -->
+</div><!-- end fence form -->
 
 
 
 </section>
+
+<!-- FORM FOR FENCE -->
+<div class="fence-form">
+	<div class="fence-form__inner">
+
+
+		<div class="fence-form__buttons">
+			<a class="fence-form__back" href="#">
+				<img src="img/calculate-prev.png" alt="back">
+				<span>Назад</span>
+			</a>
+			<a class="fence-form__again" href="#">Начать заново</a>
+		</div>
+
+		<h1>Предварительная калькуляция</h1>
+
+
+		<div class="fence-form-columns">
+			<div class="fence-form-column__first">
+				<p class="fence-form__img"><span><img src="img/slider1-big1.png" alt="Результат"></span></p>
+
+				<div class="fence-form-square__calc">
+					<p class="fence-form__square">S = <span>125</span>М<sup>2</sup></p>
+
+
+					<div class="fence-form__name">
+						<h2>Unodeck vintage</h2>
+						<p><span>Nut</span> / <span>Velvet</span></p>
+					</div>
+				</div>
+
+				<p class="fence-form__options">Пожалуйста добавьте дополнительные опции, если они требуются</p>
+
+				<ul class="fence-form__checkbox">
+					<li>
+						<input type="checkbox" id="one" checked><label for="one" data-sum="500">Замер</label>
+					</li>
+					<li>
+						<input type="checkbox" id="two"><label for="two" data-sum="1000">Доставка</label>
+					</li>
+					<li>
+						<input type="checkbox" id="three"><label for="three" data-sum="1500">Монтаж</label>
+					</li>
+				</ul>
+
+				<p class="fence-form__sum-origin"><span>250 000</span> рублей</p>
+
+				<div class="fence-form__bottom">
+					<button type="button">Отправить расчет на почту</button>
+					<a><img src="img/arrow-down_white.png" alt="slidebottom"></a>
+				</div>
+			</div>
+
+
+			<div class="fence-form-column__second">
+				<form method="post" class="fence-form__form">
+
+
+					<div class="fence-form-line">
+						<div class="fence-form__subname">
+							<h3>Unodeck vintage</h3>
+							<p><span>Nut</span> / <span>Velvet</span></p>
+						</div>
+
+
+						<p class="fence-form__sum"><span>250 000</span> рублей</p>
+					</div>
+
+					<div class="fence-form-input_box">
+						<input type="text" placeholder="Имя" class="fence-form__input js-name">
+						<input type="text" placeholder="Телефон" class="fence-form__input js-phone">
+						<input type="email" placeholder="Email" class="fence-form__input js-email">
+					</div>
+
+					<textarea name="" placeholder="Ваш комментарий или вопрос" class="fence-form__textarea"></textarea>
+
+					<div class="fence-form__files-block">
+						<input type="file" placeholder="Прикрепить свои файлы" multiple accept="image/*,image/jpeg" class="fence-form__files" id="files">
+						<label for="files">ПРИКРЕПИТЬ СВОЙ ФАЙЛЫ</label>
+					</div>
+
+					<div class="fence-form__send">
+						<a href="#">Скачать расчет в pdf</a>
+						<button type="submit">Отправить расчет на почту</button>
+					</div>
+
+					<p class="fence-form__attansion">Нажимая на кнопку "Отправить", вы принимаете условия пользовательского соглашения и даете согласие на обработку персональных данных</p>
+
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+</div>
