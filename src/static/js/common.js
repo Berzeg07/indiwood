@@ -57,7 +57,7 @@ var fenceGalleryThumbs1 = new Swiper('.fence-gallery_thumbs-one', {
 	spaceBetween: 10,
 	slidesPerView: 2,
 	loop: true,
-	centeredSlides: false,
+	centeredSlides: true,
 	watchSlidesVisibility: true,
 	watchSlidesProgress: true,
 	hashNavigation: {
@@ -288,6 +288,7 @@ buttonFence.onclick = function() {
 	});
 
 }
+
 
 
 /*Занести данные в переменные Fence*/

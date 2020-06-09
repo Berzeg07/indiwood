@@ -11,13 +11,22 @@
     background: #93856f;
 }
 
-.main-title{
+.main-title {
     font-size: 24px;
     text-transform: uppercase;
     text-align: center;
+    @media(max-width: 767px){
+        font-size: 18px;
+    }
 }
 
-.block-article{
+.block-article {
     line-height: 32px;
     font-size: 18px;
+}
+
+.btn-black {
+    background: black;
+    max-width: 313px;
+    width: 100%;
 }
