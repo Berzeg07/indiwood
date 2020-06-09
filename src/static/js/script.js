@@ -1,12 +1,23 @@
 $(document).ready(function() {
 
+    var galleryAbout = new Swiper('.about-slider', {
+        spaceBetween: 10,
+        observer: true,
+        observeParents: true,
+        // loop:true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+
     var galleryTeamThumbs = new Swiper('.team-gallery-thumbs', {
         spaceBetween: 10,
         slidesPerView: 6,
         // freeMode: true,
         // slidesPerView: 2,
-    	// loop: true,
-    	centeredSlides: false,
+        // loop: true,
+        centeredSlides: false,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
         hashNavigation: {
@@ -51,6 +62,23 @@ $(document).ready(function() {
     var swiper = new Swiper('.product-list-slider', {
         slidesPerView: 4,
         spaceBetween: 15,
+        breakpoints: {
+            767: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+            },
+            499: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            }
+        }
+    });
+
+    var swiper = new Swiper('.tab-links_mob', {
+        slidesPerView: 5,
+        spaceBetween: 15,
+        centeredSlides: true,
+        loop: true,
         breakpoints: {
             767: {
                 slidesPerView: 3,
