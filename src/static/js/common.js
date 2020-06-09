@@ -57,7 +57,6 @@ var fenceGalleryThumbs1 = new Swiper('.fence-gallery_thumbs-one', {
 	spaceBetween: 10,
 	slidesPerView: 2,
 	loop: true,
-	centeredSlides: true,
 	watchSlidesVisibility: true,
 	watchSlidesProgress: true,
 	hashNavigation: {
