@@ -122,8 +122,11 @@
 }
 
 .burger.is-active {
-    @media(min-width: 1200px) {
-        background: url("../img/close-icon.png") no-repeat center;
+    background: url("../img/close-icon.png") no-repeat center;
+    background-size: contain;
+    @media(max-width: 1199px) {
+        background: url("../img/close-icon-bl.png") no-repeat center;
+        background-size: contain;
     }
 }
 
@@ -249,9 +252,7 @@
     }
 
     .burger.is-active {
-        @media(min-width: 1200px) {
-            background: url("../img/close-icon.png") no-repeat center;
-        }
+        background: url("../img/close-icon.png") no-repeat center;
     }
 }
 
@@ -384,6 +385,7 @@
     color: #93856f;
     font-size: 26px;
     text-transform: uppercase;
+    font-weight: 500;
     @media(max-width: 767px) {
         font-size: 18px;
         width: 176px;
@@ -455,13 +457,10 @@
     justify-content: center;
     color: white;
     transition: 0.5s;
-    z-index: 200;
+    z-index: 150;
     left: -100%;
-    @media(max-width: 767px) {
+    @media(max-width: 1199px) {
         width: 100%;
-    }
-    @media(min-width: 768px) and (max-width: 1169px) {
-        width: 40%;
     }
     @media(min-width: 1200px) {
         z-index: 100;
@@ -586,7 +585,7 @@
 
 .product-info {
     padding-left: 39px;
-    padding-bottom: 30px;
+
     border-bottom: 1px solid black;
     @media(min-width: 768px) and (max-width: 1199px) {
         border-right: 1px solid black;
@@ -1244,7 +1243,6 @@
 }
 
 .calc-title {
-    font-family: "Optima";
     text-align: center;
     text-transform: uppercase;
     font-size: 24px;
@@ -1531,9 +1529,12 @@
 }
 
 .news-title {
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 14px;
     text-transform: uppercase;
+    @media(min-width: 1200px){
+        font-size: 24px;
+    }
 }
 
 .news-sup-title {
@@ -1819,6 +1820,7 @@
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 98px;
+    font-weight: bold;
     @media(max-width: 1199px) {
         display: none;
     }
@@ -1917,6 +1919,7 @@
 .contact-info {
     position: relative;
     z-index: 10;
+    font-weight: 500;
     @media(max-width: 1199px) {
         color: white;
         display: flex;
@@ -2153,7 +2156,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    z-index: 100;
+    z-index: 300;
     display: none;
 }
 
@@ -2172,7 +2175,7 @@
     height: 100%;
     background: black;
     opacity: 0.5;
-    z-index: 50;
+    z-index: 250;
     display: none;
 }
 
@@ -2328,7 +2331,6 @@
         height: calc(100vh - 65px);
         padding-top: 64px;
         width: 100%;
-
     }
 }
 
@@ -2415,15 +2417,16 @@
 
 .sidebar-list_page {
     li {
-        a{
-            @media(max-width: 1599px){
+        a {
+            @media(max-width: 1599px) {
                 font-size: 16px;
             }
         }
+
         a.is-active {
             &:after {
                 background: black;
-                @media(max-width: 1599px){
+                @media(max-width: 1599px) {
                     right: -20px;
                     top: 9px;
                 }

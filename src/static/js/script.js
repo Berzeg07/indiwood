@@ -1,39 +1,96 @@
 $(document).ready(function() {
 
+    $('.call-btn').click(function(){
+        $('.recall-modal').fadeIn();
+        $('.overlay').fadeIn();
+    });
+
+    $('.close-modal').click(function(){
+        $('.modal').fadeOut();
+        $('.overlay').fadeOut();
+    });
+
     var mapEl = document.querySelector('#mapmain');
 
+    var YaMapsShown = false;
     if (mapEl) {
 
-        ymaps.ready(init);
+        $(window).scroll(function() {
+            if (!YaMapsShown) {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 700) {
+                    var elem = document.createElement('script');
+                    elem.type = 'text/javascript';
+                    elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+                    // console.log(elem);
+                    $('body').append(elem);
+                    YaMapsShown = true;
+                    setTimeout(function() {
+                        ymaps.ready(init);
 
-        function init() {
-            var center = [55.59113656911934, 37.88662649999996];
-            var myMap = new ymaps.Map('mapmain', {
-                center: center,
-                controls: [],
-                zoom: 16
-            }, {
-                searchControlProvider: 'yandex#search'
-            });
+                        function init() {
 
-            myMap.behaviors.disable('scrollZoom');
+                            var center = [55.763240, 37.651825];
+                            var myMap = new ymaps.Map('mapmain', {
+                                center: center,
+                                controls: [],
+                                zoom: 16
+                            }, {
+                                searchControlProvider: 'yandex#search'
+                            });
 
-            var myPlacemark = new ymaps.Placemark(center, {
-                // Свойства.
-                // Содержимое иконки, балуна и хинта.
-                balloonContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00',
-                hintContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00'
-            }, {
-                // Опции.
-                iconLayout: 'default#image',
-                iconImageHref: 'img/baloon.png',
-                iconImageSize: [59, 81]
-                // preset: 'twirl#violetIcon'
-            });
+                            myMap.behaviors.disable('scrollZoom');
+                            // myMap.behaviors.disable('multiTouch');
+                            // myMap.behaviors.disable('drag')
 
-            myMap.geoObjects.add(myPlacemark);
-        }
+                            var myPlacemark = new ymaps.Placemark(center, {
+                                balloonContent: 'Москва, ул. Покровка, 43, стр 8',
+                                hintContent: 'Москва, ул. Покровка, 43, стр 8'
+                            }, {
+                                iconLayout: 'default#image',
+                                iconImageHref: 'img/baloon.png',
+                                iconImageSize: [59, 81]
+                            });
+
+                            myMap.geoObjects.add(myPlacemark);
+                        }
+                    }, 500);
+                }
+            }
+        });
     }
+
+    // if (mapEl) {
+    //
+    //     ymaps.ready(init);
+    //
+    //     function init() {
+    //         var center = [55.59113656911934, 37.88662649999996];
+    //         var myMap = new ymaps.Map('mapmain', {
+    //             center: center,
+    //             controls: [],
+    //             zoom: 16
+    //         }, {
+    //             searchControlProvider: 'yandex#search'
+    //         });
+    //
+    //         myMap.behaviors.disable('scrollZoom');
+    //
+    //         var myPlacemark = new ymaps.Placemark(center, {
+    //             // Свойства.
+    //             // Содержимое иконки, балуна и хинта.
+    //             balloonContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00',
+    //             hintContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00'
+    //         }, {
+    //             // Опции.
+    //             iconLayout: 'default#image',
+    //             iconImageHref: 'img/baloon.png',
+    //             iconImageSize: [59, 81]
+    //             // preset: 'twirl#violetIcon'
+    //         });
+    //
+    //         myMap.geoObjects.add(myPlacemark);
+    //     }
+    // }
 
 
     $('.tab-links_desc a').click(function(e) {
@@ -189,10 +246,11 @@ $(document).ready(function() {
     });
 
     var swiper = new Swiper('.gallery-indiwood', {
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 50,
         // slidesPerView: 'auto',
-        //   centeredSlides: true,
+        centeredSlides: true,
+        loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -201,10 +259,12 @@ $(document).ready(function() {
             767: {
                 slidesPerView: 1,
                 spaceBetween: 15,
+                centeredSlides: false,
             },
             1199: {
                 slidesPerView: 2,
                 spaceBetween: 15,
+                centeredSlides: false,
             }
         }
     });
