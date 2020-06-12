@@ -8,6 +8,15 @@
 }
 
 @font-face {
+    font-family: "AtlasGrotesk";
+    src: url("../fonts/AtlasGrotesk-Medium/AtlasGrotesk-Medium.eot");
+    src: local('☺'), url("../fonts/AtlasGrotesk-Medium/AtlasGrotesk-Medium.woff") format('woff'), url("../fonts/AtlasGrotesk-Medium/AtlasGrotesk-Medium.ttf") format('truetype');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Optima";
     src: url("../fonts/Optima-Bold/Optima-Bold.eot");
     src: local('☺'), url("../fonts/Optima-Bold/Optima-Bold.woff") format('woff'), url("../fonts/Optima-Bold/Optima-Bold.ttf") format('truetype');
@@ -61,11 +70,11 @@
 //     font-style: normal;
 // }
 
-@font-face {
-    font-family: "Avenir";
-    src: url("../fonts/Avenir-Heavy/Avenir-Heavy.eot");
-    src: local('☺'), url("../fonts/Avenir-Heavy/Avenir-Heavy.woff") format('woff'), url("../fonts/Avenir-Heavy/Avenir-Heavy.ttf") format('truetype');
-    font-display: swap;
-    font-weight: 500;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: "Avenir";
+//     src: url("../fonts/Avenir-Heavy/Avenir-Heavy.eot");
+//     src: local('☺'), url("../fonts/Avenir-Heavy/Avenir-Heavy.woff") format('woff'), url("../fonts/Avenir-Heavy/Avenir-Heavy.ttf") format('truetype');
+//     font-display: swap;
+//     font-weight: 500;
+//     font-style: normal;
+// }

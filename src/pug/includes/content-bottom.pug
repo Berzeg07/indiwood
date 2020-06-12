@@ -1,5 +1,7 @@
 .service-block.line-bottom
-    p.main-title.service-block__title Услуги indiwood
+    p.main-title.service-block__title 
+        b Услуги 
+        |indiwood
 
     ul.photo-list.photo-list_service
         li.photo-list__item
@@ -91,7 +93,9 @@
 
 
 .gallery-block.line-bottom
-    p.main-title.gallery-block__title Галерея indiwood
+    p.main-title.gallery-block__title 
+        b Галерея 
+        |indiwood
 
     .gallery-indiwood.swiper-container
         .swiper-wrapper
@@ -140,29 +144,29 @@
         .swiper-container.tab-links.tab-links_mob
             .swiper-wrapper
                 .swiper-slide
-                    a(href="#").product-link О компании
+                    a(href="#aboutComp").product-link.is-active О компании
                 .swiper-slide
-                    a(href="#").product-link Как мы работаем
+                    a(href="#howWork").product-link Как мы работаем
                 .swiper-slide
-                    a(href="#").product-link Гарантии
+                    a(href="#warranty").product-link Гарантии
                 .swiper-slide
-                    a(href="#").product-link Производство
+                    a(href="#production").product-link Производство
                 .swiper-slide
-                    a(href="#").product-link Вакансии
+                    a(href="#vacancies").product-link Вакансии
                     
         ul.about-tabs.tab-links.tab-links_desc
             li
-                a(href="#") О компании
+                a(href="#aboutComp") О компании
             li
-                a(href="#") Как мы работаем
+                a(href="#howWork") Как мы работаем
             li
-                a(href="#") Гарантии
+                a(href="#warranty") Гарантии
             li
-                a(href="#") Производство
+                a(href="#production") Производство
             li
-                a(href="#") Вакансии
+                a(href="#vacancies") Вакансии
         
-        .tab-block
+        .tab-block#aboutComp
             .about-slider.swiper-container
                 .swiper-wrapper
                     .swiper-slide
@@ -204,9 +208,179 @@
                 .about-slider__nav
                     .swiper-button-next
                     .swiper-button-prev
-            
+        .tab-block#howWork
+            .about-slider.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                
+                .about-slider__nav
+                    .swiper-button-next
+                    .swiper-button-prev
+        .tab-block#warranty
+            .about-slider.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                
+                .about-slider__nav
+                    .swiper-button-next
+                    .swiper-button-prev
+        .tab-block#production
+            .about-slider.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                
+                .about-slider__nav
+                    .swiper-button-next
+                    .swiper-button-prev
+        .tab-block#vacancies
+            .about-slider.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    
+                    .swiper-slide
+                        ul.about-slider__block
+                            li
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                
+                                p.article Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            li
+                                .about-slider__img
+                                    img(src="img/news.jpg")
+                            li
+                                p.about-slider__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                
+                .about-slider__nav
+                    .swiper-button-next
+                    .swiper-button-prev
+
 .team-block.line-bottom
-    p.main-title.team-block__title Команда indiwood
+    p.main-title.team-block__title
+        b Команда 
+        |indiwood
 
     .team-block__inner
         .swiper-container.team-gallery
@@ -313,7 +487,9 @@
                     p.team-gallery__prof Technical manager
 
 .news-block.line-bottom
-    p.main-title.news-block__title indiwood новости
+    p.main-title.news-block__title 
+        |indiwood 
+        b новости
 
     ul.news-top
         li.news-top__item
@@ -408,7 +584,7 @@
 
 .seo-block.line-bottom
     p.main-title.seo-block__title indiwood seo 
-        span текст
+        b текст
         
     ul.seo-block__cont.article
         li
@@ -425,7 +601,7 @@
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     
     .seo-block__btn-wrap
-        button(type="button").btn.btn-black оставить заявку    
+        button(type="button").btn.btn-black.call-btn оставить заявку    
             
 .contact-block    
     .contact-block__item.contact-block__item_left
@@ -469,4 +645,3 @@
                 button(type="submit").btn.form-recal__btn Отправить    
                 
 .map-block#mapmain
-    |Карта
