@@ -1006,7 +1006,7 @@
 	/*Изменение формы Fence*/
 	function formCalculate() {
 		fenceSquare = aCalculate * bCalculate;
-		document.querySelector('.fence-form__square span').innerHTML = fenceSquare;
+		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 
 		sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
 
@@ -1034,7 +1034,7 @@
 	/*Изменение формы Terras*/
 	function formCalculate2() {
 		fenceSquare = 4*(Number(aTerras)+Number(bTerras)+Number(cTerras)+Number(dTerras));
-		document.querySelector('.fence-form__square span').innerHTML = fenceSquare;
+		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 
 		sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
 
