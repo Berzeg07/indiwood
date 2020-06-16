@@ -13,6 +13,10 @@
 			if(document.querySelector('.fence-calculate').classList.contains('hide')) {
 				document.querySelector('.fence-calculate').classList.remove('hide')
 				document.querySelector('.terras-calculate').classList.add('hide');
+
+				let titleMain = document.querySelector('.fence-calculate .js-title1').innerHTML;
+				let titleMainNav = document.querySelector('.fence-calculate .main-back-title2');
+				titleMainNav.innerHTML = titleMain;
 			}
 
 		} else {
@@ -71,6 +75,8 @@
 		centeredSlides: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
+		observer: true,
+		observeParents: true,
 		hashNavigation: {
 			watchState: true,
 		},
@@ -92,7 +98,7 @@
 				slidesPerView: 4.5,
 			},
 			1919: {
-				spaceBetween: 50,
+				spaceBetween: 10,
 				slidesPerView: 5
 			},
 			2000: {
@@ -106,6 +112,8 @@
 	var galleryTop1 = new Swiper('.terras-slider-up-one', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -122,7 +130,8 @@
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		slidesOffsetBefore: 0,
-
+		observer: true,
+		observeParents: true,
 		breakpoints: {
 			499: {
 				spaceBetween: 20,
@@ -147,6 +156,8 @@
 	var terraseGalleryTop2 = new Swiper('.terras-slider-up-two', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -164,7 +175,8 @@
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		slidesOffsetBefore: 0,
-
+		observer: true,
+		observeParents: true,
 		breakpoints: {
 			499: {
 				slidesPerView: 2.5,
@@ -182,6 +194,8 @@
 	var terraseGalleryTop3 = new Swiper('.terras-slider-up-three', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -194,6 +208,8 @@
 	var terrasGalleryThumbs4 = new Swiper('.terras-gallery-thumbs-four', {
 		spaceBetween: 30,
 		slidesPerView: 2,
+		observer: true,
+		observeParents: true,
 		loop: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
@@ -203,6 +219,8 @@
 	var terraseGalleryTop4 = new Swiper('.terras-slider-up-four', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -219,6 +237,8 @@
 		spaceBetween: 30,
 		slidesPerView: 2,
 		loop: true,
+		observer: true,
+		observeParents: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		slidesOffsetBefore: 0
@@ -227,6 +247,8 @@
 	var terraseGalleryTop41 = new Swiper('.terras-slider-up-four2', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -245,11 +267,15 @@
 		loop: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
-		slidesOffsetBefore: 0
+		slidesOffsetBefore: 0,
+		observer: true,
+		observeParents: true,
 	});
 
 	var terraseGalleryTop6 = new Swiper('.terras-slider-up-six', {
 		spaceBetween: 10,
+		observer: true,
+		observeParents: true,
 		loop:true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
@@ -265,6 +291,8 @@
 		spaceBetween: 30,
 		slidesPerView: 4,
 		slidesOffsetBefore: 0,
+		observer: true,
+		observeParents: true,
 		loop: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
@@ -289,6 +317,8 @@
 	var terraseGalleryTop5 = new Swiper('.terras-slider-up-five', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -341,8 +371,61 @@
 	tabsLinkTerras.forEach((item) => {
 		item.addEventListener('click', function(e) {
 			e.preventDefault();
+
+			backToTabTerras.call(this);
 		});
 	});
+
+	/*Табы для террасы*/
+	function backToTabTerras() {
+		let num = Number(this.getAttribute('data-item'));
+		if(num != 1) {
+			document.querySelector('.terras-calculate .calculate-up').classList.remove('up-title');
+		} else {
+			document.querySelector('.terras-calculate .calculate-up').classList.add('up-title');
+		}
+
+		tabsLinkTerras.forEach((item) => {
+			if(item.getAttribute('data-item') == num) {
+				item.classList.add('calculate-tabs_active');
+			} else {
+				item.classList.remove('calculate-tabs_active');
+			}
+		});
+
+		galleryTopTerras.forEach((item) => {
+			if(item.getAttribute('data-item') == num) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+				document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
+			} else {
+				item.classList.remove('show');
+				item.classList.add('hide');
+			}
+		});
+
+		galleryBottomTerras.forEach((item) => {
+			if(item.getAttribute('data-item') == num) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+			} else {
+				item.classList.remove('show');
+				item.classList.add('hide');
+			}
+		});
+
+		if(num == 1) {
+			document.querySelector('.calculate__block').style.display = 'block';
+		} else {
+			document.querySelector('.calculate__block').style.display = 'none';
+		}
+
+		num1 = num;
+		document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', num);
+
+		calculateTerras();
+	}
+
 
 	/*Кнопки 05. формы и замера террасы*/
 	let fiveTerrasBtn = document.querySelectorAll('.terras-top-five-width .js-btn-five');
@@ -506,13 +589,14 @@
 
 
 	}
+
 	let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras, whereWood, howWood, formTerras, aTerras, bTerras, cTerras, dTerras, sTerras, noTerras,titleColTerras, stepColTerras,
 	widthColTerras, colorColTerras;
 
 
 	/*Занести данные в переменные Terras*/
 	function calculateTerras() {
-		let btnNum = document.querySelector('.calculate-up-button').getAttribute('data-num');
+		let btnNum = document.querySelector('.terras-calculate .calculate-up-button').getAttribute('data-num');
 
 		if(btnNum == 2) {
 			modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
@@ -582,6 +666,8 @@
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		slidesOffsetBefore: 0,
+		observer: true,
+		observeParents: true,
 
 		scrollbar: {
 			el: '.swiper-scrollbar',
@@ -611,6 +697,8 @@
 	var fenceGalleryTop2 = new Swiper('.fence-slider_up-two', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -627,6 +715,8 @@
 		centeredSlides: false,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
+		observer: true,
+		observeParents: true,
 		hashNavigation: {
 			watchState: true,
 		},
@@ -642,6 +732,8 @@
 	var fenceGalleryTop3 = new Swiper('.fence-slider_up-three', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -658,6 +750,8 @@
 	new Swiper('.fence-slider_up-four', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -672,6 +766,8 @@
 		centeredSlides: false,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
+		observer: true,
+		observeParents: true,
 		hashNavigation: {
 			watchState: true,
 		},
@@ -683,6 +779,8 @@
 	var fenceGalleryTop5 = new Swiper('.fence-slider_up-five', {
 		spaceBetween: 10,
 		loop:true,
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.calculate-gallery-top .swiper-button-next',
 			prevEl: '.calculate-gallery-top .swiper-button-prev',
@@ -731,8 +829,59 @@
 	tabsLink.forEach((item) => {
 		item.addEventListener('click', function(e) {
 			e.preventDefault();
+			backToTabFence.call(this);
 		});
 	});
+
+	/*Табы для fence*/
+	function backToTabFence() {
+		let num2 = Number(this.getAttribute('data-item'));
+		if(num2 != 1) {
+			document.querySelector('.fence-calculate .calculate-up').classList.remove('up-title');
+		} else {
+			document.querySelector('.fence-calculate .calculate-up').classList.add('up-title');
+		}
+
+		tabsLink.forEach((item) => {
+			if(item.getAttribute('data-item') == num2) {
+				item.classList.add('calculate-tabs_active');
+			} else {
+				item.classList.remove('calculate-tabs_active');
+			}
+		});
+
+		galleryTop.forEach((item) => {
+			if(item.getAttribute('data-item') == num2) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+				document.querySelector('.fence-calculate h2').innerHTML = item.getAttribute('data-title');
+			} else {
+				item.classList.remove('show');
+				item.classList.add('hide');
+			}
+		});
+
+		galleryBottom.forEach((item) => {
+			if(item.getAttribute('data-item') == num2) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+			} else {
+				item.classList.remove('show');
+				item.classList.add('hide');
+			}
+		});
+
+		if(num2 == 1) {
+			document.querySelector('.calculate__block').style.display = 'block';
+		} else {
+			document.querySelector('.calculate__block').style.display = 'none';
+		}
+
+		num = num2;
+		document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', num);
+
+		calculateFence();
+	}
 
 	/*Данные на отправку Fence*/
 	let titleCalculate, title1Calculate, size1Calculate, title2Calculate, title3Calculate, aCalculate, bCalculate, needDoor, needDoor2, title5Calculate, size5Calculate;
@@ -906,11 +1055,11 @@
 
 	/*Включить первый слайдер*/
 	function againSlider() {
-		num1 = 1;
-		document.querySelector('.calculate-up-button').setAttribute('data-num', 1);
+		num = 1;
+		document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', 1);
 		document.querySelector('.calculate__block').style.display = 'block';
-		document.querySelector('.calculate-up-button').removeAttribute('style');
-		document.querySelector('.calculate-up-button').removeAttribute('disabled');
+		document.querySelector('.fence-calculate .calculate-up-button').removeAttribute('style');
+		document.querySelector('.fence-calculate .calculate-up-button').removeAttribute('disabled');
 		document.querySelector('.fence-form').classList.remove('show');
 		document.querySelector('.calculate').classList.remove('hide');
 		document.querySelector('.fence-form__send button').removeAttribute('style');
@@ -951,9 +1100,9 @@
 
 	function againSlider2() {
 		num1 = 1;
-		document.querySelector('.calculate-up-button').setAttribute('data-num', 1);
-		document.querySelector('.calculate-up-button').removeAttribute('style');
-		document.querySelector('.calculate-up-button').removeAttribute('disabled');
+		document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', 1);
+		document.querySelector('.terras-calculate .calculate-up-button').removeAttribute('style');
+		document.querySelector('.terras-calculate .calculate-up-button').removeAttribute('disabled');
 		document.querySelector('.fence-form__send button').removeAttribute('style');
 		document.querySelector('.fence-form__send button').removeAttribute('disabled');
 		document.querySelector('.fence-form__send button').innerHTML = "Отправить расчет на почту";
@@ -1051,9 +1200,9 @@
 			e.preventDefault();
 			document.querySelector('.fence-form').classList.remove('show');
 			document.querySelector('.calculate').classList.remove('hide');
-			document.querySelector('.calculate-up-button').removeAttribute('style');
-			document.querySelector('.calculate-up-button').removeAttribute('disabled');
-			document.querySelector('.calculate-up-button').setAttribute('data-num', 7);
+			document.querySelector('.fence-calculate .calculate-up-button').removeAttribute('style');
+			document.querySelector('.fence-calculate .calculate-up-button').removeAttribute('disabled');
+			document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', 7);
 			num1 = 7;
 
 			galleryTopTerras.forEach((item) => {
@@ -1255,6 +1404,24 @@ function wicketActive () {
 	});
 
 	this.classList.add('fence-top-wicket_active');
+}
+
+let btnForTitle = document.querySelector('.fence-slider_up-one .swiper-button-next');
+let btnForTitle2 = document.querySelector('.fence-slider_up-one .swiper-button-prev');
+
+
+btnForTitle.onclick = function() {
+	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
+	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
+
+	titleNav.innerHTML = title;
+}
+
+btnForTitle2.onclick = function() {
+	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
+	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
+
+	titleNav.innerHTML = title;
 }
 
 
