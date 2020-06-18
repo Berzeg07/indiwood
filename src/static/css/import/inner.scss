@@ -273,7 +273,7 @@
 	visibility: hidden;
 	position: absolute;
 	opacity: 0;
-	transition: 0.5s easy all;
+	width: 100%;
 }
 
 .fence-slider_up-three h3{
@@ -552,7 +552,7 @@
 }
 
 .gallery-thumbs1-column {
-	width: 110px;
+	max-width: 110px;
 	margin: 0 auto;
 	text-align: center;
 
@@ -716,6 +716,7 @@ input::-webkit-inner-spin-button {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
+	width: 100%;
 }
 
 .terras-calculate .terras-gallery-thumbs-two {
@@ -1191,7 +1192,7 @@ input::-webkit-inner-spin-button {
 	visibility: hidden;
 	position: absolute;
 	opacity: 0;
-	transition: 0.5s easy all;
+	width: 100%;
 }
 
 .fence-gallery_thumbs-one,
@@ -1209,7 +1210,7 @@ input::-webkit-inner-spin-button {
 	visibility: hidden;
 	position: absolute;
 	opacity: 0;
-	transition: 0.5s easy all;
+	width: 100%;
 }
 
 
@@ -1241,7 +1242,7 @@ input::-webkit-inner-spin-button {
 
 .fence-gallery_thumbs-two {
 	visibility: hidden;
-	transition: 0.5s easy all;
+	width: 100%;
 	opacity: 0;
 	position: absolute;
 	max-width: 400px;
@@ -1449,7 +1450,7 @@ input::-webkit-inner-spin-button {
 
 .fence-slider_up-four {
 	visibility: hidden;
-	transition: 0.5s easy all;
+	width: 100%;
 	position: absolute;
 	opacity: 0;
 	@media (min-width : 1200px) {
@@ -1467,7 +1468,7 @@ input::-webkit-inner-spin-button {
 
 .fence-four-down {
 	visibility: hidden;
-	transition: 0.5s easy all;
+	width: 100%;
 	position: absolute;
 	opacity: 0;
 	@media (min-width : 1200px) {
@@ -1478,8 +1479,10 @@ input::-webkit-inner-spin-button {
 
 .fence-gallery_thumbs-five {
 	visibility: hidden;
-	transition: 0.5s easy all;
+	width: 100%;
 	position: absolute;
+	top: 0;
+	left: 0;
 	opacity: 0;
 	max-width: 300px;
 	margin: 0 auto;
@@ -1512,8 +1515,10 @@ input::-webkit-inner-spin-button {
 
 .fence-slider_up-five {
 	visibility: hidden;
-	transition: 0.5s easy all;
 	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
 	opacity: 0;
 	margin-bottom: 0;
 
@@ -1629,6 +1634,7 @@ input::-webkit-inner-spin-button {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
+	width: 100%;
 	font-family: "Avenir";
 	font-weight: 300;
 
@@ -2582,6 +2588,9 @@ input::-webkit-inner-spin-button {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
 }
 
 .show {
