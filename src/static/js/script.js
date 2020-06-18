@@ -1,11 +1,104 @@
 $(document).ready(function() {
 
-    $('.call-btn').click(function(){
+    var mainEl = document.querySelector('.card-top');
+    if (mainEl) {
+        var cardTop = $(".card-top").offset().top;
+        var catalogTop = $(".catalog-top").offset().top;
+        var applicationTop = $(".application-block").offset().top;
+        var calcTop = $(".calculate").offset().top;
+        var serviceTop = $(".service-block").offset().top;
+        var galleryTop = $(".gallery-block").offset().top;
+        var aboutTop = $(".about-block").offset().top;
+        var teamTop = $(".team-block").offset().top;
+        var newsTop = $(".news-block").offset().top;
+        var seoTop = $(".seo-block").offset().top;
+        var contactTop = $(".contact-block").offset().top;
+        var mapTop = $(".map-block").offset().top;
+
+        $(window).on("scroll", function() {
+            console.log(cardTop);
+            var scroll = $(window).scrollTop();
+            if (scroll < cardTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-1').addClass('is-active');
+            }
+            if (scroll >= cardTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-2').addClass('is-active');
+            }
+            if (scroll >= catalogTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-3').addClass('is-active');
+            }
+            if (scroll >= applicationTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-4').addClass('is-active');
+            }
+            if (scroll >= calcTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-5').addClass('is-active');
+            }
+            if (scroll >= serviceTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-6').addClass('is-active');
+            }
+            if (scroll >= galleryTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-7').addClass('is-active');
+            }
+            if (scroll >= aboutTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-8').addClass('is-active');
+            }
+            if (scroll >= teamTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-9').addClass('is-active');
+            }
+            if (scroll >= newsTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-10').addClass('is-active');
+            }
+            if (scroll >= seoTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-11').addClass('is-active');
+            }
+            if (scroll >= contactTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-12').addClass('is-active');
+            }
+            if (scroll >= mapTop) {
+                $('.scroll-indicate__link').removeClass('is-active');
+                $('.link-13').addClass('is-active');
+            }
+        });
+
+        $(function() {
+            $(".scroll-indicate a").click(function(e) {
+                e.preventDefault();
+                var currentBlock = $(this).attr("href");
+                $(".scroll-indicate__link").removeClass('is-active');
+                $(this).addClass('is-active');
+                var currentBlockoffset = $(currentBlock).offset().top;
+                $("html, body").animate({
+                    scrollTop: currentBlockoffset
+                }, 500);
+            });
+        });
+    }
+
+    $(".application-block__btn").click(function() {
+        var currentBlockoffset = $('.calculate').offset().top;
+        $("html, body").animate({
+            scrollTop: currentBlockoffset
+        }, 500);
+    });
+
+    $('.call-btn').click(function() {
         $('.recall-modal').fadeIn();
         $('.overlay').fadeIn();
     });
 
-    $('.close-modal').click(function(){
+    $('.close-modal').click(function() {
         $('.modal').fadeOut();
         $('.overlay').fadeOut();
     });
@@ -17,7 +110,9 @@ $(document).ready(function() {
 
         $(window).scroll(function() {
             if (!YaMapsShown) {
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 700) {
+                // if ($(window).scrollTop() + $(window).height() > $(document).height() - 700) {
+                if ($(window).scrollTop() > 500) {
+
                     var elem = document.createElement('script');
                     elem.type = 'text/javascript';
                     elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
@@ -194,11 +289,19 @@ $(document).ready(function() {
             el: '.swiper-scrollbar',
         },
         mousewheel: true,
+
+        breakpoints: {
+            1199: {
+                direction: 'horizontal',
+            }
+        }
     });
 
     var swiper = new Swiper('.product-list-slider', {
         slidesPerView: 4,
         spaceBetween: 15,
+        centeredSlides: true,
+        loop: true,
         breakpoints: {
             767: {
                 slidesPerView: 3,
@@ -270,14 +373,14 @@ $(document).ready(function() {
     });
 
     $('.loop').click(function() {
-        $(this).parents('li').find('.product-thumb__show').css({
+        $(this).parents('.product-thumb').find('.product-thumb__show').css({
             'display': 'none'
         });
         $(this).parents('li').find('.product-thumb__hidden').fadeIn();
     });
     $('.loop-close').click(function() {
-        $(this).parents('li').find('.product-thumb__show').fadeIn();
-        $(this).parents('li').find('.product-thumb__hidden').css({
+        $(this).parents('.product-thumb').find('.product-thumb__show').fadeIn();
+        $(this).parents('.product-thumb').find('.product-thumb__hidden').css({
             'display': 'none'
         });
     });

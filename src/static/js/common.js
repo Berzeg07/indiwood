@@ -1423,6 +1423,3 @@ btnForTitle2.onclick = function() {
 
 	titleNav.innerHTML = title;
 }
-
-
-
