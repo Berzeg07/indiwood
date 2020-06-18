@@ -10,14 +10,62 @@
 	}
 
 	@media (min-width : 1200px) {
-		padding-top: 15px;
+		padding-top: 30px;
 		padding-bottom: 15px;
 	}
 
 	@media (min-width : 1920px) {
-		padding-top: 30px;
-		padding-bottom: 20px;
+		/*padding-top: 30px;
+		padding-bottom: 20px;*/
+
+		height: 100vh;
 	}
+}
+
+
+.calculate__block .selectric-items,
+.terras-calculate__select .selectric-items {
+	background-color: transparent;
+
+	margin-top: 20px;
+	text-transform: uppercase;
+	border-radius: 10px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	box-shadow: none;
+
+	li {
+
+	}
+}
+
+.terras-calculate__select .selectric-items li,
+.calculate__block .selectric-items li {
+
+
+	&:hover {
+			background: transparent;
+			color: #ffffff;
+		}
+}
+
+.terras-calculate__select .selectric-items li.highlighted,
+.calculate__block .selectric-items li.highlighted {
+	background-color: transparent;
+	color: #ffffff;
+
+	&::hover {
+		color: #ffffff;
+		background-color: transparent;
+	}
+}
+
+.terras-calculate__select li,
+.calculate__block li {
+	background: transparent;
+
+	color: #ffffff;
 }
 
 
@@ -405,7 +453,7 @@
 	display: block;
 	border: 1px solid #ffffff;
 	background-color: transparent;
-	border-radius: 20px;
+	border-radius: 30px;
 
 	color: #ffffff;
 	font-size: 13px;
@@ -586,7 +634,7 @@
 ==============================================================*/
 .up-title{
 	@media (min-width : 1200px) {
-		margin-top: -85px;
+		margin-top: -95px;
 	}
 }
 
@@ -756,7 +804,7 @@ input::-webkit-inner-spin-button {
 	justify-content: space-between;
 	padding: 0 15px;
 	flex-wrap: wrap;
-	max-width: 400px;
+	max-width: 360px;
 	margin: 0 auto;
 	margin-bottom: 15px;
 
@@ -1595,6 +1643,12 @@ input::-webkit-inner-spin-button {
 	@media (min-width : 1200px) {
 		padding-top: 20px;
 		padding-bottom: 20px;
+	}
+
+	@media (min-width : 1920px) {
+		height: 100vh;
+		/*padding-top: 20px;
+		padding-bottom: 20px;*/
 	}
 }
 
