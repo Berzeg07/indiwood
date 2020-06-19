@@ -196,10 +196,10 @@
 		loop:false,
 		observer: true,
 		observeParents: true,
-		navigation: {
-			nextEl: '.calculate-gallery-top .swiper-button-next',
-			prevEl: '.calculate-gallery-top .swiper-button-prev',
-		},
+		// navigation: {
+		// 	nextEl: '.calculate-gallery-top .swiper-button-next',
+		// 	prevEl: '.calculate-gallery-top .swiper-button-prev',
+		// },
 		thumbs: {
 			swiper: terrasGalleryThumbs3,
 		},
