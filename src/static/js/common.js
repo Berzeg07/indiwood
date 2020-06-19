@@ -170,8 +170,8 @@
 
 	var terrasGalleryThumbs3 = new Swiper('.terras-gallery-thumbs-three', {
 		spaceBetween: 30,
-		slidesPerView: 3,
-		loop: true,
+		slidesPerView: 1,
+		loop: false,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		slidesOffsetBefore: 0,
@@ -193,7 +193,7 @@
 
 	var terraseGalleryTop3 = new Swiper('.terras-slider-up-three', {
 		spaceBetween: 10,
-		loop:true,
+		loop:false,
 		observer: true,
 		observeParents: true,
 		navigation: {
@@ -1408,6 +1408,22 @@ function wicketActive () {
 
 let btnForTitle = document.querySelector('.fence-slider_up-one .swiper-button-next');
 let btnForTitle2 = document.querySelector('.fence-slider_up-one .swiper-button-prev');
+let btnForTitleTerras = document.querySelector('.terras-slider-up-one .swiper-button-next');
+let btnForTitle2Terras = document.querySelector('.terras-slider-up-one .swiper-button-prev');
+
+btnForTitleTerras.onclick = function() {
+	let titleNav = document.querySelector('.terras-calculate .main-back-title');
+	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+	titleNav.innerHTML = title;
+}
+
+btnForTitle2Terras.onclick = function() {
+	let titleNav = document.querySelector('.terras-calculate .main-back-title');
+	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+	titleNav.innerHTML = title;
+}
 
 
 btnForTitle.onclick = function() {

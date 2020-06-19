@@ -1105,14 +1105,14 @@ input::-webkit-inner-spin-button {
 	width: 100%;
 	text-align: center;
 	z-index: 0;
-	opacity: 0.2;
+	color: #494935;
 
 	@media (min-width : 768px) {
 		font-size: 50px;
 	}
 
 	@media (min-width : 1200px) {
-		top: 20%;
+		top: 9%;
 		font-size: 80px;
 	}
 }
@@ -1642,7 +1642,7 @@ input::-webkit-inner-spin-button {
 	font-family: "Avenir";
 	font-weight: 300;
 
-	background-image: url("../img/calculate_background.png");
+	background-image: url("../img/Back.png");
 	color: #ffffff;
 	padding-top: 47px;
 
