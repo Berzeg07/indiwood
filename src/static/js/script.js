@@ -1,89 +1,12 @@
 $(document).ready(function() {
 
-    var mainEl = document.querySelector('.card-top');
-    if (mainEl) {
-        var cardTop = $(".card-top").offset().top;
-        var catalogTop = $(".catalog-top").offset().top;
-        var applicationTop = $(".application-block").offset().top;
-        var calcTop = $(".calculate").offset().top;
-        var serviceTop = $(".service-block").offset().top;
-        var galleryTop = $(".gallery-block").offset().top;
-        var aboutTop = $(".about-block").offset().top;
-        var teamTop = $(".team-block").offset().top;
-        var newsTop = $(".news-block").offset().top;
-        var seoTop = $(".seo-block").offset().top;
-        var contactTop = $(".contact-block").offset().top;
-        var mapTop = $(".map-block").offset().top;
+    var userAgent = navigator.userAgent.toLowerCase();
+    var safari = /safari/.test(userAgent);
+    var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    console.log('браузер ', isSafari);
 
-        $(window).on("scroll", function() {
-            console.log(cardTop);
-            var scroll = $(window).scrollTop();
-            if (scroll < cardTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-1').addClass('is-active');
-            }
-            if (scroll >= cardTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-2').addClass('is-active');
-            }
-            if (scroll >= catalogTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-3').addClass('is-active');
-            }
-            if (scroll >= applicationTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-4').addClass('is-active');
-            }
-            if (scroll >= calcTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-5').addClass('is-active');
-            }
-            if (scroll >= serviceTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-6').addClass('is-active');
-            }
-            if (scroll >= galleryTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-7').addClass('is-active');
-            }
-            if (scroll >= aboutTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-8').addClass('is-active');
-            }
-            if (scroll >= teamTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-9').addClass('is-active');
-            }
-            if (scroll >= newsTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-10').addClass('is-active');
-            }
-            if (scroll >= seoTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-11').addClass('is-active');
-            }
-            if (scroll >= contactTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-12').addClass('is-active');
-            }
-            if (scroll >= mapTop) {
-                $('.scroll-indicate__link').removeClass('is-active');
-                $('.link-13').addClass('is-active');
-            }
-        });
-
-        $(function() {
-            $(".scroll-indicate a").click(function(e) {
-                e.preventDefault();
-                var currentBlock = $(this).attr("href");
-                $(".scroll-indicate__link").removeClass('is-active');
-                $(this).addClass('is-active');
-                var currentBlockoffset = $(currentBlock).offset().top;
-                $("html, body").animate({
-                    scrollTop: currentBlockoffset
-                }, 500);
-            });
-        });
+    if (isSafari) {
+        $('.swiper-scrollbar').addClass('hide-block');
     }
 
     $(".application-block__btn").click(function() {
@@ -359,13 +282,9 @@ $(document).ready(function() {
             prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-            767: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-                centeredSlides: false,
-            },
+
             1199: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 15,
                 centeredSlides: false,
             }
