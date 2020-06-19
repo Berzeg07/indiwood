@@ -678,8 +678,8 @@
 
 	fenceGalleryThumbs1.on('slideChangeTransitionEnd', function () {
 
-			let titleNav = document.querySelector('.fence-calculate .main-back-title');
-			let title = document.querySelector('.fence-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+			let titleNav = document.querySelector('.fence-calculate .main-back-title2');
+			let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
 
 			titleNav.innerHTML = title;
 
@@ -687,8 +687,8 @@
 
 	fenceGalleryTop.on('slideChangeTransitionEnd', function () {
 
-			let titleNav = document.querySelector('.fence-calculate .main-back-title');
-			let title = document.querySelector('.fence-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+			let titleNav = document.querySelector('.fence-calculate .main-back-title2');
+			let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
 
 			titleNav.innerHTML = title;
 
