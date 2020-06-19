@@ -14,9 +14,9 @@
 				document.querySelector('.fence-calculate').classList.remove('hide')
 				document.querySelector('.terras-calculate').classList.add('hide');
 
-				let titleMain = document.querySelector('.fence-calculate .js-title1').innerHTML;
-				let titleMainNav = document.querySelector('.fence-calculate .main-back-title2');
-				titleMainNav.innerHTML = titleMain;
+				// let titleMain = document.querySelector('.fence-calculate .js-title1').innerHTML;
+				// let titleMainNav = document.querySelector('.fence-calculate .main-back-title2');
+				// titleMainNav.innerHTML = titleMain;
 			}
 
 		} else {
@@ -121,6 +121,24 @@
 		thumbs: {
 			swiper: galleryThumbs1,
 		},
+	});
+
+	galleryThumbs1.on('slideChangeTransitionEnd', function () {
+
+			let titleNav = document.querySelector('.terras-calculate .main-back-title');
+			let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+			titleNav.innerHTML = title;
+
+	});
+
+	galleryTop1.on('slideChangeTransitionEnd', function () {
+
+			let titleNav = document.querySelector('.terras-calculate .main-back-title');
+			let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+			titleNav.innerHTML = title;
+
 	});
 
 	var terrasGalleryThumbs2 = new Swiper('.terras-gallery-thumbs-two', {
@@ -656,6 +674,24 @@
 		thumbs: {
 			swiper: fenceGalleryThumbs1,
 		},
+	});
+
+	fenceGalleryThumbs1.on('slideChangeTransitionEnd', function () {
+
+			let titleNav = document.querySelector('.terras-calculate .main-back-title');
+			let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+			titleNav.innerHTML = title;
+
+	});
+
+	fenceGalleryTop.on('slideChangeTransitionEnd', function () {
+
+			let titleNav = document.querySelector('.terras-calculate .main-back-title');
+			let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+			titleNav.innerHTML = title;
+
 	});
 
 
@@ -1411,31 +1447,31 @@ let btnForTitle2 = document.querySelector('.fence-slider_up-one .swiper-button-p
 let btnForTitleTerras = document.querySelector('.terras-slider-up-one .swiper-button-next');
 let btnForTitle2Terras = document.querySelector('.terras-slider-up-one .swiper-button-prev');
 
-btnForTitleTerras.onclick = function() {
-	let titleNav = document.querySelector('.terras-calculate .main-back-title');
-	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+// btnForTitleTerras.onclick = function() {
+// 	let titleNav = document.querySelector('.terras-calculate .main-back-title');
+// 	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
 
-	titleNav.innerHTML = title;
-}
+// 	titleNav.innerHTML = title;
+// }
 
-btnForTitle2Terras.onclick = function() {
-	let titleNav = document.querySelector('.terras-calculate .main-back-title');
-	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+// btnForTitle2Terras.onclick = function() {
+// 	let titleNav = document.querySelector('.terras-calculate .main-back-title');
+// 	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
 
-	titleNav.innerHTML = title;
-}
+// 	titleNav.innerHTML = title;
+// }
 
 
-btnForTitle.onclick = function() {
-	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
-	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
+// btnForTitle.onclick = function() {
+// 	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
+// 	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
 
-	titleNav.innerHTML = title;
-}
+// 	titleNav.innerHTML = title;
+// }
 
-btnForTitle2.onclick = function() {
-	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
-	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
+// btnForTitle2.onclick = function() {
+// 	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
+// 	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
 
-	titleNav.innerHTML = title;
-}
+// 	titleNav.innerHTML = title;
+// }
