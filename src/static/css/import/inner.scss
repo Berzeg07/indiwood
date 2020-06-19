@@ -10,8 +10,9 @@
 	}
 
 	@media (min-width : 1200px) {
-		padding-top: 30px;
-		padding-bottom: 15px;
+		/*padding-top: 30px;
+		padding-bottom: 15px;*/
+		padding: 100px 0;
 	}
 
 	@media (min-width : 1920px) {
@@ -2429,6 +2430,8 @@ input::-webkit-inner-spin-button {
 	text-transform: uppercase;
 	font-size: 13px;
 	border-radius: 20px;
+	border: 2px solid transparent;
+	transition: 0.5s background, 0.2s color;
 
 	@media (min-width : 600px) {
 		width: 315px;
@@ -2440,6 +2443,12 @@ input::-webkit-inner-spin-button {
 	@media (min-width : 1600px) {
 		font-size: 16px;
 		width: 402px;
+	}
+
+	&:hover {
+		background-color: transparent;
+		border: 2px solid #93856f;
+		color: #93856f;
 	}
 }
 
