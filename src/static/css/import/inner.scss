@@ -45,9 +45,9 @@
 
 
 	&:hover {
-			background: transparent;
-			color: #ffffff;
-		}
+		background: transparent;
+		color: #ffffff;
+	}
 }
 
 .terras-calculate__select .selectric-items li.highlighted,
@@ -844,8 +844,24 @@ input::-webkit-inner-spin-button {
 	}
 }
 
+.terras-slider-up-six {
+	margin-top: -18px;
+
+	@media (min-width : 768px) {
+
+		margin-top: -1px;
+	}
+
+	@media (min-width : 1200px) {
+		margin-top: 0;
+	}
+}
+
+
 .terras-slider-up-six h3 {
-	margin-top: 15px;
+	@media (min-width : 1200px) {
+		margin-top: 15px;
+	}
 }
 
 
@@ -1071,6 +1087,14 @@ input::-webkit-inner-spin-button {
 }
 
 .terras-slider-up-five h3 {
+	margin-top: 8px;
+	@media (min-width : 768px) {
+		margin-top: 25px;
+	}
+
+	@media (min-width : 1200px) {
+		margin-top: 0;
+	}
 	@media (min-width : 1920px) {
 		margin-bottom: 65px;
 	}
@@ -1101,7 +1125,7 @@ input::-webkit-inner-spin-button {
 .main-back-title,
 .main-back-title2 {
 	position: absolute;
-	top: 15%;
+	top: 12.5%;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -1116,6 +1140,7 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 768px) {
 		font-size: 50px;
+		top: 13.5%;
 	}
 
 	@media (min-width : 1200px) {
