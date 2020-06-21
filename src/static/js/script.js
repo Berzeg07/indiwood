@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
-    var userAgent = navigator.userAgent.toLowerCase();
-    var safari = /safari/.test(userAgent);
-    var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-    console.log('браузер ', isSafari);
-
-    if (isSafari) {
-        $('.swiper-scrollbar').addClass('hide-block');
-    }
+    // var userAgent = navigator.userAgent.toLowerCase();
+    // var safari = /safari/.test(userAgent);
+    // var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    // console.log('браузер ', isSafari);
+    //
+    // if (isSafari) {
+    //     $('.swiper-scrollbar').addClass('hide-block');
+    // }
 
     $(".application-block__btn").click(function() {
         var currentBlockoffset = $('.calculate').offset().top;
@@ -27,88 +27,88 @@ $(document).ready(function() {
     });
 
     var mapEl = document.querySelector('#mapmain');
-
-    var YaMapsShown = false;
-    if (mapEl) {
-
-        $(window).scroll(function() {
-            if (!YaMapsShown) {
-                // if ($(window).scrollTop() + $(window).height() > $(document).height() - 700) {
-                if ($(window).scrollTop() > 500) {
-
-                    var elem = document.createElement('script');
-                    elem.type = 'text/javascript';
-                    elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-                    // console.log(elem);
-                    $('body').append(elem);
-                    YaMapsShown = true;
-                    setTimeout(function() {
-                        ymaps.ready(init);
-
-                        function init() {
-
-                            var center = [55.763240, 37.651825];
-                            var myMap = new ymaps.Map('mapmain', {
-                                center: center,
-                                controls: [],
-                                zoom: 16
-                            }, {
-                                searchControlProvider: 'yandex#search'
-                            });
-
-                            myMap.behaviors.disable('scrollZoom');
-                            // myMap.behaviors.disable('multiTouch');
-                            // myMap.behaviors.disable('drag')
-
-                            var myPlacemark = new ymaps.Placemark(center, {
-                                balloonContent: 'Москва, ул. Покровка, 43, стр 8',
-                                hintContent: 'Москва, ул. Покровка, 43, стр 8'
-                            }, {
-                                iconLayout: 'default#image',
-                                iconImageHref: 'img/baloon.png',
-                                iconImageSize: [59, 81]
-                            });
-
-                            myMap.geoObjects.add(myPlacemark);
-                        }
-                    }, 500);
-                }
-            }
-        });
-    }
-
+    //
+    // var YaMapsShown = false;
     // if (mapEl) {
     //
-    //     ymaps.ready(init);
+    //     $(window).scroll(function() {
+    //         if (!YaMapsShown) {
+    //             // if ($(window).scrollTop() + $(window).height() > $(document).height() - 700) {
+    //             if ($(window).scrollTop() > 500) {
     //
-    //     function init() {
-    //         var center = [55.59113656911934, 37.88662649999996];
-    //         var myMap = new ymaps.Map('mapmain', {
-    //             center: center,
-    //             controls: [],
-    //             zoom: 16
-    //         }, {
-    //             searchControlProvider: 'yandex#search'
-    //         });
+    //                 var elem = document.createElement('script');
+    //                 elem.type = 'text/javascript';
+    //                 elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+    //                 // console.log(elem);
+    //                 $('body').append(elem);
+    //                 YaMapsShown = true;
+    //                 setTimeout(function() {
+    //                     ymaps.ready(init);
     //
-    //         myMap.behaviors.disable('scrollZoom');
+    //                     function init() {
     //
-    //         var myPlacemark = new ymaps.Placemark(center, {
-    //             // Свойства.
-    //             // Содержимое иконки, балуна и хинта.
-    //             balloonContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00',
-    //             hintContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00'
-    //         }, {
-    //             // Опции.
-    //             iconLayout: 'default#image',
-    //             iconImageHref: 'img/baloon.png',
-    //             iconImageSize: [59, 81]
-    //             // preset: 'twirl#violetIcon'
-    //         });
+    //                         var center = [55.763240, 37.651825];
+    //                         var myMap = new ymaps.Map('mapmain', {
+    //                             center: center,
+    //                             controls: [],
+    //                             zoom: 16
+    //                         }, {
+    //                             searchControlProvider: 'yandex#search'
+    //                         });
     //
-    //         myMap.geoObjects.add(myPlacemark);
-    //     }
+    //                         myMap.behaviors.disable('scrollZoom');
+    //                         // myMap.behaviors.disable('multiTouch');
+    //                         // myMap.behaviors.disable('drag')
+    //
+    //                         var myPlacemark = new ymaps.Placemark(center, {
+    //                             balloonContent: 'Москва, ул. Покровка, 43, стр 8',
+    //                             hintContent: 'Москва, ул. Покровка, 43, стр 8'
+    //                         }, {
+    //                             iconLayout: 'default#image',
+    //                             iconImageHref: 'img/baloon.png',
+    //                             iconImageSize: [59, 81]
+    //                         });
+    //
+    //                         myMap.geoObjects.add(myPlacemark);
+    //                     }
+    //                 }, 500);
+    //             }
+    //         }
+    //     });
     // }
+
+    if (mapEl) {
+        ymaps.ready(init);
+
+        function init() {
+            var center = [55.59113656911934, 37.88662649999996];
+            var myMap = new ymaps.Map('mapmain', {
+                center: center,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+
+            var myPlacemark = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00',
+                hintContent: 'MOSCOW / SW1A 2AA, 10 Downing Street 5/2 9:00 - 18:00'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/baloon.png',
+                iconImageSize: [59, 81]
+                    // preset: 'twirl#violetIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    }
+
 
 
     $('.tab-links_desc a').click(function(e) {
@@ -204,21 +204,21 @@ $(document).ready(function() {
         }
     });
 
-    var swiper = new Swiper('.scroll-slider', {
-        direction: 'vertical',
-        slidesPerView: 'auto',
-        freeMode: true,
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-        mousewheel: true,
+    // var swiper = new Swiper('.scroll-slider', {
+    //     direction: 'vertical',
+    //     slidesPerView: 'auto',
+    //     freeMode: true,
+    //     scrollbar: {
+    //         el: '.swiper-scrollbar',
+    //     },
+    //     mousewheel: true,
 
-        breakpoints: {
-            1199: {
-                direction: 'horizontal',
-            }
-        }
-    });
+    //     breakpoints: {
+    //         767: {
+    //             direction: 'horizontal',
+    //         }
+    //     }
+    // });
 
     var swiper = new Swiper('.product-list-slider', {
         slidesPerView: 4,
