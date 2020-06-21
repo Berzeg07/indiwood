@@ -664,12 +664,32 @@ input::-webkit-inner-spin-button {
 	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+.terras-slider-up-one {
+	margin-bottom: 8px;
+
+	@media (min-width : 768px) {
+		margin-bottom: 35px;
+	}
+
+	@media (min-width : 1200px) {
+		margin-bottom: 44px;
+	}
+
+	@media (min-width : 1920px) {
+		margin-bottom: 53px;
+	}
+}
+
 .terras-slider-up-two h3,
 .terras-slider-up-three h3{
 	margin-bottom: 78px;
 
 	@media (min-width : 768px) {
 		margin-bottom: 92px;
+	}
+
+	@media (min-width : 1920px) {
+		margin-bottom: 116px;
 	}
 }
 
@@ -678,6 +698,14 @@ input::-webkit-inner-spin-button {
 	margin-bottom: 50px;
 
 	@media (min-width : 768px) {
+		margin-bottom: 100px;
+	}
+
+	@media (min-width : 1200px) {
+		margin-bottom: 74px;
+	}
+
+	@media (min-width : 1920px) {
 		margin-bottom: 100px;
 	}
 }
@@ -725,7 +753,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	@media (min-width : 1200px) {
-		margin-bottom: 65px;
+		margin-bottom: 53px;
 	}
 }
 .terras-gallery-thumbs-six,
@@ -876,10 +904,12 @@ input::-webkit-inner-spin-button {
 
 .terras-slider-up-six {
 	margin-top: -18px;
+	margin-bottom: 14px;
 
 	@media (min-width : 768px) {
 
 		margin-top: -1px;
+		margin-bottom: 45px;
 	}
 
 	@media (min-width : 1200px) {
@@ -891,6 +921,10 @@ input::-webkit-inner-spin-button {
 .terras-slider-up-six h3 {
 	@media (min-width : 1200px) {
 		margin-top: 15px;
+	}
+
+	@media (min-width : 1920px) {
+		margin-bottom: 3px;
 	}
 }
 
@@ -1139,7 +1173,11 @@ input::-webkit-inner-spin-button {
 .terras-slider-up-five {
 	@media (min-width : 1200px) {
 		max-width: 1130px;
-		margin-bottom: 65px;
+		margin-bottom: 44px;
+	}
+
+	@media (min-width : 1920px) {
+		margin-bottom: 53px;
 	}
 
 
@@ -1174,8 +1212,12 @@ input::-webkit-inner-spin-button {
 	}
 
 	@media (min-width : 1200px) {
-		top: 9%;
+		top: 11%;
 		font-size: 80px;
+	}
+
+	@media (min-width : 1920px) {
+		top: 9%;
 	}
 }
 

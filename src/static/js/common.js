@@ -446,14 +446,43 @@
 		});
 
 		galleryBottomTerras.forEach((item) => {
-			if(item.getAttribute('data-item') == num) {
-				item.classList.remove('hide');
-				item.classList.add('show');
+
+			if(num == 5) {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
+			} else if(num == 6) {
+				if(item.getAttribute('data-item') == 7) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
 			} else {
-				item.classList.remove('show');
-				item.classList.add('hide');
+
+				if(item.getAttribute('data-item') == num) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
+
 			}
 		});
+
+		if(num == 6) {
+			buttonTerras.setAttribute('disabled', 'disabled');
+			buttonTerras.style.opacity = "0.2";
+		} else {
+			buttonTerras.removeAttribute('disabled');
+			buttonTerras.removeAttribute('style');
+		}
 
 		if(num == 1) {
 			document.querySelector('.calculate__block').style.display = 'block';
