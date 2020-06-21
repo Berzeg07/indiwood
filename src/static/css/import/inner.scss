@@ -210,6 +210,7 @@
 		transform: translate(-50%, 50px);
 
 		background-color: rgba(95, 95, 74, 0.82);
+		/*background-color: red;*/
 		border-radius: 50%;
 
 		width: 250px;
@@ -676,7 +677,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	@media (min-width : 1920px) {
-		margin-bottom: 53px;
+		margin-bottom: 60px;
 	}
 }
 
@@ -754,6 +755,10 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 1200px) {
 		margin-bottom: 53px;
+	}
+
+	@media (min-width : 1920px) {
+		margin-bottom: 60px;
 	}
 }
 .terras-gallery-thumbs-six,
@@ -924,7 +929,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	@media (min-width : 1920px) {
-		margin-bottom: 3px;
+		margin-top: 3px;
 	}
 }
 
@@ -1177,7 +1182,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	@media (min-width : 1920px) {
-		margin-bottom: 53px;
+		margin-bottom: 66px;
 	}
 
 
