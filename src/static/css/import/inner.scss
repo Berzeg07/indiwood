@@ -172,6 +172,26 @@
 
 }
 
+.terras-calculate .calculate-up.up-title {
+	margin-top: 0;
+
+	@media (min-width : 1200px) {
+		margin-top: -95px;
+	}
+}
+
+.terras-calculate .calculate-up {
+	margin-top: 100px;
+
+	@media (min-width : 768px) {
+		margin-top: 130px;
+	}
+
+	@media (min-width : 1200px) {
+		margin-top: 0px;
+	}
+}
+
 
 /*Заголовок верхнего блока*/
 .calculate-up {
@@ -738,6 +758,12 @@ input::-webkit-inner-spin-button {
 	}
 }
 
+.terras-gallery-thumbs-three .swiper-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+
 .terras-slider-up-six .terras-top1-question {
 	margin-bottom: 25px;
 
@@ -809,12 +835,16 @@ input::-webkit-inner-spin-button {
 
 .terras-slider-up-five .terras-top-five-width {
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 0 15px;
 	flex-wrap: wrap;
 	max-width: 360px;
 	margin: 0 auto;
 	margin-bottom: 15px;
+
+	@media (min-width : 370px) {
+		justify-content: space-between;
+	}
 
 	@media (min-width : 1200px) {
 		flex-direction: column;
