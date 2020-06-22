@@ -422,6 +422,8 @@
 
 			buttonTerras.setAttribute('data-num', '6');
 			buttonTerras.style.display = 'block';
+			buttonTerras.setAttribute('disabled', 'disabled');
+			buttonTerras.style.opacity = "0.2";
 
 			galleryTopTerras.forEach((item) => {
 				if(item.getAttribute('data-item') == 6) {
