@@ -1304,11 +1304,11 @@
 			document.querySelector('.calculate').classList.remove('hide');
 			document.querySelector('.fence-calculate .calculate-up-button').removeAttribute('style');
 			document.querySelector('.fence-calculate .calculate-up-button').removeAttribute('disabled');
-			document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', 7);
+			document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', 6);
 			num1 = 7;
 
 			galleryTopTerras.forEach((item) => {
-				if(item.getAttribute('data-item') == 7) {
+				if(item.getAttribute('data-item') == 6) {
 					item.classList.remove('hide');
 					item.classList.add('show');
 					document.querySelector('.fence-calculate_top h2').innerHTML = item.getAttribute('data-title');
@@ -1319,7 +1319,7 @@
 			});
 
 			galleryBottomTerras.forEach((item) => {
-				if(item.getAttribute('data-item') == 7) {
+				if(item.getAttribute('data-item') == 6) {
 					item.classList.remove('hide');
 					item.classList.add('show');
 				} else {

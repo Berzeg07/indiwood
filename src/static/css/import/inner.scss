@@ -873,6 +873,11 @@ input::-webkit-inner-spin-button {
 	align-items: center;
 	padding: 0 15px;
 	margin: 0 auto;
+	margin-bottom: 15px;
+
+	@media (min-width : 768px) {
+		margin-bottom: 0;
+	}
 
 	@media (min-width : 1200px) {
 		flex-direction: column;
