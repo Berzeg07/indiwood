@@ -336,7 +336,8 @@
 	var terraseGalleryTop5 = new Swiper('.terras-slider-up-five', {
 		spaceBetween: 10,
 		loop:true,
-		simulateTouch: false,
+		onlyExternal: true,
+		noSwiping: true,
 		observer: true,
 		observeParents: true,
 		navigation: {
@@ -347,6 +348,10 @@
 			swiper: terrasGalleryThumbs5,
 		},
 	});
+
+
+
+
 
 
 	let tabsLinkTerras = document.querySelectorAll('.terras-calculate .calculate-tabs li');

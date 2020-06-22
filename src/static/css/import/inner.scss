@@ -933,7 +933,7 @@ input::-webkit-inner-spin-button {
 
 .div::-webkit-scrollbar {width: 0}
 .div {-ms-overflow-style: none}
-.div {-moz-scrollbar-width: none}
+.div {scrollbar-width: none}
 
 .terras-gallery-thumbs-five {
 	@media (min-width : 1200px) {
