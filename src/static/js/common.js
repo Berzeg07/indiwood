@@ -315,6 +315,7 @@
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 
+
 		breakpoints: {
 			400: {
 				slidesPerView:2.5,
@@ -335,6 +336,7 @@
 	var terraseGalleryTop5 = new Swiper('.terras-slider-up-five', {
 		spaceBetween: 10,
 		loop:true,
+		simulateTouch: false,
 		observer: true,
 		observeParents: true,
 		navigation: {
@@ -349,6 +351,7 @@
 
 	let tabsLinkTerras = document.querySelectorAll('.terras-calculate .calculate-tabs li');
 	let buttonTerras = document.querySelector('.terras-calculate .calculate-up-button');
+	let buttonTerrasFive = document.querySelectorAll('.terras-calculate .terras-top-five-width-button');
 	let galleryTopTerras = document.querySelectorAll('.terras-calculate .calculate-gallery-top');
 	let galleryBottomTerras= document.querySelectorAll('.terras-calculate .calculate-gallery-thumbs');
 	let num1 = 1;
@@ -394,6 +397,65 @@
 		});
 	});
 
+	buttonTerrasFive.forEach((item) => {
+		item.onclick = function(e) {
+			e.preventDefault();
+
+			if((document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value) == '') {
+				let numFive = 0;
+				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five');
+
+				btnFive.forEach((item) => {
+					if(item.value == '') {
+						numFive += 1;
+						item.parentElement.style.border = '1px solid red';
+					} else {
+						item.parentElement.removeAttribute('style');
+					}
+				});
+
+				if(numFive) {
+					return;
+				}
+
+			}
+
+			buttonTerras.setAttribute('data-num', '6');
+			buttonTerras.style.display = 'block';
+
+			galleryTopTerras.forEach((item) => {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+					document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
+			});
+
+			galleryBottomTerras.forEach((item) => {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
+			});
+
+			tabsLinkTerras.forEach((item) => {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.add('calculate-tabs_active');
+				} else {
+					item.classList.remove('calculate-tabs_active');
+				}
+			});
+
+		};
+
+	})
+
 	/*Табы для террасы*/
 	function backToTabTerras() {
 		let num = Number(this.getAttribute('data-item'));
@@ -402,8 +464,6 @@
 		} else {
 			document.querySelector('.terras-calculate .calculate-up').classList.add('up-title');
 		}
-
-
 
 		tabsLinkTerras.forEach((item) => {
 			if(item.getAttribute('data-item') == num) {
@@ -414,65 +474,26 @@
 		});
 
 		galleryTopTerras.forEach((item) => {
-			if(num == 5) {
-				if(item.getAttribute('data-item') == 6) {
-					item.classList.remove('hide');
-					item.classList.add('show');
-					document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
-				}else {
-					item.classList.remove('show');
-					item.classList.add('hide');
-				}
-			} else if(num == 6) {
-				if(item.getAttribute('data-item') == 7) {
-					item.classList.remove('hide');
-					item.classList.add('show');
-					document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
-				}else {
-					item.classList.remove('show');
-					item.classList.add('hide');
-				}
-			} else {
-				if(item.getAttribute('data-item') == num) {
-					item.classList.remove('hide');
-					item.classList.add('show');
-					document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
-				} else {
-					item.classList.remove('show');
-					item.classList.add('hide');
-				}
+
+			if(item.getAttribute('data-item') == num) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+				document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
+			}else {
+				item.classList.remove('show');
+				item.classList.add('hide');
 			}
 
 		});
 
 		galleryBottomTerras.forEach((item) => {
 
-			if(num == 5) {
-				if(item.getAttribute('data-item') == 6) {
-					item.classList.remove('hide');
-					item.classList.add('show');
-				} else {
-					item.classList.remove('show');
-					item.classList.add('hide');
-				}
-			} else if(num == 6) {
-				if(item.getAttribute('data-item') == 7) {
-					item.classList.remove('hide');
-					item.classList.add('show');
-				} else {
-					item.classList.remove('show');
-					item.classList.add('hide');
-				}
+			if(item.getAttribute('data-item') == num) {
+				item.classList.remove('hide');
+				item.classList.add('show');
 			} else {
-
-				if(item.getAttribute('data-item') == num) {
-					item.classList.remove('hide');
-					item.classList.add('show');
-				} else {
-					item.classList.remove('show');
-					item.classList.add('hide');
-				}
-
+				item.classList.remove('show');
+				item.classList.add('hide');
 			}
 		});
 
@@ -492,6 +513,14 @@
 
 		num1 = num;
 		document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', num);
+
+		if(buttonTerras.getAttribute('data-num') == 5){
+
+			buttonTerras.style.display = 'none';
+		} else {
+			buttonTerras.style.display = 'block';
+		}
+
 
 		calculateTerras();
 	}
@@ -537,8 +566,6 @@
 
 			if(num == 0) {
 				document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value = sum*4;
-			} else {
-				buttonTerras.setAttribute('data-num', 6);
 			}
 
 		}
@@ -553,38 +580,16 @@
 			document.querySelector('.terras-calculate .calculate-up').classList.remove('up-title');
 		}
 
-		if(this.getAttribute('data-num') == 8) {
+		if(this.getAttribute('data-num') == 7) {
 			document.querySelector('.calculate').classList.add('hide');
 			document.querySelector('.fence-form').classList.add('show');
 		}
 
-		if(this.getAttribute('data-num') == 9) {
+		if(this.getAttribute('data-num') == 8) {
 			document.querySelector('.calculate').classList.add('hide');
 			document.querySelector('.fence-form').classList.add('show');
 			calculateTerras();
 			formCalculate2();
-		}
-
-		if(this.getAttribute('data-num') == 6){
-
-			if((document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value) == '') {
-				let numFive = 0;
-				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five');
-
-				btnFive.forEach((item) => {
-					if(item.value == '') {
-						numFive += 1;
-						item.parentElement.style.border = '1px solid red';
-					} else {
-						item.parentElement.removeAttribute('style');
-					}
-				});
-
-				if(numFive) {
-					return;
-				}
-
-			}
 		}
 
 		if(num1 < 7) {
@@ -616,45 +621,23 @@
 			}
 		});
 
-		if(num1 == 5) {
-			tabsLinkTerras.forEach((item) => {
-				if(item.getAttribute('data-item') == 4) {
-					item.classList.add('calculate-tabs_active');
-				} else {
-					item.classList.remove('calculate-tabs_active');
-				}
-			});
-		} else if(num1 == 6) {
-			tabsLinkTerras.forEach((item) => {
-				if(item.getAttribute('data-item') == 5) {
-					item.classList.add('calculate-tabs_active');
-				} else {
-					item.classList.remove('calculate-tabs_active');
-				}
-			});
+		tabsLinkTerras.forEach((item) => {
+			if(item.getAttribute('data-item') == num1) {
+				item.classList.add('calculate-tabs_active');
+			} else {
+				item.classList.remove('calculate-tabs_active');
+			}
+		});
 
-		}else if(num1 == 7) {
-			tabsLinkTerras.forEach((item) => {
-				if(item.getAttribute('data-item') == 6) {
-					item.classList.add('calculate-tabs_active');
-				} else {
-					item.classList.remove('calculate-tabs_active');
-				}
-			});
-
-		} else {
-			tabsLinkTerras.forEach((item) => {
-				if(item.getAttribute('data-item') == num1) {
-					item.classList.add('calculate-tabs_active');
-				} else {
-					item.classList.remove('calculate-tabs_active');
-				}
-			});
-		}
-
-		if(num1 == 7) {
+		if(num1 == 6) {
 			buttonTerras.setAttribute('disabled', 'disabled');
 			buttonTerras.style.opacity = "0.2";
+		}
+
+
+		if(this.getAttribute('data-num') == 5){
+
+			this.style.display = 'none';
 		}
 
 
@@ -676,19 +659,17 @@
 		} else if(btnNum == 4) {
 			textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
 		} else if(btnNum == 5) {
-			whereWood = document.querySelector('.terras-slider-up-four .swiper-slide-active h3').innerHTML;
-		} else if(btnNum == 6) {
 			howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
-		} else if(btnNum == 7) {
+		} else if(btnNum == 6) {
 			formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
 			aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
 			bTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
 			cTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-c').value;
 			dTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d').value;
 			sTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-s').value;
-		} else if(btnNum == 8) {
+		} else if(btnNum == 7) {
 			noTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-btn-no').innerHTML;
-		} else if(btnNum == 9) {
+		} else if(btnNum == 8) {
 			titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
 			stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
 			widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
