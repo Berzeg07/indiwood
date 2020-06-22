@@ -397,69 +397,67 @@
 		});
 	});
 
-	if(window.pageXOffset >= 1199) {
 
-		buttonTerrasFive.forEach((item) => {
-			item.onclick = function(e) {
-				e.preventDefault();
+	buttonTerrasFive.forEach((item) => {
+		item.onclick = function(e) {
+			e.preventDefault();
 
-				if((document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value) == '') {
-					let numFive = 0;
-					let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five');
+			if((document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value) == '') {
+				let numFive = 0;
+				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five');
 
-					btnFive.forEach((item) => {
-						if(item.value == '') {
-							numFive += 1;
-							item.parentElement.style.border = '1px solid red';
-						} else {
-							item.parentElement.removeAttribute('style');
-						}
-					});
-
-					if(numFive) {
-						return;
+				btnFive.forEach((item) => {
+					if(item.value == '') {
+						numFive += 1;
+						item.parentElement.style.border = '1px solid red';
+					} else {
+						item.parentElement.removeAttribute('style');
 					}
+				});
 
+				if(numFive) {
+					return;
 				}
 
-				buttonTerras.setAttribute('data-num', '6');
-				buttonTerras.style.display = 'block';
-				buttonTerras.setAttribute('disabled', 'disabled');
-				buttonTerras.style.opacity = "0.2";
+			}
 
-				galleryTopTerras.forEach((item) => {
-					if(item.getAttribute('data-item') == 6) {
-						item.classList.remove('hide');
-						item.classList.add('show');
-						document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
-					} else {
-						item.classList.remove('show');
-						item.classList.add('hide');
-					}
-				});
+			buttonTerras.setAttribute('data-num', '6');
+			buttonTerras.style.display = 'block';
+			buttonTerras.setAttribute('disabled', 'disabled');
+			buttonTerras.style.opacity = "0.2";
 
-				galleryBottomTerras.forEach((item) => {
-					if(item.getAttribute('data-item') == 6) {
-						item.classList.remove('hide');
-						item.classList.add('show');
-					} else {
-						item.classList.remove('show');
-						item.classList.add('hide');
-					}
-				});
+			galleryTopTerras.forEach((item) => {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+					document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
+			});
 
-				tabsLinkTerras.forEach((item) => {
-					if(item.getAttribute('data-item') == 6) {
-						item.classList.add('calculate-tabs_active');
-					} else {
-						item.classList.remove('calculate-tabs_active');
-					}
-				});
+			galleryBottomTerras.forEach((item) => {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.remove('hide');
+					item.classList.add('show');
+				} else {
+					item.classList.remove('show');
+					item.classList.add('hide');
+				}
+			});
 
-			};
+			tabsLinkTerras.forEach((item) => {
+				if(item.getAttribute('data-item') == 6) {
+					item.classList.add('calculate-tabs_active');
+				} else {
+					item.classList.remove('calculate-tabs_active');
+				}
+			});
 
-		});
-	};
+		};
+
+	});
 
 	/*Табы для террасы*/
 	function backToTabTerras() {
@@ -502,6 +500,12 @@
 			}
 		});
 
+		if(num == 5) {
+			buttonTerras.classList.add('btn-hide');
+		} else {
+			buttonTerras.classList.remove('btn-hide');
+		}
+
 		if(num == 6) {
 			buttonTerras.setAttribute('disabled', 'disabled');
 			buttonTerras.style.opacity = "0.2";
@@ -518,14 +522,6 @@
 
 		num1 = num;
 		document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', num);
-
-		if(window.pageXOffset >= 1199) {
-			if(buttonTerras.getAttribute('data-num') == 5){
-				buttonTerras.style.display = 'none';
-			} else {
-				buttonTerras.style.display = 'block';
-			}
-		}
 
 
 		calculateTerras();
@@ -598,12 +594,20 @@
 			formCalculate2();
 		}
 
+
+
 		if(num1 < 7) {
 			num1 += 1;
 			document.querySelector('.calculate__block').style.display = 'none';
 
 			buttonTerras.setAttribute('data-num', num1);
 			calculateTerras();
+		}
+
+		if(this.getAttribute('data-num') == 5) {
+			buttonTerras.classList.add('btn-hide');
+		} else {
+			buttonTerras.classList.remove('btn-hide');
 		}
 
 		if(this.getAttribute('data-num') == 6) {
@@ -662,13 +666,6 @@
 			buttonTerras.style.opacity = "0.2";
 		}
 
-
-		if(window.pageXOffset >= 1199) {
-			if(this.getAttribute('data-num') == 5){
-
-				this.style.display = 'none';
-			}
-		}
 
 
 	}
