@@ -364,7 +364,7 @@
 		item.onclick = function() {
 			document.querySelector('.calculate').classList.add('hide');
 			document.querySelector('.fence-form').classList.add('show');
-			buttonTerras.setAttribute('data-num', 8);
+			buttonTerras.setAttribute('data-num', 7);
 			calculateTerras();
 			formCalculate2();
 		};
@@ -382,8 +382,8 @@
 
 			buttonTerras.removeAttribute('disabled');
 			buttonTerras.removeAttribute('style');
-			buttonTerras.setAttribute('data-num', 9);
-			num1 = 8;
+			buttonTerras.setAttribute('data-num', 8);
+			num1 = 7;
 		}
 
 	})
