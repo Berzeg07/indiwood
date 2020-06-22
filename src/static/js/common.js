@@ -519,9 +519,8 @@
 		num1 = num;
 		document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', num);
 
-		if(window.pageXOffset <= 1199) {
+		if(window.pageXOffset >= 1199) {
 			if(buttonTerras.getAttribute('data-num') == 5){
-
 				buttonTerras.style.display = 'none';
 			} else {
 				buttonTerras.style.display = 'block';
@@ -664,7 +663,7 @@
 		}
 
 
-		if(window.pageXOffset <= 1199) {
+		if(window.pageXOffset >= 1199) {
 			if(this.getAttribute('data-num') == 5){
 
 				this.style.display = 'none';
