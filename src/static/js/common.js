@@ -337,6 +337,7 @@
 		spaceBetween: 10,
 		loop:true,
 		onlyExternal: true,
+		allowTouchMove: false,
 		noSwiping: true,
 		observer: true,
 		observeParents: true,
