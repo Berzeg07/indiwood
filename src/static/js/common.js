@@ -534,7 +534,7 @@
 	fiveTerrasBtn.forEach((item) => {
 		item.onfocus = function() {
 			if(this.getAttribute('data-input')) {
-				let fiveTerrasImg = this.parentElement.parentElement.parentElement.querySelector('img');
+				let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
 				fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
 			}
 
