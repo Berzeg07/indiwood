@@ -181,14 +181,22 @@
 }
 
 .terras-calculate .calculate-up {
-	margin-top: 100px;
-
-	@media (min-width : 768px) {
-		margin-top: 130px;
-	}
+	margin-top: 40px;
 
 	@media (min-width : 1200px) {
 		margin-top: 0px;
+	}
+}
+
+.calculate-up.up-title {
+	&::before {
+		transform: translate(-50%, 50px);
+	}
+
+	@media (min-width : 768px) {
+		&::before {
+			transform: translate(-50%, 60px);
+		}
 	}
 }
 
@@ -207,7 +215,7 @@
 		position: absolute;
 		top: 0;
 		left: 50%;
-		transform: translate(-50%, 50px);
+		transform: translate(-50%, 110px);
 
 		background-color: rgba(95, 95, 74, 0.82);
 		/*background-color: red;*/
@@ -223,7 +231,7 @@
 			width: 419px;
 			height: 419px;
 
-			transform: translate(-50%, 60px);
+			transform: translate(-50%, 130px);
 		}
 
 		@media (min-width : 1920px) {
@@ -658,6 +666,22 @@
 	}
 }
 
+.up-title .terras-calculate-subtitle {
+	display: none;
+}
+
+.terras-calculate-subtitle {
+	margin-bottom: 45px;
+
+	@media (min-width : 768px) {
+		margin-bottom: 55px;
+	}
+
+	@media (min-width : 1200px) {
+		display: none;
+	}
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	/* display: none; <- Crashes Chrome on hover */
@@ -873,11 +897,6 @@ input::-webkit-inner-spin-button {
 	align-items: center;
 	padding: 0 15px;
 	margin: 0 auto;
-	margin-bottom: 15px;
-
-	@media (min-width : 768px) {
-		margin-bottom: 0;
-	}
 
 	@media (min-width : 1200px) {
 		flex-direction: column;
@@ -908,6 +927,7 @@ input::-webkit-inner-spin-button {
 
 .terras-slider-up-five .terras-top-five-width label {
 	margin-left: 10px;
+	margin-bottom: 15px;
 
 	@media (min-width : 1200px) {
 		margin-left: 0;
@@ -947,7 +967,6 @@ input::-webkit-inner-spin-button {
 }
 
 .terras-slider-up-six {
-	margin-top: -18px;
 	margin-bottom: 14px;
 
 	@media (min-width : 768px) {
@@ -1189,6 +1208,7 @@ input::-webkit-inner-spin-button {
 }
 
 .terras-slider-up-five .calculate-up h2 {
+
 	@media (min-width : 1200px) {
 		margin-bottom: 100px;
 	}
@@ -1197,6 +1217,7 @@ input::-webkit-inner-spin-button {
 .terras-slider-up-five h3 {
 
 	@media (min-width : 1920px) {
+
 		margin-bottom: 65px;
 	}
 }
@@ -1208,7 +1229,6 @@ input::-webkit-inner-spin-button {
 }
 
 .terras-slider-up-five {
-	margin-top: -10px;
 
 	@media (min-width : 1200px) {
 		max-width: 1130px;
@@ -1228,11 +1248,20 @@ input::-webkit-inner-spin-button {
 	z-index: 1;
 }
 
+.up-title .main-back-title {
+	top: 12.5%;
+
+	@media (min-width : 768px) {
+		top: 14%;
+	}
+
+}
+
 
 .main-back-title,
 .main-back-title2 {
 	position: absolute;
-	top: 12.5%;
+	top: 27%;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -1247,7 +1276,7 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 768px) {
 		font-size: 50px;
-		top: 13.5%;
+		top: 25.5%;
 	}
 
 	@media (min-width : 1200px) {

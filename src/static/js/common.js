@@ -3,7 +3,7 @@
 		$('.terras-calculate__select select').selectric();
 		$('.terras-calc select').selectric();
 
-		$('.calculate__select select').on('selectric-change', function(event, element, selectric) {
+		$('.calculate__select select').selectric().on('change', function() {
 			changeCalculate();
 		});
 	});
@@ -1248,6 +1248,8 @@
 				item.classList.remove('calculate-tabs_active');
 			}
 		});
+
+		document.querySelector('.terras-calculate .calculate-up').classList.add('up-title');
 
 	}
 
