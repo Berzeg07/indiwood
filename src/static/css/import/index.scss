@@ -1,7 +1,4 @@
 .header {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
     background: white;
     position: fixed;
     top: 0;
@@ -11,11 +8,19 @@
     transition: 0.3s;
     z-index: 200;
     border-bottom: 1px solid #877C6C;
+    &__inner {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        position: relative;
+        @media(max-width: 1199px) {
+            flex-wrap: wrap;
+        }
+    }
     @media(max-width: 767px) {
         padding-bottom: 15px;
     }
     @media(max-width: 1199px) {
-        flex-wrap: wrap;
         padding-top: 15px;
     }
     .header__item {
@@ -113,6 +118,12 @@
     width: 27px;
     height: 19px;
     background: url("../img/burger.svg") no-repeat center;
+    @media(max-width: 767px) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
     @media(max-width: 1199px) {
         background: url("../img/burger-b.svg") no-repeat center;
     }
@@ -121,6 +132,8 @@
 .burger.is-active {
     background: url("../img/close-icon.png") no-repeat center;
     background-size: contain;
+    position: relative;
+    z-index: 200;
     @media(max-width: 1199px) {
         background: url("../img/close-icon-bl.png") no-repeat center;
         background-size: contain;
@@ -141,7 +154,7 @@
                 width: 25%;
             }
             @media(min-width: 1200px) {
-                width: 24%;
+                width: 22%;
             }
             a {
                 display: inline-block;
@@ -176,10 +189,16 @@
     @media(max-width: 767px) {
         display: none;
     }
+    @media(min-width: 1366px) {
+        padding-left: 16px;
+    }
+    @media(min-width: 1600px) {
+        padding-left: 25px;
+    }
     &:after {
         content: '';
         position: absolute;
-        left: -50px;
+        left: -60px;
         top: 50%;
         transform: translateY(-50%);
         width: 29px;
@@ -187,6 +206,9 @@
         background: url("../img/whatsup-gold.svg") no-repeat center;
         @media(min-width: 768px) and (max-width: 1179px) {
             display: none;
+        }
+        @media(min-width: 1366px) {
+            left: -70px;
         }
     }
 }
@@ -241,10 +263,10 @@
         border: none;
         color: inherit;
         @media(max-width: 1799px) {
-            background: rgba(0, 0, 0, 0.3) url("../img/phone-icon-w.svg") no-repeat center;
+            background: #93856F url("../img/phone-icon-w.svg") no-repeat center;
         }
         @media(min-width: 1800px) {
-            background: rgba(0, 0, 0, 0.3);
+            background: #93856F;
         }
     }
     .burger {
@@ -278,6 +300,9 @@
         bottom: 70px;
         display: flex;
         justify-content: center;
+        @media(max-width: 767px) {
+            bottom: 85px;
+        }
         .swiper-pagination-bullet {
             &:not(:last-child) {
                 @media(min-width: 1200px) {
@@ -321,7 +346,7 @@
         width: 11px;
         height: 22px;
         background-size: contain;
-        bottom: 79px;
+        bottom: 94px;
     }
     .swiper-button-next {
         right: 10%;
@@ -356,8 +381,9 @@
         width: 322px;
         height: 50px;
         @media(max-width: 767px) {
-            width: 202px;
+            width: 270px;
             height: 35px;
+            margin-bottom: 50px;
         }
     }
 }
@@ -381,7 +407,7 @@
     font-weight: 500;
     @media(max-width: 767px) {
         font-size: 18px;
-        width: 176px;
+        width: 240px;
         line-height: 35px;
     }
 }
@@ -441,7 +467,6 @@
     z-index: 100;
     width: 25%;
     background: #4E4E3F;
-    font-family: "Optima";
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -497,11 +522,22 @@
     text-transform: uppercase;
     font-size: 20px;
     margin-bottom: 50px;
+    @media(min-width: 1200px) {
+        margin-bottom: 140px;
+    }
 }
 
 .dropdown-menu__list {
+    a {
+        @media(min-width: 1200px) {
+            font-size: 18px;
+        }
+    }
     li {
         margin-bottom: 15px;
+        @media(min-width: 1200px) {
+            margin-bottom: 25px;
+        }
     }
 }
 
@@ -563,6 +599,19 @@
     @media(max-width: 767px) {
         display: none;
     }
+    @media(min-width: 768px) {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('../img/scroll-white.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
     @media(min-width: 768px) and (max-width: 1199px) {
         padding-left: 10px;
         padding-right: 10px;
@@ -614,6 +663,17 @@
     scrollbar-width: none;
     @media(min-width: 768px) {
         border-right: 1px solid black;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('../img/scroll-black.svg') no-repeat center;
+            background-size: contain;
+        }
     }
     padding-right: 64px;
     padding-top: 125px;
@@ -1220,6 +1280,9 @@
     padding: 30px 20px;
     @media(min-width: 768px) and (max-width: 1199px) {
         padding: 60px 55px;
+    }
+    @media(min-width: 1366px) {
+        padding: 50px 40px;
     }
     @media(min-width: 1600px) {
         padding: 70px 66px;
@@ -1907,14 +1970,14 @@
     margin-bottom: 34px;
     text-transform: uppercase;
     @media(max-width: 599px) {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
 .contact-info__item {
-    margin-bottom: 59px;
+    margin-bottom: 40px;
     @media(max-width: 767px) {
-        width: 30%;
+        width: 50%;
     }
     @media(min-width: 768px) and (max-width: 1199px) {
         width: 25%;
@@ -1988,7 +2051,7 @@
     li {
         margin-bottom: 8px;
         @media(max-width: 599px) {
-            font-size: 10px;
+            font-size: 14px;
         }
     }
 }
@@ -2001,6 +2064,7 @@
         color: white;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 
@@ -2571,4 +2635,14 @@
 .swiper-scrollbar {
     visibility: hidden;
     opacity: 0;
+}
+
+.sidebar-list__top {
+    position: relative;
+    top: 0;
+    transition: 1s;
+}
+
+.sidebar-list__top.is-active {
+    top: 300px;
 }

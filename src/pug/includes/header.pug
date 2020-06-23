@@ -1,57 +1,58 @@
 header.header.header-opacity.header-main#header
-    .header__item
-        .logo 
-            .logo__name Indiwood
-            .logo__article individual wood solutions
+    .header__inner
+        .header__item
+            .logo 
+                .logo__name Indiwood
+                .logo__article individual wood solutions
 
-        .burger
+            .burger
 
-    .header__item
-        nav.main-nav
-            ul
-                li
-                    a(href="#") Каталог
-                li
-                    a(href="#").active Калькулятор
-                li
-                    a(href="#") О нас
-                li
-                    a(href="#") Контакты
+        .header__item
+            nav.main-nav#mainMenu
+                ul
+                    li
+                        a(href=".content__catalog") Каталог
+                    li
+                        a(href=".calculate").active Калькулятор
+                    li
+                        a(href=".about-block") О нас
+                    li
+                        a(href=".contact-block") Контакты
 
-    .header__item
-        ul.phone-block
-            li
-                a(href="tel:7499787995").phone +7 (499) 787 99 5
-            li
-                span.work-time 5/2    9:00 - 18:00
+        .header__item
+            ul.phone-block
+                li
+                    a(href="tel:7499787995").phone +7 (499) 787 99 5
+                li
+                    span.work-time 5/2    9:00 - 18:00
 
-        button(type="button").recall.call-btn
-            span Заказать звонок
+            button(type="button").recall.call-btn
+                span Заказать звонок
 
 .dropdown-menu
     .dropdown-menu__item
         .dropdown-menu__title menu
         //- button(type="button").close-menu.close-menu_mob
 
-        ul.dropdown-menu__list
+        ul.dropdown-menu__list.dropdown-menu__list_main
             li
-                a(href="#") Главная
+                a(href=".main-banner") Главная
             li
-                a(href="#") Карточка товара
+                a(href=".content__inner_product") Карточка товара
             li
-                a(href="#") Каталог
+                a(href=".content__catalog") Каталог
             li
-                a(href="#") Область применения
+                a(href=".application-block") Область применения
             li
-                a(href="#") Калькулятор
+                a(href=".calculate") Калькулятор
             li
-                a(href="#") Услуги
+                a(href=".service-block") Услуги
             li
-                a(href="#") Галерея
+                a(href=".gallery-block") Галерея
             li
-                a(href="#") О компании
+                a(href=".about-block") О компании
             li
-                a(href="#") Контакты
+                a(href=".contact-block") Контакты
 
 
 

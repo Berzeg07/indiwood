@@ -1,5 +1,16 @@
 $(document).ready(function() {
 
+    $(function() {
+        $("#mainMenu a, .dropdown-menu__list_main a").click(function(e) {
+            e.preventDefault();
+            var currentBlock = $(this).attr("href");
+            currentBlockoffset = $(currentBlock).offset().top;
+            $("html, body").animate({
+                scrollTop: currentBlockoffset - 66,
+            }, 500);
+        });
+    });
+
     // var userAgent = navigator.userAgent.toLowerCase();
     // var safari = /safari/.test(userAgent);
     // var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
@@ -8,6 +19,16 @@ $(document).ready(function() {
     // if (isSafari) {
     //     $('.swiper-scrollbar').addClass('hide-block');
     // }
+
+    $(window).scroll(function() {
+        var scroll = $(this).scrollTop();
+        console.log(scroll);
+        if (scroll >= 1150 && scroll < 1600) {
+            $('.sidebar-list__top').addClass('is-active');
+        } else {
+            $('.sidebar-list__top').removeClass('is-active');
+        }
+    });
 
     $(".application-block__btn").click(function() {
         var currentBlockoffset = $('.calculate').offset().top;
