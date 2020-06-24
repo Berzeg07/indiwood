@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+
+
     $(function() {
         $("#mainMenu a, .dropdown-menu__list_main a").click(function(e) {
             e.preventDefault();
@@ -22,7 +25,6 @@ $(document).ready(function() {
 
     $(window).scroll(function() {
         var scroll = $(this).scrollTop();
-        console.log(scroll);
         if (scroll >= 1150 && scroll < 1600) {
             $('.sidebar-list__top').addClass('is-active');
         } else {
