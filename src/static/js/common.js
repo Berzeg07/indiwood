@@ -364,13 +364,127 @@
 
 	btnNo.forEach((item) => {
 		item.onclick = function() {
-			document.querySelector('.calculate').classList.add('hide');
-			document.querySelector('.fence-form').classList.add('show');
-			buttonTerras.setAttribute('data-num', 7);
-			calculateTerras();
-			formCalculate2();
+
+			if((document.querySelector('.terras-slider-up-five .swiper-slide-active .btn-sum-five').value) == '') {
+				let numFive = 0;
+				let btnFive = document.querySelectorAll('.terras-slider-up-five .swiper-slide-active .terras-top-five-width .btn-five');
+
+				btnFive.forEach((item) => {
+					if(item.value == '') {
+						numFive += 1;
+						item.parentElement.style.border = '1px solid red';
+					} else {
+						item.parentElement.removeAttribute('style');
+					}
+				});
+
+				galleryTopTerras.forEach((item) => {
+					if(item.getAttribute('data-item') == 5) {
+						item.classList.remove('hide');
+						item.classList.add('show');
+						document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
+					} else {
+						item.classList.remove('show');
+						item.classList.add('hide');
+					}
+				});
+
+				galleryBottomTerras.forEach((item) => {
+					if(item.getAttribute('data-item') == 5) {
+						item.classList.remove('hide');
+						item.classList.add('show');
+					} else {
+						item.classList.remove('show');
+						item.classList.add('hide');
+					}
+				});
+
+				tabsLinkTerras.forEach((item) => {
+					if(item.getAttribute('data-item') == 5) {
+						item.classList.add('calculate-tabs_active');
+					} else {
+						item.classList.remove('calculate-tabs_active');
+					}
+				});
+
+				buttonTerras.setAttribute('data-num', 5);
+				buttonTerras.removeAttribute('disabled');
+				buttonTerras.removeAttribute('style');
+
+				if(numFive) {
+					num1 = 5;
+					return;
+				}
+
+
+			} else {
+				document.querySelector('.calculate').classList.add('hide');
+				document.querySelector('.fence-form').classList.add('show');
+				buttonTerras.setAttribute('data-num', 7);
+				collectInfo2()
+				formCalculate2();
+			}
+
+
+
 		};
 	});
+
+	let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras,  howWood, formTerras, aTerras, bTerras, cTerras, dTerras, eTerras, sTerras, noTerras,titleColTerras, stepColTerras,
+	widthColTerras, colorColTerras, imgPath2;
+
+	function collectInfo2() {
+		modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
+		modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .label').innerHTML;
+		modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
+		textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
+		howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
+		formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
+		aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
+		bTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
+		sTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-s').value;
+		imgPath2 = document.querySelector('.terras-slider-up-one .swiper-slide-active img').getAttribute('src');
+
+		if(document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-c')) {
+			cTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
+		}
+
+		if(document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d')) {
+			dTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d').value;
+		}
+
+		if(document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-e')) {
+			eTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-e').value;
+		}
+
+		setFormTitles2();
+	}
+
+	function setFormTitles2() {
+		document.querySelector('.fence-form .fence-form__name h2').innerHTML = modelTerrasTitle;
+		document.querySelector('.fence-form .fence-form__subname h3').innerHTML = modelTerrasTitle;
+		document.querySelector('.fence-form .fence-form__subname p').innerHTML = modelTerrasColor+' / '+textureTerras;
+		document.querySelector('.fence-form .fence-form__name p').innerHTML = modelTerrasColor+' / '+textureTerras;
+
+		if(sTerras) {
+			document.querySelector('.fence-form__square span').innerHTML = Number(sTerras);
+		} else {
+			if(cTerras) {
+				fenceSquare = 4*(Number(aTerras)+Number(bTerras)+ Number(cTerras));
+			} else if(dTerras) {
+				fenceSquare = 4*(Number(aTerras)+Number(bTerras)+ Number(cTerras) + Number(dTerras));
+			} else if(eTerras) {
+				fenceSquare = 4*(Number(aTerras)+Number(bTerras)+ Number(cTerras) + Number(dTerras) + Number(eTerras));
+			} else {
+				fenceSquare = 4*(Number(aTerras)+Number(bTerras));
+			}
+			document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
+		}
+
+		sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
+		document.querySelector('.fence-form .fence-form__img img').setAttribute('src', imgPath2);
+	}
+
 
 	btnYes.forEach((item) => {
 		item.onclick = function() {
@@ -423,6 +537,7 @@
 
 			}
 
+
 			buttonTerras.setAttribute('data-num', '6');
 			buttonTerras.style.display = 'block';
 			buttonTerras.setAttribute('disabled', 'disabled');
@@ -473,6 +588,7 @@
 			document.querySelector('.terras-calculate .calculate-up').classList.add('up-title');
 		}
 
+
 		tabsLinkTerras.forEach((item) => {
 			if(item.getAttribute('data-item') == num) {
 				item.classList.add('calculate-tabs_active');
@@ -505,6 +621,9 @@
 			}
 		});
 
+		document.querySelector('.swiper-slide-active .terras-top1-question_one').removeAttribute('style');
+		document.querySelector('.swiper-slide-active .terras-top1-question_two').removeAttribute('style');
+
 		if(num == 5) {
 			buttonTerras.classList.add('btn-hide');
 		} else {
@@ -527,9 +646,6 @@
 
 		num1 = num;
 		document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', num);
-
-
-		calculateTerras();
 	}
 
 
@@ -722,10 +838,66 @@
 		}
 
 		if(this.getAttribute('data-num') == 8) {
-			document.querySelector('.calculate').classList.add('hide');
-			document.querySelector('.fence-form').classList.add('show');
-			calculateTerras();
-			formCalculate2();
+
+			if((document.querySelector('.terras-slider-up-five .swiper-slide-active .btn-sum-five').value) == '') {
+				let numFive = 0;
+				let btnFive = document.querySelectorAll('.terras-slider-up-five .swiper-slide-active .terras-top-five-width .btn-five');
+
+				btnFive.forEach((item) => {
+					if(item.value == '') {
+						numFive += 1;
+						item.parentElement.style.border = '1px solid red';
+					} else {
+						item.parentElement.removeAttribute('style');
+					}
+				});
+
+				galleryTopTerras.forEach((item) => {
+					if(item.getAttribute('data-item') == 5) {
+						item.classList.remove('hide');
+						item.classList.add('show');
+						document.querySelector('.terras-calculate h2').innerHTML = item.getAttribute('data-title');
+					} else {
+						item.classList.remove('show');
+						item.classList.add('hide');
+					}
+				});
+
+				galleryBottomTerras.forEach((item) => {
+					if(item.getAttribute('data-item') == 5) {
+						item.classList.remove('hide');
+						item.classList.add('show');
+					} else {
+						item.classList.remove('show');
+						item.classList.add('hide');
+					}
+				});
+
+				tabsLinkTerras.forEach((item) => {
+					if(item.getAttribute('data-item') == 5) {
+						item.classList.add('calculate-tabs_active');
+					} else {
+						item.classList.remove('calculate-tabs_active');
+					}
+				});
+
+				buttonTerras.setAttribute('data-num', 5);
+				buttonTerras.removeAttribute('disabled');
+				buttonTerras.removeAttribute('style');
+
+				if(numFive) {
+					num1 = 5;
+					return;
+				}
+
+
+			} else {
+				document.querySelector('.calculate').classList.add('hide');
+				document.querySelector('.fence-form').classList.add('show');
+				collectInfo2();
+				formCalculate2();
+			}
+
 		}
 
 
@@ -735,7 +907,6 @@
 			document.querySelector('.calculate__block').style.display = 'none';
 
 			buttonTerras.setAttribute('data-num', num1);
-			calculateTerras();
 		}
 
 		if(this.getAttribute('data-num') == 5) {
@@ -801,41 +972,6 @@
 		}
 
 
-
-	}
-
-	let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras, whereWood, howWood, formTerras, aTerras, bTerras, cTerras, dTerras, sTerras, noTerras,titleColTerras, stepColTerras,
-	widthColTerras, colorColTerras;
-
-
-	/*Занести данные в переменные Terras*/
-	function calculateTerras() {
-		let btnNum = document.querySelector('.terras-calculate .calculate-up-button').getAttribute('data-num');
-
-		// if(btnNum == 2) {
-		// 	modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
-		// 	modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .terras-calculate__select .label').innerHTML;
-		// }else if (btnNum == 3) {
-		// 	modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
-		// } else if(btnNum == 4) {
-		// 	textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
-		// } else if(btnNum == 5) {
-		// 	howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
-		// } else if(btnNum == 6) {
-		// 	formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
-		// 	aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
-		// 	bTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
-		// 	cTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-c').value;
-		// 	dTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d').value;
-		// 	sTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-s').value;
-		// } else if(btnNum == 7) {
-		// 	noTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-btn-no').innerHTML;
-		// } else if(btnNum == 8) {
-		// 	titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
-		// 	stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
-		// 	widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
-		// 	colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-calc .label').innerHTML;
-		// }
 
 	}
 
@@ -1118,32 +1254,98 @@
 		num = num2;
 		document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', num2);
 
-		calculateFence();
 	}
 
-	/*Данные на отправку Fence*/
-	let titleCalculate, title1Calculate, size1Calculate, title2Calculate, title3Calculate, aCalculate, bCalculate, needDoor, needDoor2, title5Calculate, size5Calculate;
 
+	/*Кнопка далее Fence*/
 	buttonFence.onclick = function() {
 		if(document.querySelector('.fence-calculate .calculate-up').classList.contains('up-title')) {
 			document.querySelector('.fence-calculate .calculate-up').classList.remove('up-title');
 		}
 
+		if(num == 4) {
+			let numFive = 0;
+			let btnFive = document.querySelectorAll('.fence-top-four-width .fence-input');
+
+			btnFive.forEach((item) => {
+				if(item.value == '') {
+					numFive += 1;
+					item.parentElement.style.border = '1px solid red';
+				} else {
+					item.parentElement.removeAttribute('style');
+				}
+			});
+
+			if(numFive) {
+				return;
+			}
+		}
+
 		if(num == 5) {
-			document.querySelector('.calculate').classList.add('hide');
-			document.querySelector('.fence-form').classList.add('show');
+
+			let numFive = 0;
+			let btnFive = document.querySelectorAll('.fence-top-four-width .fence-input');
+
+			btnFive.forEach((item) => {
+				if(item.value == '') {
+					numFive += 1;
+					item.parentElement.style.border = '1px solid red';
+				} else {
+					item.parentElement.removeAttribute('style');
+				}
+			});
+
+			if(numFive) {
+
+				galleryTop.forEach((item) => {
+					if(item.getAttribute('data-item') == 4) {
+						item.classList.remove('hide');
+						item.classList.add('show');
+						document.querySelector('.fence-calculate_top h2').innerHTML = item.getAttribute('data-title');
+					} else {
+						item.classList.remove('show');
+						item.classList.add('hide');
+					}
+				});
+
+				galleryBottom.forEach((item) => {
+					if(item.getAttribute('data-item') == 4) {
+						item.classList.remove('hide');
+						item.classList.add('show');
+					} else {
+						item.classList.remove('show');
+						item.classList.add('hide');
+					}
+				});
+
+				tabsLink.forEach((item) => {
+					if(item.getAttribute('data-item') == 4) {
+						item.classList.add('calculate-tabs_active');
+					} else {
+						item.classList.remove('calculate-tabs_active');
+					}
+				});
+
+				buttonFence.setAttribute('data-num', 4);
+				num = 4;
+
+				return;
+			} else {
+				document.querySelector('.calculate').classList.add('hide');
+				document.querySelector('.fence-form').classList.add('show');
 
 
-			buttonFence.setAttribute('data-num', 6);
-			calculateFence.call(buttonFence);
-			formCalculate();
+				buttonFence.setAttribute('data-num', 6);
+				collectInfo();
+				formCalculate();
+			}
+
 
 		} else {
 			num += 1;
 			document.querySelector('.calculate__block').style.display = 'none';
 
 			buttonFence.setAttribute('data-num', num);
-			calculateFence.call(buttonFence);
 		}
 
 		if(num == 4) {
@@ -1187,6 +1389,21 @@
 
 	buttonFence2.onclick = function() {
 
+		let numFive = 0;
+		let btnFive = document.querySelectorAll('.fence-top-four-width .fence-input');
+
+		btnFive.forEach((item) => {
+			if(item.value == '') {
+				numFive += 1;
+				item.parentElement.style.border = '1px solid red';
+			} else {
+				item.parentElement.removeAttribute('style');
+			}
+		});
+
+		if(numFive) {
+			return;
+		}
 
 		buttonFence.setAttribute('data-num', '5');
 		buttonFence.classList.remove('btn-hide');
@@ -1223,30 +1440,36 @@
 
 	}
 
+	/*Данные на отправку Fence*/
+	let titleCalculate, title1Calculate, size1Calculate, title2Calculate, title3Calculate, aCalculate, bCalculate, needDoor, needDoor2, size2Calculate, imgPath;
 
+	function collectInfo() {
+		titleCalculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
+		title1Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
+		title2Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
+		size1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .label').innerHTML;
+		aCalculate = document.querySelector('.fence-slider_up-four .fence-a').value;
+		bCalculate = document.querySelector('.fence-slider_up-four .fence-b').value;
+		needDoor = document.querySelector('.fence-slider_up-four .fence-top-four-gate_active').innerHTML;
+		needDoor2 = document.querySelector('.fence-slider_up-four .fence-top-wicket_active').innerHTML;
+		title3Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .calculate-subtitle').innerHTML;
+		size2Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
+		imgPath = document.querySelector('.fence-slider_up-one .swiper-slide-active .fence-top1-column img').getAttribute('src');
 
-	/*Занести данные в переменные Fence*/
-	function calculateFence() {
-		let btnNum = buttonFence.getAttribute('data-num');
+		setFormTitles();
+	}
 
-		// if(btnNum == 2) {
-		// 	titleCalculate = document.querySelector('.calculate__block .label').innerHTML;
-		// 	title1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
-		// 	size1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .selectric-js-size1 .label').innerHTML;
-		// }else if (btnNum == 3) {
-		// 	title2Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
-		// } else if(btnNum == 4) {
-		// 	title3Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
-		// } else if(btnNum == 5) {
-		// 	aCalculate = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-a').value;
-		// 	bCalculate = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-b').value;
-		// 	needDoor = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-top-four-gate_active').innerHTML;
-		// 	needDoor2 = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-top-wicket_active').innerHTML;
-		// } else if(btnNum == 6) {
-		// 	title5Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active h3').innerHTML;
-		// 	size5Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
-		// }
+	function setFormTitles() {
+		document.querySelector('.fence-form .fence-form__name h2').innerHTML = titleCalculate;
+		document.querySelector('.fence-form .fence-form__subname h3').innerHTML = titleCalculate;
+		document.querySelector('.fence-form .fence-form__subname p').innerHTML = title1Calculate+' / '+title2Calculate;
+		document.querySelector('.fence-form .fence-form__name p').innerHTML = title1Calculate+' / '+title2Calculate;
 
+		fenceSquare = Number(aCalculate) * Number(bCalculate);
+		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
+
+		sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
+		document.querySelector('.fence-form .fence-form__img img').setAttribute('src', imgPath);
 	}
 
 
@@ -1434,15 +1657,12 @@
 
 	}
 
+
 	let sumFence;
 	let fenceSquare = 0;
 
 	/*Изменение формы Fence*/
 	function formCalculate() {
-		fenceSquare = aCalculate * bCalculate;
-		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
-
-		sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
 
 		againBtn.onclick = function(e) {
 			if(!document.querySelector('.fence-calculate .calculate-up').classList.contains('up-title')) {
@@ -1457,7 +1677,6 @@
 			e.preventDefault();
 			document.querySelector('.fence-form').classList.remove('show');
 			document.querySelector('.calculate').classList.remove('hide');
-
 		}
 
 
@@ -1467,10 +1686,6 @@
 
 	/*Изменение формы Terras*/
 	function formCalculate2() {
-		fenceSquare = 4*(Number(aTerras)+Number(bTerras)+Number(cTerras)+Number(dTerras));
-		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
-
-		sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
 
 		againBtn.onclick = function(e) {
 			if(!document.querySelector('.fence-calculate .calculate-up').classList.contains('up-title')) {
