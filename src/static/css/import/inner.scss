@@ -191,11 +191,15 @@
 .calculate-up.up-title {
 	&::before {
 		transform: translate(-50%, 50px);
-	}
 
-	@media (min-width : 768px) {
-		&::before {
+		@media (min-width : 768px) {
 			transform: translate(-50%, 60px);
+		}
+
+		@media (min-width : 1920px) {
+			width: 580px;
+			height: 580px;
+			transform: translate(-50%, 30px);
 		}
 	}
 }
@@ -232,6 +236,10 @@
 			height: 419px;
 
 			transform: translate(-50%, 130px);
+		}
+
+		@media (min-width : 1200px) {
+			transform: translate(-50%, 60px);
 		}
 
 		@media (min-width : 1920px) {
@@ -878,6 +886,7 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 768px) {
 		max-width: 400px;
+		margin-bottom: 80px;
 	}
 
 	@media (min-width : 1200px) {
@@ -888,6 +897,8 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 1920px) {
 		max-width: 570px;
+		margin-top: 20px;
+		margin-bottom: 57px;
 	}
 }
 
@@ -919,6 +930,7 @@ input::-webkit-inner-spin-button {
 .terras-top-five-width-button {
 	margin-bottom: 0;
 	margin-top: 0;
+	margin-left: 10px;
 
 	@media (min-width : 1200px) {
 		display: none;
@@ -927,7 +939,6 @@ input::-webkit-inner-spin-button {
 
 .terras-slider-up-five .terras-top-five-width label {
 	margin-left: 10px;
-	margin-bottom: 15px;
 
 	@media (min-width : 1200px) {
 		margin-left: 0;
@@ -968,6 +979,7 @@ input::-webkit-inner-spin-button {
 
 .terras-slider-up-six {
 	margin-bottom: 14px;
+	margin-top: -18px;
 
 	@media (min-width : 768px) {
 
@@ -977,13 +989,18 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 1200px) {
 		margin-top: 0;
+		margin-bottom: 60px;
+	}
+
+	@media (min-width : 1920px) {
+		margin-bottom: 42px;
 	}
 }
 
 
 .terras-slider-up-six h3 {
 	@media (min-width : 1200px) {
-		margin-top: 15px;
+		margin-top: 0px;
 	}
 
 	@media (min-width : 1920px) {
@@ -1230,13 +1247,21 @@ input::-webkit-inner-spin-button {
 
 .terras-slider-up-five {
 
+	margin-top: -15px;
+
+
+	@media (min-width : 768px) {
+		margin-top: 0;
+	}
+
 	@media (min-width : 1200px) {
 		max-width: 1130px;
-		margin-bottom: 44px;
+		margin-bottom: 40px;
+		margin-top: -20px;
 	}
 
 	@media (min-width : 1920px) {
-		margin-bottom: 66px;
+		margin-bottom: 35px;
 	}
 
 
@@ -1253,6 +1278,15 @@ input::-webkit-inner-spin-button {
 
 	@media (min-width : 768px) {
 		top: 14%;
+	}
+
+	@media (min-width : 1200px) {
+		top: 11%;
+		font-size: 80px;
+	}
+
+	@media (min-width : 1920px) {
+		top: 9%;
 	}
 
 }

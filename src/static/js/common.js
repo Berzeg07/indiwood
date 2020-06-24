@@ -13,10 +13,6 @@
 			if(document.querySelector('.fence-calculate').classList.contains('hide')) {
 				document.querySelector('.fence-calculate').classList.remove('hide')
 				document.querySelector('.terras-calculate').classList.add('hide');
-
-				// let titleMain = document.querySelector('.fence-calculate .js-title1').innerHTML;
-				// let titleMainNav = document.querySelector('.fence-calculate .main-back-title2');
-				// titleMainNav.innerHTML = titleMain;
 			}
 
 		} else {
@@ -408,9 +404,9 @@
 		item.onclick = function(e) {
 			e.preventDefault();
 
-			if((document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value) == '') {
+			if((document.querySelector('.swiper-slide-active .terras-top-five-width .btn-sum-five').value) == '') {
 				let numFive = 0;
-				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five');
+				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .btn-five');
 
 				btnFive.forEach((item) => {
 					if(item.value == '') {
@@ -464,6 +460,9 @@
 		};
 
 	});
+
+
+
 
 	/*Табы для террасы*/
 	function backToTabTerras() {
@@ -536,8 +535,65 @@
 
 	/*Кнопки 05. формы и замера террасы*/
 	let fiveTerrasBtn = document.querySelectorAll('.terras-top-five-width .js-btn-five');
+	let fiveTerrasBtn2 = document.querySelectorAll('.terras-top-five-width .js-btn-five2');
+	let fiveTerrasBtn3 = document.querySelectorAll('.terras-top-five-width .js-btn-five3');
+	let fiveTerrasBtn4 = document.querySelectorAll('.terras-top-five-width .js-btn-five4');
 
 	fiveTerrasBtn.forEach((item) => {
+		item.onfocus = function() {
+			if(this.getAttribute('data-input')) {
+				let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
+				fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
+			}
+
+			fiveTerrasBtn.forEach((item) => {
+				if(item.parentElement.getAttribute('style')) {
+					item.parentElement.removeAttribute('style');
+				}
+			});
+
+			item.parentElement.style.backgroundColor = '#5b5b44';
+
+		};
+	});
+
+	fiveTerrasBtn2.forEach((item) => {
+		item.onfocus = function() {
+			if(this.getAttribute('data-input')) {
+				let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
+				fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
+			}
+
+			fiveTerrasBtn.forEach((item) => {
+				if(item.parentElement.getAttribute('style')) {
+					item.parentElement.removeAttribute('style');
+				}
+			});
+
+			item.parentElement.style.backgroundColor = '#5b5b44';
+
+		};
+	});
+
+	fiveTerrasBtn3.forEach((item) => {
+		item.onfocus = function() {
+			if(this.getAttribute('data-input')) {
+				let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
+				fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
+			}
+
+			fiveTerrasBtn.forEach((item) => {
+				if(item.parentElement.getAttribute('style')) {
+					item.parentElement.removeAttribute('style');
+				}
+			});
+
+			item.parentElement.style.backgroundColor = '#5b5b44';
+
+		};
+	});
+
+	fiveTerrasBtn4.forEach((item) => {
 		item.onfocus = function() {
 			if(this.getAttribute('data-input')) {
 				let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
@@ -581,6 +637,78 @@
 
 	});
 
+	fiveTerrasBtn2.forEach((item) => {
+
+		item.onchange = function() {
+			let fiveTerrasBtn2 = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five2');
+			let sum = 0;
+			let num = 0;
+
+			fiveTerrasBtn2.forEach((item) => {
+				if(item.value == '') {
+					num +=1;
+				} else {
+					sum += Number(item.value);
+				}
+			});
+
+			if(num == 0) {
+				document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = sum*4;
+			}
+
+		}
+
+
+	});
+
+	fiveTerrasBtn3.forEach((item) => {
+
+		item.onchange = function() {
+			let fiveTerrasBtn3 = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five3');
+			let sum = 0;
+			let num = 0;
+
+			fiveTerrasBtn3.forEach((item) => {
+				if(item.value == '') {
+					num +=1;
+				} else {
+					sum += Number(item.value);
+				}
+			});
+
+			if(num == 0) {
+				document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five3').value = sum*4;
+			}
+
+		}
+
+
+	});
+
+	fiveTerrasBtn4.forEach((item) => {
+
+		item.onchange = function() {
+			let fiveTerrasBtn4 = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five4');
+			let sum = 0;
+			let num = 0;
+
+			fiveTerrasBtn4.forEach((item) => {
+				if(item.value == '') {
+					num +=1;
+				} else {
+					sum += Number(item.value);
+				}
+			});
+
+			if(num == 0) {
+				document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum*4;
+			}
+
+		}
+
+
+	});
+
 
 	buttonTerras.onclick = function() {
 
@@ -617,9 +745,9 @@
 		}
 
 		if(this.getAttribute('data-num') == 6) {
-			if((document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value) == '') {
+			if((document.querySelector('.swiper-slide-active .terras-top-five-width .btn-sum-five').value) == '') {
 				let numFive = 0;
-				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five');
+				let btnFive = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .btn-five');
 
 				btnFive.forEach((item) => {
 					if(item.value == '') {
@@ -684,30 +812,30 @@
 	function calculateTerras() {
 		let btnNum = document.querySelector('.terras-calculate .calculate-up-button').getAttribute('data-num');
 
-		if(btnNum == 2) {
-			modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
-			modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .terras-calculate__select .label').innerHTML;
-		}else if (btnNum == 3) {
-			modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
-		} else if(btnNum == 4) {
-			textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
-		} else if(btnNum == 5) {
-			howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
-		} else if(btnNum == 6) {
-			formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
-			aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
-			bTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
-			cTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-c').value;
-			dTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d').value;
-			sTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-s').value;
-		} else if(btnNum == 7) {
-			noTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-btn-no').innerHTML;
-		} else if(btnNum == 8) {
-			titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
-			stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
-			widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
-			colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-calc .label').innerHTML;
-		}
+		// if(btnNum == 2) {
+		// 	modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
+		// 	modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .terras-calculate__select .label').innerHTML;
+		// }else if (btnNum == 3) {
+		// 	modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
+		// } else if(btnNum == 4) {
+		// 	textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
+		// } else if(btnNum == 5) {
+		// 	howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
+		// } else if(btnNum == 6) {
+		// 	formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
+		// 	aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
+		// 	bTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
+		// 	cTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-c').value;
+		// 	dTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d').value;
+		// 	sTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-s').value;
+		// } else if(btnNum == 7) {
+		// 	noTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-btn-no').innerHTML;
+		// } else if(btnNum == 8) {
+		// 	titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
+		// 	stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
+		// 	widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
+		// 	colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-calc .label').innerHTML;
+		// }
 
 	}
 
