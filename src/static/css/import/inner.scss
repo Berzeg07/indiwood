@@ -997,6 +997,18 @@ input::-webkit-inner-spin-button {
 	}
 }
 
+.terras-slider-up-five .terras-top-five-width_six {
+	width: 655px;
+
+	@media (min-width : 768px) {
+		width: 700px;
+	}
+
+	@media (min-width : 1200px) {
+		width: auto;
+	}
+}
+
 
 .terras-slider-up-six h3 {
 	@media (min-width : 1200px) {
