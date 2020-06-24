@@ -977,16 +977,16 @@
 
 
 
-	new Swiper('.fence-slider_up-four', {
-		spaceBetween: 10,
-		loop:true,
-		observer: true,
-		observeParents: true,
-		navigation: {
-			nextEl: '.calculate-gallery-top .swiper-button-next',
-			prevEl: '.calculate-gallery-top .swiper-button-prev',
-		}
-	});
+	// new Swiper('.fence-slider_up-four', {
+	// 	spaceBetween: 10,
+	// 	loop:true,
+	// 	observer: true,
+	// 	observeParents: true,
+	// 	navigation: {
+	// 		nextEl: '.calculate-gallery-top .swiper-button-next',
+	// 		prevEl: '.calculate-gallery-top .swiper-button-prev',
+	// 	}
+	// });
 
 
 	var fenceGalleryThumbs5 = new Swiper('.fence-gallery_thumbs-five', {
@@ -1023,6 +1023,7 @@
 
 	/*FENCE CALCULATE*/
 	let tabsLink = document.querySelectorAll('.fence-calculate .calculate-tabs li');
+	let buttonFence2 = document.querySelector('.fence-calculate .fence-top-four-button');
 	let buttonFence = document.querySelector('.fence-calculate .calculate-up-button');
 	let galleryTop = document.querySelectorAll('.fence-calculate .calculate-gallery-top');
 	let galleryBottom = document.querySelectorAll('.fence-calculate .calculate-gallery-thumbs');
@@ -1072,6 +1073,7 @@
 			document.querySelector('.fence-calculate .calculate-up').classList.add('up-title');
 		}
 
+
 		tabsLink.forEach((item) => {
 			if(item.getAttribute('data-item') == num2) {
 				item.classList.add('calculate-tabs_active');
@@ -1101,6 +1103,12 @@
 			}
 		});
 
+		if(num2 == 4) {
+			buttonFence.classList.add('btn-hide');
+		} else {
+			buttonFence.classList.remove('btn-hide');
+		}
+
 		if(num2 == 1) {
 			document.querySelector('.calculate__block').style.display = 'block';
 		} else {
@@ -1108,7 +1116,7 @@
 		}
 
 		num = num2;
-		document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', num);
+		document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', num2);
 
 		calculateFence();
 	}
@@ -1136,6 +1144,12 @@
 
 			buttonFence.setAttribute('data-num', num);
 			calculateFence.call(buttonFence);
+		}
+
+		if(num == 4) {
+			buttonFence.classList.add('btn-hide');
+		} else {
+			buttonFence.classList.remove('btn-hide');
 		}
 
 
@@ -1171,28 +1185,67 @@
 	}
 
 
+	buttonFence2.onclick = function() {
+
+
+		buttonFence.setAttribute('data-num', '5');
+		buttonFence.classList.remove('btn-hide');
+
+
+		galleryTop.forEach((item) => {
+			if(item.getAttribute('data-item') == 5) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+				document.querySelector('.fence-calculate_top h2').innerHTML = item.getAttribute('data-title');
+			} else {
+				item.classList.remove('show');
+				item.classList.add('hide');
+			}
+		});
+
+		galleryBottom.forEach((item) => {
+			if(item.getAttribute('data-item') == 5) {
+				item.classList.remove('hide');
+				item.classList.add('show');
+			} else {
+				item.classList.remove('show');
+				item.classList.add('hide');
+			}
+		});
+
+		tabsLink.forEach((item) => {
+			if(item.getAttribute('data-item') == 5) {
+				item.classList.add('calculate-tabs_active');
+			} else {
+				item.classList.remove('calculate-tabs_active');
+			}
+		});
+
+	}
+
+
 
 	/*Занести данные в переменные Fence*/
 	function calculateFence() {
 		let btnNum = buttonFence.getAttribute('data-num');
 
-		if(btnNum == 2) {
-			titleCalculate = document.querySelector('.calculate__block .label').innerHTML;
-			title1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
-			size1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .selectric-js-size1 .label').innerHTML;
-		}else if (btnNum == 3) {
-			title2Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
-		} else if(btnNum == 4) {
-			title3Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
-		} else if(btnNum == 5) {
-			aCalculate = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-a').value;
-			bCalculate = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-b').value;
-			needDoor = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-top-four-gate_active').innerHTML;
-			needDoor2 = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-top-wicket_active').innerHTML;
-		} else if(btnNum == 6) {
-			title5Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active h3').innerHTML;
-			size5Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
-		}
+		// if(btnNum == 2) {
+		// 	titleCalculate = document.querySelector('.calculate__block .label').innerHTML;
+		// 	title1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
+		// 	size1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .selectric-js-size1 .label').innerHTML;
+		// }else if (btnNum == 3) {
+		// 	title2Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
+		// } else if(btnNum == 4) {
+		// 	title3Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
+		// } else if(btnNum == 5) {
+		// 	aCalculate = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-a').value;
+		// 	bCalculate = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-b').value;
+		// 	needDoor = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-top-four-gate_active').innerHTML;
+		// 	needDoor2 = document.querySelector('.fence-slider_up-four .swiper-slide-active .fence-top-wicket_active').innerHTML;
+		// } else if(btnNum == 6) {
+		// 	title5Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active h3').innerHTML;
+		// 	size5Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
+		// }
 
 	}
 
