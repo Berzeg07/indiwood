@@ -94,9 +94,9 @@ if(!empty($name) && !empty($phone)&& !empty($email)) {
 
 	if($stepmodel) {
 		$msg .= "<p><strong>Параметры лестницы:</strong></p>\r\n";
-		$msg .= "<p><strong>Модель лестницы</strong> ".$stepmodel."</p>\r\n";
-		$msg .= "<p><strong>Размер лестницы</strong> ".$lengthstep."</p>\r\n";
-		$msg .= "<p><strong>Цвет лестницы</strong> ".$colorstep."</p>\r\n";
+		$msg .= "<p><strong>Модель лестницы</strong> ".$stepmodel."</p>\t\r\n";
+		$msg .= "<p><strong>Размер лестницы</strong> ".$lengthstep."</p>\t\r\n";
+		$msg .= "<p><strong>Цвет лестницы</strong> ".$colorstep."</p>\t\r\n";
 	}
 
 }

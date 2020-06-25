@@ -1910,12 +1910,13 @@ function sendMailTerras() {
 
 	if(cTerras) {
 		formData.append('cside', cTerras);
-	} else if(cTerras && dTerras) {
-		formData.append('cside', cTerras);
+	}
+
+	if(dTerras) {
 		formData.append('dside', dTerras);
-	} else if(cTerras && dTerras && eTerras) {
-		formData.append('cside', cTerras);
-		formData.append('dside', dTerras);
+	}
+
+	if(eTerras) {
 		formData.append('eside', eTerras);
 	}
 
