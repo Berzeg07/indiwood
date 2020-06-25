@@ -430,7 +430,7 @@
 		};
 	});
 
-	let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras,  howWood, formTerras, aTerras, bTerras, cTerras, dTerras, eTerras, sTerras, noTerras,titleColTerras, stepColTerras,
+	let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras,  howWood, formTerras, aTerras, bTerras, cTerras, dTerras, eTerras, sTerras, titleColTerras, stepColTerras,
 	widthColTerras, colorColTerras, imgPath2;
 
 	function collectInfo2() {
@@ -458,6 +458,13 @@
 		}
 
 		setFormTitles2();
+	}
+
+	function collectInfo3() {
+		titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
+		stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
+		widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
+		colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-calc .label').innerHTML;
 	}
 
 	function setFormTitles2() {
@@ -895,6 +902,7 @@
 				document.querySelector('.calculate').classList.add('hide');
 				document.querySelector('.fence-form').classList.add('show');
 				collectInfo2();
+				collectInfo3();
 				formCalculate2();
 			}
 
@@ -1480,8 +1488,12 @@
 	let filesListFence = '';
 
 
-	files.onchange = function() {
+	files.onchange = changeFileForm;
+
+	function changeFileForm() {
+
 		filesBlock.querySelector('label').style.display = 'none';
+		console.log('hello');
 
 		setFiles();
 	}
@@ -1541,8 +1553,7 @@
 		label.setAttribute('for', 'files');
 		label.innerHTML = 'Прикрепить свои файлы';
 		filesBlock.appendChild(label);
-
-
+		filesBlock.querySelector('.fence-form__files').onchange = changeFileForm;
 	}
 
 
@@ -1776,20 +1787,29 @@
 		formData.append('name', fenceName);
 		formData.append('phone', fencePhone);
 		formData.append('email', fenceEmail);
-		formData.append('message', fenceMessage);
 		formData.append('square', fenceSquare);
 		formData.append('price', sumFence);
-		formData.append('files', filesListFence);
-		formData.append('model', title1Calculate);
-		formData.append('size', size1Calculate);
-		formData.append('color', title2Calculate);
-		formData.append('texture', title3Calculate);
 		formData.append('length', aCalculate);
 		formData.append('width', bCalculate);
 		formData.append('door', needDoor);
 		formData.append('door2', needDoor2);
-		formData.append('options', fenceOptions);
+		formData.append('model', titleCalculate);
+		formData.append('size', size1Calculate);
+		formData.append('color', title1Calculate);
+		formData.append('texture', title2Calculate);
 
+
+		if(filesListFence != '') {
+			formData.append('files', filesListFence);
+		}
+
+		if(fenceOptions != '') {
+			formData.append('options', fenceOptions);
+		}
+
+		if(fenceMessage != '') {
+			formData.append('message', fenceMessage);
+		}
 		var xhr = new XMLHttpRequest();
 
 	// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
@@ -1802,6 +1822,8 @@
 	document.querySelector('.fence-form-input_box .js-phone').value = '';
 	document.querySelector('.fence-form-input_box .js-email').value = '';
 	document.querySelector('.fence-form__textarea').value = '';
+
+	createFiles();
 
 	document.querySelector('.fence-form__send button').innerHTML = 'Отправлено!';
 	document.querySelector('.fence-form__send button').style.color = '#ffffff';
@@ -1818,33 +1840,50 @@ function sendMailTerras() {
 	formData.append('name', fenceName);
 	formData.append('phone', fencePhone);
 	formData.append('email', fenceEmail);
-	formData.append('message', fenceMessage);
-	formData.append('square', fenceSquare);
 	formData.append('price', sumFence);
-	formData.append('files', filesListFence);
 	formData.append('model', modelTerrasTitle);
 	formData.append('size', modelTerrasSize);
 	formData.append('color', modelTerrasColor);
 	formData.append('texture', textureTerras);
-	formData.append('where', whereWood);
 	formData.append('how', howWood);
 	formData.append('forma', formTerras);
 	formData.append('aside', aTerras);
 	formData.append('bside', bTerras);
-	formData.append('cside', cTerras);
-	formData.append('dside', dTerras);
 
+	if(filesListFence != '') {
+		formData.append('files', filesListFence);
+	}
 
-	if(noTerras != undefined) {
-		formData.append('noterras', noTerras);
-	} else {
-		formData.append('yesterras', 'Да');
+	if(fenceMessage != '') {
+		formData.append('message', fenceMessage);
+	}
+
+	if(sTerras) {
+		formData.append('square', sTerras);
+	}
+
+	if(cTerras) {
+		formData.append('cside', cTerras);
+	} else if(cTerras && dTerras) {
+		formData.append('cside', cTerras);
+		formData.append('dside', dTerras);
+	} else if(cTerras && dTerras && eTerras) {
+		formData.append('cside', cTerras);
+		formData.append('dside', dTerras);
+		formData.append('eside', eTerras);
+	}
+
+	if(titleColTerras) {
 		formData.append('stepmodel', titleColTerras);
 		formData.append('stepscol', stepColTerras);
 		formData.append('lengthstep', widthColTerras);
-		formData.append('colorstep', widthColTerras);
+		formData.append('colorstep', colorColTerras);
 	}
-	formData.append('options', fenceOptions);
+
+	if(fenceOptions != '') {
+		formData.append('options', fenceOptions);
+	}
+
 
 
 	var xhr = new XMLHttpRequest();
@@ -1859,6 +1898,8 @@ function sendMailTerras() {
 	document.querySelector('.fence-form-input_box .js-phone').value = '';
 	document.querySelector('.fence-form-input_box .js-email').value = '';
 	document.querySelector('.fence-form__textarea').value = '';
+
+	createFiles();
 
 
 	document.querySelector('.fence-form__send button').innerHTML = 'Отправлено!';
