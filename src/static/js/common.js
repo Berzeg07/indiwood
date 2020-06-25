@@ -410,6 +410,7 @@
 				buttonTerras.setAttribute('data-num', 5);
 				buttonTerras.removeAttribute('disabled');
 				buttonTerras.removeAttribute('style');
+				buttonTerras.classList.add('btn-hide');
 
 				if(numFive) {
 					num1 = 5;
@@ -1217,6 +1218,19 @@
 			document.querySelector('.fence-calculate .calculate-up').classList.add('up-title');
 		}
 
+		if(num2 == 5) {
+			if(document.querySelector('.fence-calculate .fence-top-four-gate_active').innerHTML == 'Нет') {
+				document.querySelector('.calculate').classList.add('hide');
+				document.querySelector('.fence-form').classList.add('show');
+
+
+				buttonFence.setAttribute('data-num', 4);
+				collectInfo();
+				formCalculate();
+				return;
+			}
+		}
+
 
 		tabsLink.forEach((item) => {
 			if(item.getAttribute('data-item') == num2) {
@@ -1287,6 +1301,18 @@
 			if(numFive) {
 				return;
 			}
+
+
+			if(document.querySelector('.fence-calculate .fence-top-four-gate_active').innerHTML == 'Нет') {
+				document.querySelector('.calculate').classList.add('hide');
+				document.querySelector('.fence-form').classList.add('show');
+
+
+				buttonFence.setAttribute('data-num', 4);
+				collectInfo();
+				formCalculate();
+				return;
+			}
 		}
 
 		if(num == 5) {
@@ -1335,6 +1361,7 @@
 				});
 
 				buttonFence.setAttribute('data-num', 4);
+				buttonFence.classList.add('btn-hide');
 				num = 4;
 
 				return;
@@ -1413,6 +1440,17 @@
 			return;
 		}
 
+		if(document.querySelector('.fence-calculate .fence-top-four-gate_active').innerHTML == 'Нет') {
+			document.querySelector('.calculate').classList.add('hide');
+			document.querySelector('.fence-form').classList.add('show');
+
+
+			buttonFence.setAttribute('data-num', 4);
+			collectInfo();
+			formCalculate();
+			return;
+		}
+
 		buttonFence.setAttribute('data-num', '5');
 		buttonFence.classList.remove('btn-hide');
 
@@ -1460,8 +1498,10 @@
 		bCalculate = document.querySelector('.fence-slider_up-four .fence-b').value;
 		needDoor = document.querySelector('.fence-slider_up-four .fence-top-four-gate_active').innerHTML;
 		needDoor2 = document.querySelector('.fence-slider_up-four .fence-top-wicket_active').innerHTML;
-		title3Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .calculate-subtitle').innerHTML;
-		size2Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
+		if(document.querySelector('.fence-calculate .fence-top-four-gate_active').innerHTML == 'Да') {
+			title3Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .calculate-subtitle').innerHTML;
+			size2Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
+		}
 		imgPath = document.querySelector('.fence-slider_up-one .swiper-slide-active .fence-top1-column img').getAttribute('src');
 
 		setFormTitles();
@@ -1493,7 +1533,6 @@
 	function changeFileForm() {
 
 		filesBlock.querySelector('label').style.display = 'none';
-		console.log('hello');
 
 		setFiles();
 	}
@@ -1798,6 +1837,11 @@
 		formData.append('color', title1Calculate);
 		formData.append('texture', title2Calculate);
 
+		if(title3Calculate) {
+			formData.append('doorName', title3Calculate);
+			formData.append('doorSize', size2Calculate);
+		}
+
 
 		if(filesListFence != '') {
 			formData.append('files', filesListFence);
@@ -1831,6 +1875,8 @@
 	document.querySelector('.fence-form__send button').style.border = '1px solid #93856f';
 	document.querySelector('.fence-form__send button').setAttribute('disabled', 'disabled');
 
+		filesListFence = '';
+		fenceOptions = '';
 
 }
 
@@ -1947,10 +1993,10 @@ function wicketActive () {
 	this.classList.add('fence-top-wicket_active');
 }
 
-let btnForTitle = document.querySelector('.fence-slider_up-one .swiper-button-next');
-let btnForTitle2 = document.querySelector('.fence-slider_up-one .swiper-button-prev');
-let btnForTitleTerras = document.querySelector('.terras-slider-up-one .swiper-button-next');
-let btnForTitle2Terras = document.querySelector('.terras-slider-up-one .swiper-button-prev');
+// let btnForTitle = document.querySelector('.fence-slider_up-one .swiper-button-next');
+// let btnForTitle2 = document.querySelector('.fence-slider_up-one .swiper-button-prev');
+// let btnForTitleTerras = document.querySelector('.terras-slider-up-one .swiper-button-next');
+// let btnForTitle2Terras = document.querySelector('.terras-slider-up-one .swiper-button-prev');
 
 // btnForTitleTerras.onclick = function() {
 // 	let titleNav = document.querySelector('.terras-calculate .main-back-title');

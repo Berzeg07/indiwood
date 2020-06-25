@@ -4,13 +4,8 @@ $to = "amra_sk@mail.ru";
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $name = $_POST['name'];
-$message = $_POST['message'];
 $square =$_POST['square'];
-if(isset($_POST['files'])) {
-	$files = $_POST['files'];
-}
 $price = $_POST['price'];
-$files = $_POST['files'];
 $model = $_POST['model'];
 $size = $_POST['size'];
 $color = $_POST['color'];
@@ -20,7 +15,22 @@ $width = $_POST['width'];
 $door1 = $_POST['door'];
 $door2 = $_POST['door2'];
 
-$options = $_POST['options'];
+if(isset($_POST['files'])) {
+	$files = $_POST['files'];
+}
+if(isset($_POST['message'])) {
+	$message = $_POST['message'];
+}
+if(isset($_POST['options'])) {
+	$options = $_POST['options'];
+}
+
+if(isset($_POST['doorName'])) {
+	$doorName = $_POST['doorName'];
+	$doorSize = $_POST['doorSize'];
+}
+
+
 
 
 // Формирование заголовка письма
@@ -36,13 +46,13 @@ if(!empty($name) && !empty($phone)&& !empty($email)) {
 	$msg .= "<p><strong>Имя:</strong> ".$name."</p>\r\n";
 	$msg .= "<p><strong>Телефон:</strong> ".$phone."</p>\r\n";
 	$msg .= "<p><strong>Email:</strong> ".$email."</p>\r\n";
-	if(!empty($message)) {
+	if($message) {
 		$msg .= "<p><strong>Сообщение:</strong> ".$message."</p>\r\n";
 	}
 	$msg .= "<p><strong>Площадь:</strong> ".$square."</p>\r\n";
-if(!empty($files)) {
-	$msg .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
-}
+	if($files) {
+		$msg .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
+	}
 	$msg .= "<p><strong>Цена:</strong> ".$price."</p>\r\n";
 	$msg .= "<p><strong>Модель:</strong> ".$model."</p>\r\n";
 	$msg .= "<p><strong>Размер:</strong> ".$size."</p>\r\n";
@@ -52,9 +62,12 @@ if(!empty($files)) {
 	$msg .= "<p><strong>Ширина:</strong> ".$width."</p>\r\n";
 	$msg .= "<p><strong>Нужны ли ворота:</strong> ".$door1."</p>\r\n";
 	$msg .= "<p><strong>Нужна ли калитка:</strong> ".$door2."</p>\r\n";
-	$msg .= "<p><strong>Опции:</strong> ".$options."</p>\r\n";
-
-
+	if($options) {
+		$msg .= "<p><strong>Опции</strong> ".$options."</p>\r\n";
+	}
+	if($doorName) {
+		$msg .= "<p><strong>Ворота: </strong>".$doorName.", ".$doorSize."</p>";
+	}
 
 }
 

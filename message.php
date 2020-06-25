@@ -6,9 +6,6 @@ $email = $_POST['email'];
 $name = $_POST['name'];
 $message = $_POST['message'];
 $square =$_POST['square'];
-if(isset($_POST['files'])) {
-	$files = $_POST['files'];
-}
 $price = $_POST['price'];
 $files = $_POST['files'];
 $model = $_POST['model'];
@@ -19,6 +16,10 @@ $how = $_POST['how'];
 $forma = $_POST['forma'];
 $aside = $_POST['aside'];
 $bside = $_POST['bside'];
+
+if(isset($_POST['files'])) {
+	$files = $_POST['files'];
+}
 
 if(isset($_POST['cside'])) {
 	$cside = $_POST['cside'];
@@ -37,7 +38,7 @@ if(isset($_POST['eside'])) {
 }
 
 if(isset($_POST['options'])) {
-	$dside = $_POST['dside'];
+	$options = $_POST['options'];
 }
 
 if(isset($_POST['stepmodel'])) {
@@ -65,6 +66,9 @@ if(!empty($name) && !empty($phone)&& !empty($email)) {
 	if($message) {
 		$msg .= "<p><strong>Сообщение:</strong> ".$message."</p>\r\n";
 	}
+	if($files) {
+		$msg .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
+	}
 	$msg .= "<p><strong>Площадь:</strong> ".$square."</p>\r\n";
 	$msg .= "<p><strong>Модель доски</strong> ".$model."</p>\r\n";
 	$msg .= "<p><strong>Размер доски </strong> ".$size."</p>\r\n";
@@ -81,7 +85,7 @@ if(!empty($name) && !empty($phone)&& !empty($email)) {
 		$msg .= "<p><strong>Сторона D</strong> ".$dside."</p>\r\n";
 	}
 	if($eside) {
-		$msg .= "<p><strong>Опции</strong> ".$eside."</p>\r\n";
+		$msg .= "<p><strong>Сторона Е</strong> ".$eside."</p>\r\n";
 	}
 
 	if($options) {
