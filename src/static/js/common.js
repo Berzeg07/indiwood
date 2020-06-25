@@ -1823,6 +1823,7 @@
 	function sendMail() {
 		let formData = new FormData();
 
+		formData.append('title', 'fence');
 		formData.append('name', fenceName);
 		formData.append('phone', fencePhone);
 		formData.append('email', fenceEmail);
@@ -1857,7 +1858,7 @@
 		var xhr = new XMLHttpRequest();
 
 	// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-	xhr.open('POST', 'sendmessage.php');
+	xhr.open('POST', 'message.php');
 
 	// 3. Отсылаем запрос
 	xhr.send(formData);
@@ -1883,6 +1884,7 @@
 function sendMailTerras() {
 	let formData = new FormData();
 
+	formData.append('title', 'terras');
 	formData.append('name', fenceName);
 	formData.append('phone', fencePhone);
 	formData.append('email', fenceEmail);
