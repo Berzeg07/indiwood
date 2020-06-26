@@ -22,15 +22,56 @@ $(document).ready(function() {
     // if (isSafari) {
     //     $('.swiper-scrollbar').addClass('hide-block');
     // }
+    $(function() {
+        $(window).scroll(function() {
+            var scroll = $(this).scrollTop();
 
-    $(window).scroll(function() {
-        var scroll = $(this).scrollTop();
-        if (scroll >= 1150 && scroll < 1600) {
-            $('.sidebar-list__top').addClass('is-active');
-        } else {
-            $('.sidebar-list__top').removeClass('is-active');
-        }
+            if (scroll >= 1150 && scroll < 1600) {
+                $('.sidebar-list__top').addClass('is-active');
+            } else {
+                $('.sidebar-list__top').removeClass('is-active');
+            }
+        });
     });
+
+    $(function() {
+        $(window).scroll(function() {
+            var scroll = $(this).scrollTop();
+
+            if (scroll >= 2300 && scroll < 2700) {
+                $('.sidebar_catalog .sidebar-list').addClass('is-active');
+            } else {
+                $('.sidebar_catalog .sidebar-list').removeClass('is-active');
+            }
+        });
+    });
+
+
+    function removeOverflow() {
+        $('body').removeClass('overflow-hide');
+        $('.header').removeClass('padding-r');
+    }
+
+    $(function() {
+        var flag = true;
+        $(window).scroll(function() {
+            var scroll = $(this).scrollTop();
+            if (scroll >= 1000) {
+                if (flag) {
+                    $('.header').addClass('padding-r');
+                    $('body').addClass('overflow-hide');
+
+
+                    setTimeout(removeOverflow, 2000);
+                    flag = false;
+                }
+            }
+            if (scroll < 300) {
+                flag = true;
+            }
+        });
+    });
+
 
     $(".application-block__btn").click(function() {
         var currentBlockoffset = $('.calculate').offset().top;
