@@ -1016,6 +1016,13 @@ input::-webkit-inner-spin-button {
 	}
 }
 
+.terras-gallery-thumbs-five .gallery-thumbs1-column{
+	@media (max-width : 767px) {
+		max-width: 100px;
+		margin-bottom: 10px;
+	}
+}
+
 .terras-slider-up-six {
 	margin-bottom: 14.5px;
 	margin-top: -18px;
@@ -1553,6 +1560,7 @@ input::-webkit-inner-spin-button {
 		margin-bottom: 0px;
 	}
 }
+
 
 .fence-gallery_thumbs-two {
 	visibility: hidden;
