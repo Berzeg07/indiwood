@@ -2037,36 +2037,3 @@ function wicketActive () {
 	this.classList.add('fence-top-wicket_active');
 }
 
-// let btnForTitle = document.querySelector('.fence-slider_up-one .swiper-button-next');
-// let btnForTitle2 = document.querySelector('.fence-slider_up-one .swiper-button-prev');
-// let btnForTitleTerras = document.querySelector('.terras-slider-up-one .swiper-button-next');
-// let btnForTitle2Terras = document.querySelector('.terras-slider-up-one .swiper-button-prev');
-
-// btnForTitleTerras.onclick = function() {
-// 	let titleNav = document.querySelector('.terras-calculate .main-back-title');
-// 	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
-
-// 	titleNav.innerHTML = title;
-// }
-
-// btnForTitle2Terras.onclick = function() {
-// 	let titleNav = document.querySelector('.terras-calculate .main-back-title');
-// 	let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
-
-// 	titleNav.innerHTML = title;
-// }
-
-
-// btnForTitle.onclick = function() {
-// 	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
-// 	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
-
-// 	titleNav.innerHTML = title;
-// }
-
-// btnForTitle2.onclick = function() {
-// 	let titleNav = document.querySelector('.fence-calculate .main-back-title2');
-// 	let title = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
-
-// 	titleNav.innerHTML = title;
-// }
