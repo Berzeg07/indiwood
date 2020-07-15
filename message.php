@@ -49,40 +49,6 @@ if($_POST['title'] == 'terras') {
 		$colorstep = $_POST['colorstep'];
 	}
 
-
-	try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.mail.ru';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'amra_sk@mail.ru';                     // SMTP username
-    $mail->Password   = '15198624aFf';                               // SMTP password
-    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
-    //Recipients
-    $mail->setFrom('betokov93@mail.ru', 'Mailer');
-    $mail->addAddress('web_masters_07@mail.ru');     // Add a recipient
-    // $mail->addAddress('ellen@example.com');               // Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
-
-    // Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-
-    for ($i=0; $i < count($_FILES['files']['name']); $i++) {
-        $mail->addAttachment($_FILES['files']['tmp_name'][$i], $_FILES['files']['name'][$i]);    // Optional name
-    }
-
-
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Калькулятор Террас';
-    $mail->CharSet = "utf-8";
-    // $mail->Body = 'Hi Genius';
-
     if(!empty($name) && !empty($phone)&& !empty($email)) {
         $sendmessage = "<p><strong>Имя:</strong> ".$name."</p>\r\n";
         $sendmessage .= "<p><strong>Телефон:</strong> ".$phone."</p>\r\n";
@@ -139,7 +105,7 @@ try {
     $message = (new Swift_Message('Калькулятор террас'))
 
     ->setFrom(['betokov93@mail.ru' => 'Betokov Barasbi'])
-    ->setTo(['web_masters_07@mail.ru' => 'A name'])
+    ->setTo(['web_masters_07@mail.ru', 'amra_sk@mail.ru' => 'A name'])
     ->setBody($sendmessage, 'text/html')
     ;
 
