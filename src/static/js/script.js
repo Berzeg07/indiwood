@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-
-
-
     $(function() {
         $("#mainMenu a, .dropdown-menu__list_main a").click(function(e) {
             e.preventDefault();
@@ -14,14 +11,6 @@ $(document).ready(function() {
         });
     });
 
-    // var userAgent = navigator.userAgent.toLowerCase();
-    // var safari = /safari/.test(userAgent);
-    // var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-    // console.log('браузер ', isSafari);
-    //
-    // if (isSafari) {
-    //     $('.swiper-scrollbar').addClass('hide-block');
-    // }
     $(function() {
         $(window).scroll(function() {
             var scroll = $(this).scrollTop();
@@ -52,25 +41,24 @@ $(document).ready(function() {
         $('.header').removeClass('padding-r');
     }
 
-    $(function() {
-        var flag = true;
-        $(window).scroll(function() {
-            var scroll = $(this).scrollTop();
-            if (scroll >= 1000) {
-                if (flag) {
-                    $('.header').addClass('padding-r');
-                    $('body').addClass('overflow-hide');
+    // $(function() {
+    //     var flag = true;
+    //     $(window).scroll(function() {
 
-
-                    setTimeout(removeOverflow, 2000);
-                    flag = false;
-                }
-            }
-            if (scroll < 300) {
-                flag = true;
-            }
-        });
-    });
+    //         var scroll = $(this).scrollTop();
+    //         if (scroll >= 1000) {
+    //             if (flag) {
+    //                 $('.header').addClass('padding-r');
+    //                 $('body').addClass('overflow-hide');
+    //                 flag = false;
+    //                 setTimeout(removeOverflow, 2000);
+    //             }
+    //         }
+    //         if (scroll < 300) {
+    //             flag = true;
+    //         }
+    //     });
+    // });
 
 
     $(".application-block__btn").click(function() {
