@@ -1878,7 +1878,7 @@ let fenceName, fencePhone, fenceEmail, fenceMessage, fenceOptions='';
 /*Отправка формы*/
 function takeIfnoFence(myNum) {
 	document.querySelector('.fence-form__form').onsubmit = function(e) {
-		e.preventDefault();
+		// e.preventDefault();
 
 
 		fenceName = document.querySelector('.fence-form-input_box .js-name').value;
