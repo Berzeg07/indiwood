@@ -63,8 +63,8 @@ if($_POST['title'] == 'terras') {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.mail.ru';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'betokov93@mail.ru';                     // SMTP username
-    $mail->Password   = 'w5]4=^R0';                               // SMTP password
+    $mail->Username   = '';                     // SMTP username
+    $mail->Password   = '';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
