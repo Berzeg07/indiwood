@@ -8,12 +8,12 @@
     }
     @media (min-width: 1200px) {
         /*padding-top: 30px;
-		padding-bottom: 15px;*/
+        padding-bottom: 15px;*/
         padding: 100px 0 80px;
     }
     @media (min-width: 1920px) {
         /*padding-top: 30px;
-		padding-bottom: 20px;*/
+        padding-bottom: 20px;*/
     }
 }
 
@@ -1768,7 +1768,7 @@ input::-webkit-inner-spin-button {
     @media (min-width: 1920px) {
         height: 100vh;
         /*padding-top: 20px;
-		padding-bottom: 20px;*/
+        padding-bottom: 20px;*/
     }
 }
 
@@ -2516,7 +2516,7 @@ input::-webkit-inner-spin-button {
         justify-content: flex-start;
     }
     @media (min-width: 1600px) {
-        max-width: none;
+        max-width: 680px;
     }
 }
 
@@ -2600,4 +2600,38 @@ input::-webkit-inner-spin-button {
     visibility: visible;
     position: relative;
     transition: all 0.5s ease;
+}
+
+.fence-form-span_close {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        background: #ffffff;
+        width: 2px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        content: "";
+        background: #ffffff;
+        width: 2px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+.font-form {
+    font-size: 14px;
+    padding-top: 10px;
 }

@@ -473,7 +473,7 @@ btnNo.forEach((item) => {
 });
 
 let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras,  howWood, formTerras, aTerras, bTerras, cTerras, dTerras, eTerras, sTerras, titleColTerras, stepColTerras,
-	widthColTerras, colorColTerras, imgPath2;
+widthColTerras, colorColTerras, imgPath2;
 
 function collectInfo2() {
 	modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
@@ -1565,8 +1565,8 @@ function setFormTitles() {
 
 /*Добавление файлов*/
 let filesBlock = document.querySelector('.fence-form__files-block');
-let files = document.querySelector('.fence-form__files');
 let filesListFence = '';
+let filesVal = '';
 
 
 files.onchange = changeFileForm;
@@ -1579,11 +1579,49 @@ function changeFileForm() {
 }
 
 function setFiles() {
+	let files = document.querySelector('.fence-form__files');
+
+	filesVal = files.files;
+
 	filesBlock.innerHTML = "";
 
 	let files1 = files.files;
 	let num = 0;
 	let span = document.createElement('span');
+
+	let formats = [".jpg", ".jpeg", ".png", ".doc", ".docx", ".xls", ".xlsx", ".pdf"];
+
+
+	for (let i = 0; i < files1.length; i++) {
+		let a = 0;
+		let b = 0;
+
+		for (let j = 0; j < formats.length; j++) {
+			b += files1[i]['size'];
+			if(files1[i]['name'].indexOf(formats[j]) != -1) {
+				a += 1;
+			}
+		}
+
+		if(a != 1) {
+			createFiles();
+
+			let span = document.createElement('span');
+			span.classList.add('font-form');
+			span.innerHTML = "Файл не должен превышать 10мб и должен иметь расширение jpg, png, jpg, doc, docx, xls, xlsx";
+			filesBlock.appendChild(span);
+			return;
+
+		} else if(b > 10000000) {
+			createFiles();
+
+			let span = document.createElement('span');
+			span.classList.add('font-form');
+			span.innerHTML = "Файл не должен превышать 10мб и должен иметь расширение jpg, png, jpg, doc, docx, xls, xlsx";
+			filesBlock.appendChild(span);
+			return;
+		}
+	}
 
 
 	for(item of files1) {
@@ -1597,13 +1635,10 @@ function setFiles() {
 		let span = document.createElement('span');
 		let btn = document.createElement('span');
 
-		btn.classList.add('fence-form-btn');
+		// btn.classList.add('fence-form-btn');
 		span.setAttribute('data-file', num);
 		span.innerHTML = item.name.slice(0, 7)+'...';
 		span.classList.add('fence-form-span_name', 'fence-form-span');
-		btn.onclick = function() {
-			deleteFiles.call(span);
-		};
 		span.appendChild(btn);
 		filesBlock.appendChild(span);
 
@@ -1617,6 +1652,14 @@ function setFiles() {
 		filesBlock.appendChild(span);
 	}
 
+	if(true) {
+		let span = document.createElement('span');
+		span.classList.add('fence-form-span_last', 'fence-form-span', 'fence-form-span_close');
+		span.addEventListener('click', function(){
+			createFiles();
+		});
+		filesBlock.appendChild(span);
+	}
 }
 
 function createFiles() {
@@ -1886,7 +1929,9 @@ function sendMail() {
 
 
 	if(filesListFence != '') {
-		formData.append('files', filesListFence);
+		for(var i=0;i<filesVal.length;i++){
+			formData.append("files["+i+"]",filesVal[i]);
+		}
 	}
 
 	if(fenceOptions != '') {
@@ -1896,6 +1941,8 @@ function sendMail() {
 	if(fenceMessage != '') {
 		formData.append('message', fenceMessage);
 	}
+
+
 	var xhr = new XMLHttpRequest();
 
 	// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
@@ -1940,7 +1987,9 @@ function sendMailTerras() {
 	formData.append('bside', bTerras);
 
 	if(filesListFence != '') {
-		formData.append('files', filesListFence);
+		for(var i=0;i<filesVal.length;i++){
+			formData.append("files["+i+"]",filesVal[i]);
+		}
 	}
 
 	if(fenceMessage != '') {
@@ -1975,7 +2024,6 @@ function sendMailTerras() {
 	}
 
 
-
 	var xhr = new XMLHttpRequest();
 
 	// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
@@ -1998,6 +2046,8 @@ function sendMailTerras() {
 	document.querySelector('.fence-form__send button').style.border = '1px solid #93856f';
 	document.querySelector('.fence-form__send button').setAttribute('disabled', 'disabled');
 
+	filesListFence = '';
+	fenceOptions = '';
 }
 
 

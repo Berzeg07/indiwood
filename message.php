@@ -1,6 +1,17 @@
 <?php
 
-if(i1sset($_POST['terras'])) {
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/vendor/autoload.php';
+
+
+$mail = new PHPMailer(true);
+
+if($_POST['title'] == 'terras') {
+
+
 
 	$to = "amra_sk@mail.ru";
 	$phone = $_POST['phone'];
@@ -18,10 +29,6 @@ if(i1sset($_POST['terras'])) {
 	$forma = $_POST['forma'];
 	$aside = $_POST['aside'];
 	$bside = $_POST['bside'];
-
-	if(isset($_POST['files'])) {
-		$files = $_POST['files'];
-	}
 
 	if(isset($_POST['cside'])) {
 		$cside = $_POST['cside'];
@@ -50,68 +57,92 @@ if(i1sset($_POST['terras'])) {
 		$colorstep = $_POST['colorstep'];
 	}
 
+	try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.mail.ru';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'betokov93@mail.ru';                     // SMTP username
+    $mail->Password   = 'w5]4=^R0';                               // SMTP password
+    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('betokov93@mail.ru', 'Mailer');
+    $mail->addAddress('web_masters_07@mail.ru');     // Add a recipient
+    // $mail->addAddress('ellen@example.com');               // Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    // Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+
+    for ($i=0; $i < count($_FILES['files']['name']); $i++) {
+        $mail->addAttachment($_FILES['files']['tmp_name'][$i], $_FILES['files']['name'][$i]);    // Optional name
+    }
 
 
-// Формирование заголовка письма
-	$subject = 'Калькулятор Террас';
-	$headers  = "From: info@starlight.space" . "\r\n";
-	$headers .= "Reply-To: info@starlight.space".  "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html;charset=utf-8 \r\n";
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Калькулятор Террас';
+    $mail->CharSet = "utf-8";
+    // $mail->Body = 'Hi Genius';
+    if(!empty($name) && !empty($phone)&& !empty($email)) {
+      $mail->Body = "<p><strong>Имя:</strong> ".$name."</p>\r\n";
+      $mail->Body .= "<p><strong>Телефон:</strong> ".$phone."</p>\r\n";
+      $mail->Body .= "<p><strong>Email:</strong> ".$email."</p>\r\n";
+      if($message) {
+         $mail->Body .= "<p><strong>Сообщение:</strong> ".$message."</p>\r\n";
+     }
+     if($files) {
+         $mail->Body .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
+     }
+     $mail->Body .= "<p><strong>Площадь:</strong> ".$square."</p>\r\n";
+     $mail->Body .= "<p><strong>Модель доски</strong> ".$model."</p>\r\n";
+     $mail->Body .= "<p><strong>Размер доски </strong> ".$size."</p>\r\n";
+     $mail->Body .= "<p><strong>Цвет доски</strong> ".$color."</p>\r\n";
+     $mail->Body .= "<p><strong>Текстура доски</strong> ".$texture."</p>\r\n";
+     $mail->Body .= "<p><strong>Способ укладки</strong> ".$how."</p>\r\n";
+     $mail->Body .= "<p><strong>Форма террасы</strong> ".$forma."</p>\r\n";
+     $mail->Body .= "<p><strong>Сторона А</strong> ".$aside."</p>\r\n";
+     $mail->Body .= "<p><strong>Сторона Б</strong> ".$bside."</p>\r\n";
+     if($cside) {
+         $mail->Body = "<p><strong>Сторона С</strong> ".$cside."</p>\r\n";
+     }
+     if($dside) {
+         $mail->Body = "<p><strong>Сторона D</strong> ".$dside."</p>\r\n";
+     }
+     if($eside) {
+         $mail->Body = "<p><strong>Сторона Е</strong> ".$eside."</p>\r\n";
+     }
 
-	$msg  = "<html><body>";
-	$msg .= "<h2>Новое сообщение</h2>\r\n";
-	if(!empty($name) && !empty($phone)&& !empty($email)) {
-		$msg .= "<p><strong>Имя:</strong> ".$name."</p>\r\n";
-		$msg .= "<p><strong>Телефон:</strong> ".$phone."</p>\r\n";
-		$msg .= "<p><strong>Email:</strong> ".$email."</p>\r\n";
-		if($message) {
-			$msg .= "<p><strong>Сообщение:</strong> ".$message."</p>\r\n";
-		}
-		if($files) {
-			$msg .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
-		}
-		$msg .= "<p><strong>Площадь:</strong> ".$square."</p>\r\n";
-		$msg .= "<p><strong>Модель доски</strong> ".$model."</p>\r\n";
-		$msg .= "<p><strong>Размер доски </strong> ".$size."</p>\r\n";
-		$msg .= "<p><strong>Цвет доски</strong> ".$color."</p>\r\n";
-		$msg .= "<p><strong>Текстура доски</strong> ".$texture."</p>\r\n";
-		$msg .= "<p><strong>Способ укладки</strong> ".$how."</p>\r\n";
-		$msg .= "<p><strong>Форма террасы</strong> ".$forma."</p>\r\n";
-		$msg .= "<p><strong>Сторона А</strong> ".$aside."</p>\r\n";
-		$msg .= "<p><strong>Сторона Б</strong> ".$bside."</p>\r\n";
-		if($cside) {
-			$msg .= "<p><strong>Сторона С</strong> ".$cside."</p>\r\n";
-		}
-		if($dside) {
-			$msg .= "<p><strong>Сторона D</strong> ".$dside."</p>\r\n";
-		}
-		if($eside) {
-			$msg .= "<p><strong>Сторона Е</strong> ".$eside."</p>\r\n";
-		}
+     if($options) {
+         $mail->Body = "<p><strong>Опции</strong> ".$options."</p>\r\n";
+     }
 
-		if($options) {
-			$msg .= "<p><strong>Опции</strong> ".$options."</p>\r\n";
-		}
+     if($stepmodel) {
+         $mail->Body = "<p><strong>Параметры лестницы:</strong></p>\r\n";
+         $mail->Body = "<p><strong>Модель лестницы</strong> ".$stepmodel."</p>\t\r\n";
+         $mail->Body = "<p><strong>Размер лестницы</strong> ".$lengthstep."</p>\t\r\n";
+         $mail->Body = "<p><strong>Цвет лестницы</strong> ".$colorstep."</p>\t\r\n";
+     }
 
-		if($stepmodel) {
-			$msg .= "<p><strong>Параметры лестницы:</strong></p>\r\n";
-			$msg .= "<p><strong>Модель лестницы</strong> ".$stepmodel."</p>\t\r\n";
-			$msg .= "<p><strong>Размер лестницы</strong> ".$lengthstep."</p>\t\r\n";
-			$msg .= "<p><strong>Цвет лестницы</strong> ".$colorstep."</p>\t\r\n";
-		}
+ }
 
-	}
+ $mail->AltBody = '';
 
-	$msg .= "</body></html>";
+ $mail->send();
+ echo 'Message has been sent';
+} catch (Exception $e) {
+	echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 
-
-// отправка сообщения
-	@mail($to, $subject, $msg, $headers);
 
 }
 
-if(i1sset($_POST['terras'])) {
+if($_POST['title'] == 'fence') {
 
 	$to = "amra_sk@mail.ru";
 	$phone = $_POST['phone'];
@@ -128,9 +159,7 @@ if(i1sset($_POST['terras'])) {
 	$door1 = $_POST['door'];
 	$door2 = $_POST['door2'];
 
-	if(isset($_POST['files'])) {
-		$files = $_POST['files'];
-	}
+
 	if(isset($_POST['message'])) {
 		$message = $_POST['message'];
 	}
@@ -147,48 +176,78 @@ if(i1sset($_POST['terras'])) {
 
 
 // Формирование заголовка письма
-	$subject = 'Калькулятор Заборов';
-	$headers  = "From: info@starlight.space" . "\r\n";
-	$headers .= "Reply-To: info@starlight.space".  "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html;charset=utf-8 \r\n";
 
-	$msg  = "<html><body>";
-	$msg .= "<h2>Новое сообщение</h2>\r\n";
-	if(!empty($name) && !empty($phone)&& !empty($email)) {
-		$msg .= "<p><strong>Имя:</strong> ".$name."</p>\r\n";
-		$msg .= "<p><strong>Телефон:</strong> ".$phone."</p>\r\n";
-		$msg .= "<p><strong>Email:</strong> ".$email."</p>\r\n";
-		if($message) {
-			$msg .= "<p><strong>Сообщение:</strong> ".$message."</p>\r\n";
-		}
-		$msg .= "<p><strong>Площадь:</strong> ".$square."</p>\r\n";
-		if($files) {
-			$msg .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
-		}
-		$msg .= "<p><strong>Цена:</strong> ".$price."</p>\r\n";
-		$msg .= "<p><strong>Модель:</strong> ".$model."</p>\r\n";
-		$msg .= "<p><strong>Размер:</strong> ".$size."</p>\r\n";
-		$msg .= "<p><strong>Цвет:</strong> ".$color."</p>\r\n";
-		$msg .= "<p><strong>Текстура:</strong> ".$texture."</p>\r\n";
-		$msg .= "<p><strong>Высота:</strong> ".$length."</p>\r\n";
-		$msg .= "<p><strong>Ширина:</strong> ".$width."</p>\r\n";
-		$msg .= "<p><strong>Нужны ли ворота:</strong> ".$door1."</p>\r\n";
-		$msg .= "<p><strong>Нужна ли калитка:</strong> ".$door2."</p>\r\n";
-		if($options) {
-			$msg .= "<p><strong>Опции</strong> ".$options."</p>\r\n";
-		}
-		if($doorName) {
-			$msg .= "<p><strong>Ворота: </strong>".$doorName.", ".$doorSize."</p>";
-		}
+    try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.mail.ru';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'betokov93@mail.ru';                     // SMTP username
+    $mail->Password   = 'w5]4=^R0';                               // SMTP password
+    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-	}
+    //Recipients
+    $mail->setFrom('betokov93@mail.ru', 'Mailer');
+    $mail->addAddress('web_masters_07@mail.ru');     // Add a recipient
+    // $mail->addAddress('ellen@example.com');               // Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
 
-	$msg .= "</body></html>";
+    // Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+
+    for ($i=0; $i < count($_FILES['files']['name']); $i++) {
+        $mail->addAttachment($_FILES['files']['tmp_name'][$i], $_FILES['files']['name'][$i]);    // Optional name
+    }
 
 
-// отправка сообщения
-	@mail($to, $subject, $msg, $headers);
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Калькулятор Террас';
+    $mail->CharSet = "utf-8";
+    // $mail->Body = 'Hi Genius';
+    if(!empty($name) && !empty($phone)&& !empty($email)) {
+     if(!empty($name) && !empty($phone)&& !empty($email)) {
+        $mail->Body = "<p><strong>Имя:</strong> ".$name."</p>\r\n";
+        $mail->Body .= "<p><strong>Телефон:</strong> ".$phone."</p>\r\n";
+        $mail->Body .= "<p><strong>Email:</strong> ".$email."</p>\r\n";
+        if($message) {
+            $mail->Body .= "<p><strong>Сообщение:</strong> ".$message."</p>\r\n";
+        }
+        $mail->Body .= "<p><strong>Площадь:</strong> ".$square."</p>\r\n";
+        if($files) {
+            $mail->Body .= "<p><strong>Файлы:</strong> ".$files."</p>\r\n";
+        }
+        $mail->Body .= "<p><strong>Цена:</strong> ".$price."</p>\r\n";
+        $mail->Body .= "<p><strong>Модель:</strong> ".$model."</p>\r\n";
+        $mail->Body .= "<p><strong>Размер:</strong> ".$size."</p>\r\n";
+        $mail->Body .= "<p><strong>Цвет:</strong> ".$color."</p>\r\n";
+        $mail->Body .= "<p><strong>Текстура:</strong> ".$texture."</p>\r\n";
+        $mail->Body .= "<p><strong>Высота:</strong> ".$length."</p>\r\n";
+        $mail->Body .= "<p><strong>Ширина:</strong> ".$width."</p>\r\n";
+        $mail->Body .= "<p><strong>Нужны ли ворота:</strong> ".$door1."</p>\r\n";
+        $mail->Body .= "<p><strong>Нужна ли калитка:</strong> ".$door2."</p>\r\n";
+        if($options) {
+            $mail->Body .= "<p><strong>Опции</strong> ".$options."</p>\r\n";
+        }
+        if($doorName) {
+            $mail->Body .= "<p><strong>Ворота: </strong>".$doorName.", ".$doorSize."</p>";
+        }
+
+    }
+}
+
+$mail->AltBody = '';
+
+$mail->send();
+echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 }
 
 ?>
