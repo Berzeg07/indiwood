@@ -478,6 +478,7 @@ let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras, howWood,
     widthColTerras, colorColTerras, imgPath2;
 
 function collectInfo2() {
+<<<<<<< HEAD
     modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
     modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .label').innerHTML;
     modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
@@ -509,9 +510,308 @@ function collectInfo3() {
     stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
     widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
     colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .unit-color .unit-color__text').innerHTML;
+=======
+	modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
+	modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .label').innerHTML;
+	modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
+	textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
+	howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
+	formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
+	aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
+	bTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
+	sTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-s').value;
+	imgPath2 = document.querySelector('.terras-slider-up-one .swiper-slide-active img').getAttribute('src');
+
+	if(document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-c')) {
+		cTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-b').value;
+	}
+
+	if(document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d')) {
+		dTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-d').value;
+	}
+
+	if(document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-e')) {
+		eTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-e').value;
+	}
+
+	let docinfoTer = {
+            info: {
+                title: 'indiwood',
+                author: 'indiwood',
+                subject: 'Расчет калькулятора с сайта indiwood',
+                keywords: 'террасная доска'
+            },
+            pageSize: 'A4',
+            pageOrientation: 'portrait', //portrait
+            pageMargins: [25, 25, 25, 25],
+
+            footer: [{
+                text: 'indiwood - individual wood solutions',
+                alignment: 'center'
+            }],
+
+            content: [{
+                    columns: [{
+                        width: '50%',
+                        text: 'INDIWOOD',
+                        alignment: 'left',
+                        margin: [0, 10, 0, 50]
+                    }, {
+                        width: '50%',
+                        text: '+7 (499) 787 99 5',
+                        alignment: 'right',
+                        margin: [0, 10, 0, 50]
+                    }],
+                },
+                // {
+                //     text: test3,
+                //     fontSize: 16,
+                //     margin: [0, 0, 0, 20]
+                // },
+
+                // {
+                //     text: 'Имя: ' + test1,
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // }, {
+                //     text: 'Телефон: ' + test2,
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // },
+                // {
+                //     text: 'Email: test@mail.ru',
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // },
+                {
+                    text: 'Калькулятор Террас',
+                    fontSize: 16,
+                    margin: [0, 0, 0, 25]
+                },
+                {
+                    text: 'Площадь: '+sTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Модель доски: '+modelTerrasTitle,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Размер доски: '+modelTerrasSize,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Цвет доски: '+modelTerrasColor,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Текстура доски: '+textureTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Способ укладки: '+howWood,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Форма террасы: '+formTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Сторона А: '+aTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Сторона Б: '+bTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: cTerras ? 'Сторона C: '+cTerras:'',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: dTerras?'Сторона D: '+dTerras:'',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: eTerras ? 'Сторона E: ' + eTerras : '',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                },
+                // {
+                //     text: 'Опции: замер, доставка, монтаж',
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 20]
+                // },
+                // Если нет лестницы в text ставим пусто. Так же и в других строках *
+                {
+                    text: 'Общая стоимость: 250 000 руб',
+                    fontSize: 14,
+                    margin: [0, 20, 0, 5]
+                },
+            ]
+        };
+
+        document.querySelector('.fence-form__send a').onclick = function(e) {
+        	e.preventDefault();
+        	pdfMake.createPdf(docinfoTer).download('indiwood.pdf');
+        }
+
+	setFormTitles2();
 }
 
+function collectInfo3() {
+	titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
+	stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
+	widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
+	colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .unit-color .unit-color__text').innerHTML;
+
+	let docinfoTer = {
+            info: {
+                title: 'indiwood',
+                author: 'indiwood',
+                subject: 'Расчет калькулятора с сайта indiwood',
+                keywords: 'террасная доска'
+            },
+            pageSize: 'A4',
+            pageOrientation: 'portrait', //portrait
+            pageMargins: [25, 25, 25, 25],
+
+            footer: [{
+                text: 'indiwood - individual wood solutions',
+                alignment: 'center'
+            }],
+
+            content: [{
+                    columns: [{
+                        width: '50%',
+                        text: 'INDIWOOD',
+                        alignment: 'left',
+                        margin: [0, 10, 0, 50]
+                    }, {
+                        width: '50%',
+                        text: '+7 (499) 787 99 5',
+                        alignment: 'right',
+                        margin: [0, 10, 0, 50]
+                    }],
+                },
+                // {
+                //     text: test3,
+                //     fontSize: 16,
+                //     margin: [0, 0, 0, 20]
+                // },
+
+                // {
+                //     text: 'Имя: ' + test1,
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // }, {
+                //     text: 'Телефон: ' + test2,
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // },
+                // {
+                //     text: 'Email: test@mail.ru',
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // },
+                {
+                    text: 'Калькулятор Террас',
+                    fontSize: 16,
+                    margin: [0, 0, 0, 25]
+                },
+                {
+                    text: 'Площадь: '+sTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Модель доски: '+modelTerrasTitle,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Размер доски: '+modelTerrasSize,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Цвет доски: '+modelTerrasColor,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Текстура доски: '+textureTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Способ укладки: '+howWood,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Форма террасы: '+formTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Сторона А: '+aTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Сторона Б: '+bTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: cTerras ? 'Сторона C: '+cTerras:'',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: dTerras?'Сторона D: '+dTerras:'',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: eTerras ? 'Сторона E: ' + eTerras : '',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                },
+                // {
+                //     text: 'Опции: замер, доставка, монтаж',
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 20]
+                // },
+                // Если нет лестницы в text ставим пусто. Так же и в других строках *
+                {
+                    text: 'Параметры лестницы',
+                    fontSize: 16,
+                    margin: [0, 20, 0, 10]
+                }, {
+                    text: 'Модель лестницы: '+titleColTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Размер лестницы: '+widthColTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Цвет лестницы: '+colorColTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Количество ступеней: '+stepColTerras,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Общая стоимость: 250 000 руб',
+                    fontSize: 14,
+                    margin: [0, 20, 0, 0]
+                },
+            ]
+        };
+
+        document.querySelector('.fence-form__send a').onclick = function(e) {
+        	e.preventDefault();
+        	pdfMake.createPdf(docinfoTer).download('indiwood.pdf');
+        }
+>>>>>>> 3fa0e65345aa71f5721e1a804ad016b0927922dc
+}
+
+
 function setFormTitles2() {
+<<<<<<< HEAD
     document.querySelector('.fence-form .fence-form__name h2').innerHTML = modelTerrasTitle;
     document.querySelector('.fence-form .fence-form__subname h3').innerHTML = modelTerrasTitle;
     document.querySelector('.fence-form .fence-form__subname p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
@@ -534,6 +834,32 @@ function setFormTitles2() {
 
     sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
     document.querySelector('.fence-form .fence-form__img img').setAttribute('src', imgPath2);
+=======
+
+	document.querySelector('.fence-form .fence-form__name h2').innerHTML = modelTerrasTitle;
+	document.querySelector('.fence-form .fence-form__subname h3').innerHTML = modelTerrasTitle;
+	document.querySelector('.fence-form .fence-form__subname p').innerHTML = modelTerrasColor+' / '+textureTerras;
+	document.querySelector('.fence-form .fence-form__name p').innerHTML = modelTerrasColor+' / '+textureTerras;
+
+	if(sTerras) {
+		document.querySelector('.fence-form__square span').innerHTML = Number(sTerras);
+	} else {
+		if(cTerras) {
+			fenceSquare = 4*(Number(aTerras)+Number(bTerras)+ Number(cTerras));
+		} else if(dTerras) {
+			fenceSquare = 4*(Number(aTerras)+Number(bTerras)+ Number(cTerras) + Number(dTerras));
+		} else if(eTerras) {
+			fenceSquare = 4*(Number(aTerras)+Number(bTerras)+ Number(cTerras) + Number(dTerras) + Number(eTerras));
+		} else {
+			fenceSquare = 4*(Number(aTerras)+Number(bTerras));
+		}
+		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
+	}
+
+	sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
+	document.querySelector('.fence-form .fence-form__img img').setAttribute('src', imgPath2);
+
+>>>>>>> 3fa0e65345aa71f5721e1a804ad016b0927922dc
 }
 
 
@@ -1029,6 +1355,7 @@ buttonTerras.onclick = function() {
 
 
 var fenceGalleryThumbs1 = new Swiper('.fence-gallery_thumbs-one', {
+<<<<<<< HEAD
     spaceBetween: 10,
     slidesPerView: 2,
     loop: true,
@@ -1042,6 +1369,18 @@ var fenceGalleryThumbs1 = new Swiper('.fence-gallery_thumbs-one', {
     scrollbar: {
         el: '.swiper-scrollbar',
     }
+=======
+	spaceBetween: 10,
+	slidesPerView: 2,
+	loop: true,
+	observer: true,
+	observeParents: true,
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+	scrollbar: {
+		el: '.swiper-scrollbar',
+	}
+>>>>>>> 3fa0e65345aa71f5721e1a804ad016b0927922dc
 });
 
 var fenceGalleryTop = new Swiper('.fence-slider_up-one', {
@@ -1162,6 +1501,7 @@ var fenceGalleryTop3 = new Swiper('.fence-slider_up-three', {
 
 
 
+<<<<<<< HEAD
 new Swiper('.fence-slider_up-four', {
     spaceBetween: 10,
     loop: true,
@@ -1189,6 +1529,32 @@ var fenceGalleryThumbs5 = new Swiper('.fence-gallery_thumbs-five', {
     scrollbar: {
         el: '.swiper-scrollbar',
     }
+=======
+// new Swiper('.fence-slider_up-four', {
+// 	spaceBetween: 10,
+// 	loop:true,
+// 	observer: true,
+// 	observeParents: true,
+// 	navigation: {
+// 		nextEl: '.calculate-gallery-top .swiper-button-next',
+// 		prevEl: '.calculate-gallery-top .swiper-button-prev',
+// 	}
+// });
+
+
+var fenceGalleryThumbs5 = new Swiper('.fence-gallery_thumbs-five', {
+	spaceBetween: 10,
+	slidesPerView: 2,
+	loop: true,
+	centeredSlides: false,
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+	observer: true,
+	observeParents: true,
+	scrollbar: {
+		el: '.swiper-scrollbar',
+	}
+>>>>>>> 3fa0e65345aa71f5721e1a804ad016b0927922dc
 });
 
 var fenceGalleryTop5 = new Swiper('.fence-slider_up-five', {
@@ -1529,7 +1895,9 @@ buttonFence2.onclick = function() {
 /*Данные на отправку Fence*/
 let titleCalculate, title1Calculate, size1Calculate, title2Calculate, title3Calculate, aCalculate, bCalculate, needDoor, needDoor2, size2Calculate, imgPath;
 
+
 function collectInfo() {
+<<<<<<< HEAD
     titleCalculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
     title1Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
     title2Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
@@ -1545,6 +1913,126 @@ function collectInfo() {
     imgPath = document.querySelector('.fence-slider_up-one .swiper-slide-active .fence-top1-column img').getAttribute('src');
 
     setFormTitles();
+=======
+	titleCalculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
+	title1Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
+	title2Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
+	size1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .label').innerHTML;
+	aCalculate = document.querySelector('.fence-slider_up-four .fence-a').value;
+	bCalculate = document.querySelector('.fence-slider_up-four .fence-b').value;
+	needDoor = document.querySelector('.fence-slider_up-four .fence-top-four-gate_active').innerHTML;
+	needDoor2 = document.querySelector('.fence-slider_up-four .fence-top-wicket_active').innerHTML;
+	if(document.querySelector('.fence-calculate .fence-top-four-gate_active').innerHTML == 'Да') {
+		title3Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .calculate-subtitle').innerHTML;
+		size2Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
+	}
+	imgPath = document.querySelector('.fence-slider_up-one .swiper-slide-active .fence-top1-column img').getAttribute('src');
+
+	setFormTitles();
+
+	let docinfoFence = {
+            info: {
+                title: 'indiwood',
+                author: 'indiwood',
+                subject: 'Расчет калькулятора с сайта indiwood',
+                keywords: 'террасная доска'
+            },
+            pageSize: 'A4',
+            pageOrientation: 'portrait', //portrait
+            pageMargins: [25, 25, 25, 25],
+
+            footer: [{
+                text: 'indiwood - individual wood solutions',
+                alignment: 'center'
+            }],
+
+            content: [{
+                    columns: [{
+                        width: '50%',
+                        text: 'INDIWOOD',
+                        alignment: 'left',
+                        margin: [0, 10, 0, 50]
+                    }, {
+                        width: '50%',
+                        text: '+7 (499) 787 99 5',
+                        alignment: 'right',
+                        margin: [0, 10, 0, 50]
+                    }],
+                    // fontSize: 16
+                }, {
+                    text: 'Калькулятор заборов',
+                    fontSize: 16,
+                    margin: [0, 0, 0, 20]
+                },
+
+                // {
+                //     text: 'Имя: ' + test1,
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // }, {
+                //     text: 'Телефон: ' + test2,
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // }, {
+                //     text: 'Email: test@mail.ru',
+                //     fontSize: 14,
+                //     margin: [0, 0, 0, 5]
+                // },
+                 {
+                    text: 'Модель доски: '+titleCalculate,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Размер доски: '+size1Calculate,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Цвет доски: '+title1Calculate,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Текстура доски: '+title2Calculate,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Высота: '+aCalculate,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Ширина: '+bCalculate,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Нужны ли ворота: '+needDoor,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: 'Нужна ли калитка: '+needDoor2,
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                }, {
+                    text: title3Calculate?'Ворота: '+title3Calculate:'',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                 },
+                {
+                    text: size2Calculate?'Размер: '+size2Calculate:'',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                },
+                {
+                    text: 'Общая стоимость: 250 000 руб',
+                    fontSize: 14,
+                    margin: [0, 0, 0, 5]
+                },
+            ]
+        }
+
+        document.querySelector('.fence-form__send a').onclick = function(e) {
+        	e.preventDefault();
+        	pdfMake.createPdf(docinfoFence).download('indiwood.pdf');
+        }
+>>>>>>> 3fa0e65345aa71f5721e1a804ad016b0927922dc
 }
 
 function setFormTitles() {
