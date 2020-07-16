@@ -1901,7 +1901,7 @@ function collectInfo() {
                 {
                     text: 'Общая стоимость: 250 000 руб',
                     fontSize: 14,
-                    margin: [0, 0, 0, 5]
+                    margin: [0, 20, 0, 0]
                 },
             ]
         }
