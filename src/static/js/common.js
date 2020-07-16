@@ -506,7 +506,7 @@ function collectInfo3() {
 	titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
 	stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
 	widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
-	colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-calc .label').innerHTML;
+	colorColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .unit-color .unit-color__text').innerHTML;
 }
 
 function setFormTitles2() {
@@ -1878,7 +1878,7 @@ let fenceName, fencePhone, fenceEmail, fenceMessage, fenceOptions='';
 /*Отправка формы*/
 function takeIfnoFence(myNum) {
 	document.querySelector('.fence-form__form').onsubmit = function(e) {
-		// e.preventDefault();
+		e.preventDefault();
 
 
 		fenceName = document.querySelector('.fence-form-input_box .js-name').value;
@@ -2087,3 +2087,44 @@ function wicketActive () {
 	this.classList.add('fence-top-wicket_active');
 }
 
+/*SELECT COLOR*/
+let unitBlock = document.querySelector('.unit-color');
+let unitFirstImg = document.querySelector('.unit-color-down .unit-color__img').cloneNode(true);
+let unitFirstText = document.querySelector('.unit-color-down .unit-color__text').cloneNode(true);
+
+unitBlock.appendChild(unitFirstImg);
+unitBlock.appendChild(unitFirstText);
+
+
+document.querySelector('.unit-color').onclick = function() {
+	if(document.querySelector('.unit-color-down').style.display == 'block') {
+		document.querySelector('.unit-color-down').style.display = 'none';
+	} else {
+		document.querySelector('.unit-color-down').style.display = 'block';
+	}
+};
+
+document.querySelectorAll('.unit-color-item').forEach((item) => {
+	item.onclick = function() {
+		document.querySelectorAll('.unit-color-item').forEach((item) => {
+			item.classList.remove('unit-color-item_active');
+		});
+
+		this.classList.add('unit-color-item_active');
+		let img = this.querySelector('.unit-color__img img').getAttribute('src');
+		let text = this.querySelector('.unit-color__text').innerHTML;
+
+		document.querySelector('.unit-color .unit-color__img img').setAttribute('src', img);
+		document.querySelector('.unit-color .unit-color__text').innerHTML = text;
+		document.querySelector('.unit-color-down').removeAttribute('style');
+	}
+});
+
+$(document).mouseup(function (e){
+	var modalctr = $(".unit-color-block");
+	var myModal = $(".unit-color-down");
+
+	if (!modalctr.is(e.target) && modalctr.has(e.target).length === 0){
+		myModal.hide();
+	}
+});
