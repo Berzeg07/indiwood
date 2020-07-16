@@ -2605,7 +2605,6 @@ input::-webkit-inner-spin-button {
 .fence-form-span_close {
     position: relative;
     cursor: pointer;
-
     &::before {
         content: "";
         background: #ffffff;
@@ -2617,7 +2616,6 @@ input::-webkit-inner-spin-button {
         left: 50%;
         transform: translate(-50%, -50%) rotate(45deg);
     }
-
     &::after {
         content: "";
         background: #ffffff;
