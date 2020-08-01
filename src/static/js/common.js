@@ -1123,19 +1123,19 @@ fiveTerrasBtn4.forEach((item) => {
 
 	item.onchange = function() {
 		let fiveTerrasBtn4 = document.querySelectorAll('.swiper-slide-active .terras-top-five-width .js-btn-five4');
-		let sum = 0;
+		let sum = 1;
 		let num = 0;
 
 		fiveTerrasBtn4.forEach((item) => {
 			if(item.value == '') {
 				num +=1;
 			} else {
-				sum += Number(item.value);
+				sum *= Number(item.value);
 			}
 		});
 
 		if(num == 0) {
-			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum*4;
+			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum;
 		}
 
 	}
