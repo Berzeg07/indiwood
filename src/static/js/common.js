@@ -495,6 +495,8 @@ function collectInfo2() {
         eTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-e').value;
     }
 
+    setFormTitles2();
+
     let docinfoTer = {
         info: {
             title: 'indiwood',
@@ -605,7 +607,7 @@ function collectInfo2() {
             // },
             // Если нет лестницы в text ставим пусто. Так же и в других строках *
             {
-                text: 'Общая стоимость: 250 000 руб',
+                text: 'Общая стоимость: '+document.querySelector('.fence-form__sum-origin span').innerHTML+' руб',
                 fontSize: 14,
                 margin: [0, 20, 0, 5]
             },
@@ -616,8 +618,6 @@ function collectInfo2() {
         e.preventDefault();
         pdfMake.createPdf(docinfoTer).download('indiwood.pdf');
     }
-
-    setFormTitles2();
 }
 
 function collectInfo3() {
@@ -756,7 +756,7 @@ function collectInfo3() {
                 fontSize: 14,
                 margin: [0, 0, 0, 5]
             }, {
-                text: 'Общая стоимость: 250 000 руб',
+                text: 'Общая стоимость: '+document.querySelector('.fence-form__sum-origin span').innerHTML+' руб',
                 fontSize: 14,
                 margin: [0, 20, 0, 0]
             },
@@ -1888,7 +1888,7 @@ function collectInfo() {
                 margin: [0, 0, 0, 5]
             },
             {
-                text: 'Общая стоимость: 250 000 руб',
+                text: 'Общая стоимость: '+document.querySelector('.fence-form__sum-origin span').innerHTML+' руб',
                 fontSize: 14,
                 margin: [0, 20, 0, 0]
             },
