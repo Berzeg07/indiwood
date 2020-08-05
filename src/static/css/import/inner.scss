@@ -1558,7 +1558,7 @@ input::-webkit-inner-spin-button {
 
 .fence-top-four-gate_active,
 .fence-top-wicket_active {
-    background-color: #5b5b44;
+    background-color: #464632;
     border-radius: 10px;
 }
 
@@ -2638,11 +2638,14 @@ input::-webkit-inner-spin-button {
 .unit-color-block {
     position: relative;
     width: 92px;
+    margin-left: 5px;
+
 }
 
 @media (min-width : 768px) {
     .unit-color-block {
         width: 203px;
+        margin-left: 0;
     }
 }
 
@@ -2767,4 +2770,24 @@ input::-webkit-inner-spin-button {
 
 .unit-color-item_active .unit-color__text {
     color: rgba(255, 255, 255, 0.23);
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
 }
