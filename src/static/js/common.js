@@ -981,7 +981,7 @@ fiveTerrasBtn3.forEach((item) => {
 
         if (num == 0) {
             sum = (Number(fiveTerrasBtn2[1].value) * Number(fiveTerrasBtn2[2].value)) - (Number(fiveTerrasBtn2[0].value) * Number(fiveTerrasBtn2[3].value));
-            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum) / 100;
+            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five3').value = Math.abs(sum) / 100;
         }
 
     }
