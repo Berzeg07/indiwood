@@ -526,26 +526,6 @@ function collectInfo2() {
                 margin: [0, 10, 0, 50]
             }],
         },
-            // {
-            //     text: test3,
-            //     fontSize: 16,
-            //     margin: [0, 0, 0, 20]
-            // },
-
-            // {
-            //     text: 'Имя: ' + test1,
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 5]
-            // }, {
-            //     text: 'Телефон: ' + test2,
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 5]
-            // },
-            // {
-            //     text: 'Email: test@mail.ru',
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 5]
-            // },
             {
                 text: 'Калькулятор Террас',
                 fontSize: 16,
@@ -600,12 +580,6 @@ function collectInfo2() {
                 fontSize: 14,
                 margin: [0, 0, 0, 5]
             },
-            // {
-            //     text: 'Опции: замер, доставка, монтаж',
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 20]
-            // },
-            // Если нет лестницы в text ставим пусто. Так же и в других строках *
             {
                 text: 'Общая стоимость: '+document.querySelector('.fence-form__sum-origin span').innerHTML+' руб',
                 fontSize: 14,
@@ -655,26 +629,6 @@ function collectInfo3() {
                 margin: [0, 10, 0, 50]
             }],
         },
-            // {
-            //     text: test3,
-            //     fontSize: 16,
-            //     margin: [0, 0, 0, 20]
-            // },
-
-            // {
-            //     text: 'Имя: ' + test1,
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 5]
-            // }, {
-            //     text: 'Телефон: ' + test2,
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 5]
-            // },
-            // {
-            //     text: 'Email: test@mail.ru',
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 5]
-            // },
             {
                 text: 'Калькулятор Террас',
                 fontSize: 16,
@@ -729,12 +683,6 @@ function collectInfo3() {
                 fontSize: 14,
                 margin: [0, 0, 0, 5]
             },
-            // {
-            //     text: 'Опции: замер, доставка, монтаж',
-            //     fontSize: 14,
-            //     margin: [0, 0, 0, 20]
-            // },
-            // Если нет лестницы в text ставим пусто. Так же и в других строках *
             {
                 text: 'Параметры лестницы',
                 fontSize: 16,
@@ -970,78 +918,6 @@ let fiveTerrasBtn2 = document.querySelectorAll('.terras-top-five-width .js-btn-f
 let fiveTerrasBtn3 = document.querySelectorAll('.terras-top-five-width .js-btn-five3');
 let fiveTerrasBtn4 = document.querySelectorAll('.terras-top-five-width .js-btn-five4');
 
-// fiveTerrasBtn.forEach((item) => {
-// 	item.onfocus = function() {
-// 		if(this.getAttribute('data-input')) {
-// 			let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
-// 			fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
-// 		}
-//
-// 		fiveTerrasBtn.forEach((item) => {
-// 			if(item.parentElement.getAttribute('style')) {
-// 				item.parentElement.removeAttribute('style');
-// 			}
-// 		});
-//
-// 		item.parentElement.style.backgroundColor = '#5b5b44';
-//
-// 	};
-// });
-//
-// fiveTerrasBtn2.forEach((item) => {
-// 	item.onfocus = function() {
-// 		if(this.getAttribute('data-input')) {
-// 			let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
-// 			fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
-// 		}
-//
-// 		fiveTerrasBtn.forEach((item) => {
-// 			if(item.parentElement.getAttribute('style')) {
-// 				item.parentElement.removeAttribute('style');
-// 			}
-// 		});
-//
-// 		item.parentElement.style.backgroundColor = '#5b5b44';
-//
-// 	};
-// });
-//
-// fiveTerrasBtn3.forEach((item) => {
-// 	item.onfocus = function() {
-// 		if(this.getAttribute('data-input')) {
-// 			let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
-// 			fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
-// 		}
-//
-// 		fiveTerrasBtn.forEach((item) => {
-// 			if(item.parentElement.getAttribute('style')) {
-// 				item.parentElement.removeAttribute('style');
-// 			}
-// 		});
-//
-// 		item.parentElement.style.backgroundColor = '#5b5b44';
-//
-// 	};
-// });
-//
-// fiveTerrasBtn4.forEach((item) => {
-// 	item.onfocus = function() {
-// 		if(this.getAttribute('data-input')) {
-// 			let fiveTerrasImg = this.parentElement.parentElement.parentElement.parentElement.querySelector('img');
-// 			fiveTerrasImg.setAttribute('src', 'img/terras-five'+this.getAttribute('data-input')+'.png');
-// 		}
-//
-// 		fiveTerrasBtn.forEach((item) => {
-// 			if(item.parentElement.getAttribute('style')) {
-// 				item.parentElement.removeAttribute('style');
-// 			}
-// 		});
-//
-// 		item.parentElement.style.backgroundColor = '#5b5b44';
-//
-// 	};
-// });
-
 /*Отслеживаем input*/
 
 fiveTerrasBtn.forEach((item) => {
@@ -1058,8 +934,8 @@ fiveTerrasBtn.forEach((item) => {
         });
 
         if (num == 0) {
-            sum = (Number(fiveTerrasBtn[0].value) * Number(fiveTerrasBtn[1].value) * Number(fiveTerrasBtn[2].value)) - (Number(fiveTerrasBtn[3].value) * Number(fiveTerrasBtn[4].value));
-            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value = Math.abs(sum);
+            sum = (Number(fiveTerrasBtn[0].value) * Number(fiveTerrasBtn[1].value)) - (Number(fiveTerrasBtn[2].value) * Number(fiveTerrasBtn[3].value));
+            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value = Math.abs(sum) / 100;
         }
 
     }
@@ -1082,7 +958,7 @@ fiveTerrasBtn2.forEach((item) => {
 
         if (num == 0) {
             sum = (Number(fiveTerrasBtn2[1].value) * Number(fiveTerrasBtn2[2].value)) - (Number(fiveTerrasBtn2[0].value) * Number(fiveTerrasBtn2[3].value));
-            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum);
+            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum) / 100;
         }
 
     }
@@ -1105,7 +981,7 @@ fiveTerrasBtn3.forEach((item) => {
 
         if (num == 0) {
             sum = (Number(fiveTerrasBtn2[1].value) * Number(fiveTerrasBtn2[2].value)) - (Number(fiveTerrasBtn2[0].value) * Number(fiveTerrasBtn2[3].value));
-            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum);
+            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum) / 100;
         }
 
     }
@@ -1128,7 +1004,7 @@ fiveTerrasBtn4.forEach((item) => {
 
         if (num == 0) {
             sum = Number(fiveTerrasBtn4[0].value) * Number(fiveTerrasBtn4[1].value);
-            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum;
+            document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum / 100;
         }
 
     }
@@ -1907,12 +1783,18 @@ function setFormTitles() {
     document.querySelector('.fence-form .fence-form__subname p').innerHTML = title1Calculate + ' / ' + title2Calculate;
     document.querySelector('.fence-form .fence-form__name p').innerHTML = title1Calculate + ' / ' + title2Calculate;
 
-    let price = Number(aCalculate) * Number(bCalculate)  * Number(document.querySelector('.fence-slider_up-one .swiper-slide-active .fence-price').innerHTML);
+    let doorPrice = 0;
+
+    if(document.querySelector('.fence-calculate .calculate-up-button').getAttribute('data-num') == 6) {
+        doorPrice = Number(document.querySelector('.fence-slider_up-five .swiper-slide-active .fence-door-price').innerHTML);
+    }
+
+    let price = (Number(aCalculate) * Number(bCalculate))/100  * Number(document.querySelector('.fence-slider_up-one .swiper-slide-active .fence-price').innerHTML)+doorPrice;
 
     document.querySelector('.fence-form__sum-origin span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     document.querySelector('.fence-form__sum span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 
-    fenceSquare = Number(aCalculate) * Number(bCalculate);
+    fenceSquare = (Number(aCalculate) * Number(bCalculate))/100;
     document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 
     sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
@@ -2495,28 +2377,3 @@ document.addEventListener('click', function (e) {
         }
     });
 });
-
-// $(document).mouseup(function (e){
-// 	let unitBlock = $('.unit-color-block');
-// 	console.log(unitBlock);
-
-// 	unitBlock.each((item) => {
-// 		console.log($(item).html);
-
-// 		if (!$(item).is(e.target) && $(item).has(e.target).length === 0){
-// 			unit.hide();
-// 			let unit = unitBlock.querySelector('.unit-color-down').style.display = none;
-// 			$(document).find('.unit-color-down').removeAttr('style');
-// 			$(document).find('.unit-color-down').each((item)=> {
-
-// 			});
-// 		}
-// 	});
-
-// var modalctr = $(".swiper-slide-active .unit-color-block");
-// var myModal = $("swiper-slide-active .unit-color-down");
-
-// console.log(modalctr);
-
-
-// });

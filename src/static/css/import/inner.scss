@@ -1173,7 +1173,7 @@ input::-webkit-inner-spin-button {
     width: 100%;
     text-align: center;
     z-index: 0;
-    color: #4D4D3B;
+    color: #494935;
     @media (min-width: 768px) {
         font-size: 50px;
         top: 25.5%;
@@ -1433,6 +1433,10 @@ input::-webkit-inner-spin-button {
         width: 151px;
         height: 48px;
         line-height: 48px;
+
+        &:last-of-type {
+            line-height: 40px;
+        }
     }
 }
 
