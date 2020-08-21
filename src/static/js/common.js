@@ -928,7 +928,7 @@ function backToTabTerras() {
 		document.querySelector('.calculate__block').style.display = 'none';
 	}
 
-	if (num == 2) {
+	if (num == 2 || num == 3) {
 		selectColorAndTexture('terras-calculate', 'terras-slider-up-one');
 	}
 
@@ -1503,7 +1503,7 @@ function backToTabFence() {
 		document.querySelector('.calculate__block').style.display = 'none';
 	}
 
-	if (num2 == 2) {
+	if (num2 == 2 || num2 == 3) {
 		selectColorAndTexture('fence-calculate', 'fence-slider_up-one');
 	}
 
