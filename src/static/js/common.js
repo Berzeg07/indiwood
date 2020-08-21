@@ -161,6 +161,11 @@ var galleryTop1 = new Swiper('.terras-slider-up-one', {
 	},
 });
 
+let titleNav = document.querySelector('.terras-calculate .main-back-title');
+let title = document.querySelector('.terras-calculate .terras-slider-up-one .swiper-slide-active h3').innerHTML;
+
+titleNav.innerHTML = title;
+
 galleryThumbs1.on('slideChangeTransitionEnd', function () {
 
 	let titleNav = document.querySelector('.terras-calculate .main-back-title');
@@ -1231,6 +1236,11 @@ var fenceGalleryTop = new Swiper('.fence-slider_up-one', {
 		swiper: fenceGalleryThumbs1,
 	},
 });
+
+let titleNavFence = document.querySelector('.fence-calculate .main-back-title2');
+let titleFence = document.querySelector('.fence-calculate .fence-slider_up-one .swiper-slide-active h3').innerHTML;
+
+titleNavFence.innerHTML = titleFence;
 
 fenceGalleryThumbs1.on('slideChangeTransitionEnd', function () {
 
