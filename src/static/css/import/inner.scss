@@ -1450,6 +1450,11 @@ input::-webkit-inner-spin-button {
 	}
 }
 
+.fence-calculate {
+	position: relative;
+	z-index: 1;
+}
+
 .fence-calculate .fence-top-four-width label {
 	margin-right: 10px;
 	&:last-child {

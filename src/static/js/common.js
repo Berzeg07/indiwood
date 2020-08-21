@@ -317,16 +317,16 @@ var terrasGalleryThumbs41 = new Swiper('.terras-gallery-thumbs-four2', {
 
 var terraseGalleryTop41 = new Swiper('.terras-slider-up-four2', {
 	spaceBetween: 10,
-	loop: false,
+	loop: true,
 	observer: true,
 	observeParents: true,
-	// navigation: {
-	//     nextEl: '.calculate-gallery-top .swiper-button-next',
-	//     prevEl: '.calculate-gallery-top .swiper-button-prev',
-	// },
-	// pagination: {
-	//     el: '.swiper-pagination',
-	// },
+	navigation: {
+		nextEl: '.calculate-gallery-top .swiper-button-next',
+		prevEl: '.calculate-gallery-top .swiper-button-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+	},
 	thumbs: {
 		swiper: terrasGalleryThumbs41,
 	},
