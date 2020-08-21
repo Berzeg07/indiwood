@@ -746,7 +746,7 @@ function setFormTitles2() {
 	document.querySelector('.fence-form .fence-form__subname p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
 	document.querySelector('.fence-form .fence-form__name p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
 
-	let price = Number(sTerras) * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value);
+	let price = Math.round(Number(sTerras) * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 
 	document.querySelector('.fence-form__sum-origin span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 	document.querySelector('.fence-form__sum span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
@@ -1864,7 +1864,7 @@ function setFormTitles() {
 		doorPrice = Number(document.querySelector('.fence-slider_up-five .swiper-slide-active .fence-door-price').innerHTML);
 	}
 
-	let price = (Number(aCalculate) * Number(bCalculate)) / 100 * Number(document.querySelector('.fence-slider_up-one .swiper-slide-active .price-fence').value) + doorPrice;
+	let price = Math.round((Number(aCalculate) * Number(bCalculate)) / 100 * Number(document.querySelector('.fence-slider_up-one .swiper-slide-active .price-fence').value) + doorPrice);
 
 	document.querySelector('.fence-form__sum-origin span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 	document.querySelector('.fence-form__sum span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
