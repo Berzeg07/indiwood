@@ -226,9 +226,11 @@
 
 
 /*Верхний 1й слайдер*/
-
+//ДОБАВИЛ margin 0 auto
 .calculate-gallery-top {
-    max-width: 700px;
+	 max-width: 700px;
+	 margin: 0 auto;
+
     @media (min-width: 768px) {
         max-width: 750px;
         margin-bottom: 35px;
@@ -726,14 +728,19 @@ input::-webkit-inner-spin-button {
     width: 100%;
 }
 
+//!ДОБАВИЛ margin: 0 auto
 .terras-calculate .terras-gallery-thumbs-two {
     @media (min-width: 1200px) {
-        max-width: 1100px;
+		  max-width: 1100px;
+		  margin: 0 auto;
     }
 }
 
+
+//!Добавил margin: 0 auto
 .terras-calculate .terras-gallery-thumbs-three {
     @media (min-width: 768px) {
+		  margin: 0 auto;
         max-width: 715px;
     }
 }

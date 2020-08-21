@@ -179,86 +179,97 @@ galleryTop1.on('slideChangeTransitionEnd', function () {
 
 });
 
-var terrasGalleryThumbs2 = new Swiper('.terras-gallery-thumbs-two', {
-	spaceBetween: 30,
-	slidesPerView: 4,
-	loop: true,
-	watchSlidesVisibility: true,
-	watchSlidesProgress: true,
-	slidesOffsetBefore: 0,
-	observer: true,
-	observeParents: true,
-	breakpoints: {
-		499: {
-			spaceBetween: 20,
-			slidesPerView: 2.5,
-			slidesOffsetBefore: -40,
-		},
-		767: {
-			slidesPerView: 3,
-			slidesOffsetBefore: 0,
-		},
-		991: {
-			spaceBetween: 30,
-			slidesPerView: 3.5,
-			slidesOffsetBefore: -60,
-		},
-		1199: {
-			slidesPerView: 4
+var colorThumbs = document.querySelectorAll('.terras-gallery-thumbs-two2');
+var colorSliders = document.querySelectorAll('.terras-slider-up-two2');
+var textureThumbs = document.querySelectorAll('.terras-gallery-thumbs-three2');
+var textureSliders = document.querySelectorAll('.terras-slider-up-three2');
+
+for (let i = 0; i < document.querySelectorAll('.terras-gallery-thumbs-two2').length; i++) {
+	let thumbColor = new Swiper(colorThumbs[i], {
+		spaceBetween: 30,
+		slidesPerView: 4,
+		loop: true,
+		// watchSlidesVisibility: true,
+		// watchSlidesProgress: true,
+		slidesOffsetBefore: 0,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			499: {
+				spaceBetween: 20,
+				slidesPerView: 2.5,
+				slidesOffsetBefore: -40,
+			},
+			767: {
+				slidesPerView: 3,
+				slidesOffsetBefore: 0,
+			},
+			991: {
+				spaceBetween: 30,
+				slidesPerView: 3.5,
+				slidesOffsetBefore: -60,
+			},
+			1199: {
+				slidesPerView: 4
+			}
 		}
-	}
-});
+	});
 
-var terraseGalleryTop2 = new Swiper('.terras-slider-up-two', {
-	spaceBetween: 10,
-	loop: true,
-	observer: true,
-	observeParents: true,
-	navigation: {
-		nextEl: '.calculate-gallery-top .swiper-button-next',
-		prevEl: '.calculate-gallery-top .swiper-button-prev',
-	},
-	thumbs: {
-		swiper: terrasGalleryThumbs2,
-	},
-});
+	new Swiper(colorSliders[i], {
+		spaceBetween: 10,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.calculate-gallery-top .swiper-button-next',
+			prevEl: '.calculate-gallery-top .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: thumbColor,
+		},
+	});
 
-var terrasGalleryThumbs3 = new Swiper('.terras-gallery-thumbs-three', {
-	spaceBetween: 0,
-	slidesPerView: 3,
-	loop: false,
-	// watchSlidesVisibility: true,
-	// watchSlidesProgress: true,
-	slidesOffsetBefore: 0,
-	observer: true,
-	observeParents: true,
-	breakpoints: {
-		499: {
-			slidesPerView: 2.5,
-			slidesOffsetBefore: -40
-		},
-		767: {
-			slidesPerView: 3
-		},
-		1199: {
-			slidesPerView: 3
+
+	let thumbTexture = new Swiper(textureThumbs[i], {
+		spaceBetween: 0,
+		slidesPerView: 3,
+		loop: true,
+		slidesOffsetBefore: 0,
+		observer: true,
+		observeParents: true,
+		breakpoints: {
+			499: {
+				slidesPerView: 2.5,
+				slidesOffsetBefore: -40
+			},
+			767: {
+				slidesPerView: 3
+			},
+			1199: {
+				slidesPerView: 3
+			}
 		}
-	}
-});
+	});
 
-var terraseGalleryTop3 = new Swiper('.terras-slider-up-three', {
-	spaceBetween: 10,
-	loop: false,
-	observer: true,
-	observeParents: true,
-	// navigation: {
-	// 	nextEl: '.calculate-gallery-top .swiper-button-next',
-	// 	prevEl: '.calculate-gallery-top .swiper-button-prev',
-	// },
-	thumbs: {
-		swiper: terrasGalleryThumbs3,
-	},
-});
+	new Swiper(textureSliders[i], {
+		spaceBetween: 10,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.calculate-gallery-top .swiper-button-next',
+			prevEl: '.calculate-gallery-top .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: thumbTexture,
+		},
+	});
+
+
+
+
+};
+
 
 var terrasGalleryThumbs4 = new Swiper('.terras-gallery-thumbs-four', {
 	spaceBetween: 30,
@@ -467,15 +478,19 @@ btnNo.forEach((item) => {
 	};
 });
 
+
+
 let modelTerrasTitle, modelTerrasSize, modelTerrasColor, textureTerras, howWood, formTerras, aTerras, bTerras, cTerras,
 	dTerras, eTerras, sTerras, titleColTerras, stepColTerras,
 	widthColTerras, colorColTerras, imgPath2;
 
 function collectInfo2() {
+	let idModel = document.querySelector('.terras-slider-up-one .swiper-slide-active').getAttribute('id');
+
 	modelTerrasTitle = document.querySelector('.terras-slider-up-one .swiper-slide-active h3').innerHTML;
 	modelTerrasSize = document.querySelector('.terras-slider-up-one .swiper-slide-active .label').innerHTML;
-	modelTerrasColor = document.querySelector('.terras-slider-up-two .swiper-slide-active h3').innerHTML;
-	textureTerras = document.querySelector('.terras-slider-up-three .swiper-slide-active h3').innerHTML;
+	modelTerrasColor = document.querySelector('.terras-slider-up-two .' + idModel + ' .swiper-slide-active h3').innerHTML;
+	textureTerras = document.querySelector('.terras-slider-up-three .' + idModel + ' .swiper-slide-active h3').innerHTML;
 	howWood = document.querySelector('.terras-slider-up-four2 .swiper-slide-active h3').innerHTML;
 	formTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active h3').innerHTML;
 	aTerras = document.querySelector('.terras-slider-up-five .swiper-slide-active .terras-a').value;
@@ -595,6 +610,7 @@ function collectInfo2() {
 }
 
 function collectInfo3() {
+
 	titleColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two h3').innerHTML;
 	stepColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-steps .num').innerHTML;
 	widthColTerras = document.querySelector('.terras-slider-up-six .swiper-slide-active .terras-top1-question_two .terras-width .num').innerHTML;
@@ -907,6 +923,10 @@ function backToTabTerras() {
 		document.querySelector('.calculate__block').style.display = 'none';
 	}
 
+	if (num == 2) {
+		selectColorAndTexture('terras-calculate', 'terras-slider-up-one');
+	}
+
 	num1 = num;
 	document.querySelector('.terras-calculate .calculate-up-button').setAttribute('data-num', num);
 }
@@ -1158,6 +1178,29 @@ buttonTerras.onclick = function () {
 		buttonTerras.style.opacity = "0.2";
 	}
 
+	//ПЕРЕКЛЮЧЕНИЕ ЦВЕТОВ И ТЕКСТУР В ЗАВИСИМОСТИ ОТ ВЫБОРА МОДЕЛИ
+	if (this.getAttribute('data-num') == 2) {
+		selectColorAndTexture('terras-calculate', 'terras-slider-up-one');
+	}
+
+}
+
+//ПЕРЕКЛЮЧЕНИЕ ЦВЕТОВ И ТЕКСТУР В ЗАВИСИМОСТИ ОТ ВЫБОРА МОДЕЛИ
+function selectColorAndTexture(parent, id) {
+
+	let all = document.querySelectorAll('.' + parent + ' .all-models');
+	let selectModel = document.querySelector("." + id + " .swiper-slide-active").getAttribute("id");
+
+
+	all.forEach((item) => {
+		item.style.display = "none";
+	});
+
+	all.forEach((item) => {
+		if (item.classList.contains(selectModel)) {
+			item.removeAttribute('style');
+		}
+	});
 
 }
 
@@ -1208,86 +1251,98 @@ fenceGalleryTop.on('slideChangeTransitionEnd', function () {
 });
 
 
-var fenceGalleryThumbs2 = new Swiper('.fence-gallery_thumbs-two', {
-	spaceBetween: 30,
-	slidesPerView: 4,
-	loop: true,
-	watchSlidesVisibility: true,
-	watchSlidesProgress: true,
-	slidesOffsetBefore: 0,
-	observer: true,
-	observeParents: true,
+var colorThumbsFence = document.querySelectorAll('.fence-gallery_thumbs-two2');
+var colorSlidersFence = document.querySelectorAll('.fence-slider_up-two2');
+var textureThumbsFence = document.querySelectorAll('.fence-gallery_thumbs-three2');
+var textureSlidersFence = document.querySelectorAll('.fence-slider_up-three2');
 
-	scrollbar: {
-		el: '.swiper-scrollbar',
-	},
-	breakpoints: {
-		499: {
-			spaceBetween: 20,
-			slidesPerView: 2.5,
-			slidesOffsetBefore: -40,
+for (let i = 0; i < document.querySelectorAll('.fence-slider_up-two2').length; i++) {
+	let thumbColor = new Swiper(colorThumbsFence[i], {
+		spaceBetween: 30,
+		slidesPerView: 4,
+		loop: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		slidesOffsetBefore: 0,
+		observer: true,
+		observeParents: true,
+
+		scrollbar: {
+			el: '.swiper-scrollbar',
 		},
-		767: {
-			slidesPerView: 3,
-			slidesOffsetBefore: 0,
-		},
-		991: {
-			spaceBetween: 0,
-			slidesPerView: 3.5,
-			slidesOffsetBefore: -70,
-		},
-		1199: {
-			slidesPerView: 4,
-			slidesOffsetBefore: -70,
+		breakpoints: {
+			499: {
+				spaceBetween: 20,
+				slidesPerView: 2.5,
+				slidesOffsetBefore: -40,
+			},
+			767: {
+				slidesPerView: 3,
+				slidesOffsetBefore: 0,
+			},
+			991: {
+				spaceBetween: 0,
+				slidesPerView: 3.5,
+				slidesOffsetBefore: -70,
+			},
+			1199: {
+				slidesPerView: 4,
+				slidesOffsetBefore: -70,
+			}
 		}
-	}
-});
+	});
 
-var fenceGalleryTop2 = new Swiper('.fence-slider_up-two', {
-	spaceBetween: 10,
-	loop: true,
-	observer: true,
-	observeParents: true,
-	navigation: {
-		nextEl: '.calculate-gallery-top .swiper-button-next',
-		prevEl: '.calculate-gallery-top .swiper-button-prev',
-	},
-	thumbs: {
-		swiper: fenceGalleryThumbs2,
-	},
-});
+	new Swiper(colorSlidersFence[i], {
+		spaceBetween: 10,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.calculate-gallery-top .swiper-button-next',
+			prevEl: '.calculate-gallery-top .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: thumbColor,
+		},
+	});
 
-var fenceGalleryThumbs3 = new Swiper('.fence-gallery_thumbs-three', {
-	spaceBetween: 10,
-	slidesPerView: 2,
-	loop: true,
-	centeredSlides: false,
-	watchSlidesVisibility: true,
-	watchSlidesProgress: true,
-	observer: true,
-	observeParents: true,
-	navigation: {
-		nextEl: '.calculate-gallery-top .swiper-button-next',
-		prevEl: '.calculate-gallery-top .swiper-button-prev',
-	},
-	scrollbar: {
-		el: '.swiper-scrollbar',
-	}
-});
 
-var fenceGalleryTop3 = new Swiper('.fence-slider_up-three', {
-	spaceBetween: 10,
-	loop: true,
-	observer: true,
-	observeParents: true,
-	navigation: {
-		nextEl: '.calculate-gallery-top .swiper-button-next',
-		prevEl: '.calculate-gallery-top .swiper-button-prev',
-	},
-	thumbs: {
-		swiper: fenceGalleryThumbs3,
-	},
-});
+	let thumbTexture = new Swiper(textureThumbsFence[i], {
+		spaceBetween: 10,
+		slidesPerView: 2,
+		loop: true,
+		centeredSlides: false,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.calculate-gallery-top .swiper-button-next',
+			prevEl: '.calculate-gallery-top .swiper-button-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		}
+	});
+
+	new Swiper(textureSlidersFence[i], {
+		spaceBetween: 10,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.calculate-gallery-top .swiper-button-next',
+			prevEl: '.calculate-gallery-top .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: thumbTexture,
+		},
+	});
+
+
+
+};
+
 
 
 // new Swiper('.fence-slider_up-four', {
@@ -1438,6 +1493,10 @@ function backToTabFence() {
 		document.querySelector('.calculate__block').style.display = 'none';
 	}
 
+	if (num2 == 2) {
+		selectColorAndTexture('fence-calculate', 'fence-slider_up-one');
+	}
+
 	num = num2;
 	document.querySelector('.fence-calculate .calculate-up-button').setAttribute('data-num', num2);
 
@@ -1584,6 +1643,10 @@ buttonFence.onclick = function () {
 		}
 	});
 
+	if (num == 2) {
+		selectColorAndTexture('fence-calculate', 'fence-slider_up-one');
+	}
+
 }
 
 
@@ -1657,9 +1720,11 @@ let titleCalculate, title1Calculate, size1Calculate, title2Calculate, title3Calc
 
 
 function collectInfo() {
+	let idModel = document.querySelector('.fence-slider_up-one .swiper-slide-active').getAttribute('id');
+
 	titleCalculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .js-title1').innerHTML;
-	title1Calculate = document.querySelector('.fence-slider_up-two .swiper-slide-active .calculate-subtitle').innerHTML;
-	title2Calculate = document.querySelector('.fence-slider_up-three .swiper-slide-active h3').innerHTML;
+	title1Calculate = document.querySelector('.fence-slider_up-two .' + idModel + ' .swiper-slide-active .calculate-subtitle').innerHTML;
+	title2Calculate = document.querySelector('.fence-slider_up-three .' + idModel + ' .swiper-slide-active h3').innerHTML;
 	size1Calculate = document.querySelector('.fence-slider_up-one .swiper-slide-active .label').innerHTML;
 	aCalculate = document.querySelector('.fence-slider_up-four .fence-a').value;
 	bCalculate = document.querySelector('.fence-slider_up-four .fence-b').value;
