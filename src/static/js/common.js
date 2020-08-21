@@ -326,6 +326,7 @@ var terraseGalleryTop41 = new Swiper('.terras-slider-up-four2', {
 	},
 	pagination: {
 		el: '.swiper-pagination',
+		clickable: true
 	},
 	thumbs: {
 		swiper: terrasGalleryThumbs41,
