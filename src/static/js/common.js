@@ -860,35 +860,28 @@ function setFormTitles2() {
 	document.querySelector('.fence-form .fence-form__subname p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
 	document.querySelector('.fence-form .fence-form__name p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
 
+	let price = Math.round((Number(sTerras) / 10000) * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 
-	let price = 0;
+	document.querySelector('.fence-form__sum-origin span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+	document.querySelector('.fence-form__sum span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 
-
-	if (cTerras) {
-
-		fenceSquare = Number(aTerras) / 100 + Number(bTerras) / 100 + Number(aTerras) / 100;
-		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
-		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
-
-	} else if (dTerras) {
-		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100) * (Number(aTerras) / 100) * (Number(dTerras) / 100);
-		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
-		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
-	} else if (eTerras) {
-		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100) * (Number(aTerras) / 100) * (Number(dTerras) / 100) * (Number(eTerras) / 100);
-		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
-		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
+	if (sTerras) {
+		document.querySelector('.fence-form__square span').innerHTML = Number(sTerras) / 10000;
 	} else {
-		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100);
-		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
+		if (cTerras) {
+			fenceSquare = 4 * (Number(aTerras) + Number(bTerras) + Number(cTerras));
+		} else if (dTerras) {
+			fenceSquare = 4 * (Number(aTerras) + Number(bTerras) + Number(cTerras) + Number(dTerras));
+		} else if (eTerras) {
+			fenceSquare = 4 * (Number(aTerras) + Number(bTerras) + Number(cTerras) + Number(dTerras) + Number(eTerras));
+		} else {
+			fenceSquare = 4 * (Number(aTerras) + Number(bTerras));
+		}
 		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 	}
 
 	sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
 	document.querySelector('.fence-form .fence-form__img img').setAttribute('src', imgPath2);
-
-	document.querySelector('.fence-form__sum-origin span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-	document.querySelector('.fence-form__sum span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 
 	//Цена в чекбоксы
 	let froze = document.querySelector('.terras-calculate .checkbox-price .froze').innerHTML;
