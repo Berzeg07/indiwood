@@ -866,24 +866,22 @@ function setFormTitles2() {
 
 	if (cTerras) {
 
-		fenceSquare = Number(aTerras) / 100 + Number(bTerras) / 100 + Number(cTerras) / 100;
+		fenceSquare = Number(aTerras) / 100 + Number(bTerras) / 100 + Number(aTerras) / 100;
 		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 
 	} else if (dTerras) {
-		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100) * (Number(cTerras) / 100) * (Number(dTerras) / 100);
+		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100) * (Number(aTerras) / 100) * (Number(dTerras) / 100);
 		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 	} else if (eTerras) {
-		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100) * (Number(cTerras) / 100) * (Number(dTerras) / 100) * (Number(eTerras) / 100);
+		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100) * (Number(aTerras) / 100) * (Number(dTerras) / 100) * (Number(eTerras) / 100);
 		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
 	} else {
 		fenceSquare = (Number(aTerras) / 100) * (Number(bTerras) / 100);
 		price = Math.round(fenceSquare * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 		document.querySelector('.fence-form__square span').innerHTML = Number(fenceSquare);
-
-		console.log(Number(aTerras) / 100);
 	}
 
 	sumFence = document.querySelector('.fence-form__sum-origin span').innerHTML;
