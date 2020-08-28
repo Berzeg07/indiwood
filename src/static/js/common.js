@@ -969,6 +969,7 @@ btnYes.forEach((item) => {
 
 		buttonTerras.removeAttribute('disabled');
 		buttonTerras.removeAttribute('style');
+		buttonTerras.classList.remove('btn-hide');
 		buttonTerras.setAttribute('data-num', 8);
 		num1 = 7;
 	}
