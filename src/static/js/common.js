@@ -860,13 +860,13 @@ function setFormTitles2() {
 	document.querySelector('.fence-form .fence-form__subname p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
 	document.querySelector('.fence-form .fence-form__name p').innerHTML = modelTerrasColor + ' / ' + textureTerras;
 
-	let price = Math.round(Number(sTerras) * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
+	let price = Math.round((Number(sTerras) / 100) * Number(document.querySelector('.terras-slider-up-one .swiper-slide-active .price-terras').value));
 
 	document.querySelector('.fence-form__sum-origin span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 	document.querySelector('.fence-form__sum span').innerHTML = String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 
 	if (sTerras) {
-		document.querySelector('.fence-form__square span').innerHTML = Number(sTerras);
+		document.querySelector('.fence-form__square span').innerHTML = Number(sTerras) / 100;
 	} else {
 		if (cTerras) {
 			fenceSquare = 4 * (Number(aTerras) + Number(bTerras) + Number(cTerras));
@@ -1146,7 +1146,7 @@ fiveTerrasBtn.forEach((item) => {
 
 		if (num == 0) {
 			sum = (Number(fiveTerrasBtn[0].value) * Number(fiveTerrasBtn[1].value)) - (Number(fiveTerrasBtn[2].value) * Number(fiveTerrasBtn[3].value));
-			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value = Math.abs(sum) / 100;
+			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five').value = Math.abs(sum);
 		}
 
 	}
@@ -1169,7 +1169,7 @@ fiveTerrasBtn2.forEach((item) => {
 
 		if (num == 0) {
 			sum = (Number(fiveTerrasBtn2[1].value) * Number(fiveTerrasBtn2[2].value)) - (Number(fiveTerrasBtn2[0].value) * Number(fiveTerrasBtn2[3].value));
-			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum) / 100;
+			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five2').value = Math.abs(sum);
 		}
 
 	}
@@ -1192,7 +1192,7 @@ fiveTerrasBtn3.forEach((item) => {
 
 		if (num == 0) {
 			sum = (Number(fiveTerrasBtn2[1].value) * Number(fiveTerrasBtn2[2].value)) - (Number(fiveTerrasBtn2[0].value) * Number(fiveTerrasBtn2[3].value));
-			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five3').value = Math.abs(sum) / 100;
+			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five3').value = Math.abs(sum);
 		}
 
 	}
@@ -1215,7 +1215,7 @@ fiveTerrasBtn4.forEach((item) => {
 
 		if (num == 0) {
 			sum = Number(fiveTerrasBtn4[0].value) * Number(fiveTerrasBtn4[1].value);
-			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum / 100;
+			document.querySelector('.swiper-slide-active .terras-top-five-width .js-btn-sum-five4').value = sum;
 		}
 
 	}
@@ -2050,7 +2050,8 @@ function setFormTitles() {
 	let doorPrice = 0;
 
 	if (document.querySelector('.fence-calculate .calculate-up-button').getAttribute('data-num') == 6) {
-		doorPrice = Number(document.querySelector('.fence-slider_up-five .swiper-slide-active .fence-door-price').innerHTML);
+		size2Calculate = document.querySelector('.fence-slider_up-five .swiper-slide-active .answer').innerHTML;
+		doorPrice = Number(document.querySelector('.fence-slider_up-five .swiper-slide-active .fence-door-price').innerHTML) * Number(size2Calculate.split(',').join('.'));
 	}
 
 	let price = Math.round((Number(aCalculate) * Number(bCalculate)) / 100 * Number(document.querySelector('.fence-slider_up-one .swiper-slide-active .price-fence').value) + doorPrice);

@@ -1433,20 +1433,22 @@ input::-webkit-inner-spin-button {
 		height: 48px;
 		line-height: 48px;
 
-		&:last-of-type {
-			line-height: 40px;
-		}
+		//Удалить
+		// &:last-of-type {
+		// 	line-height: 40px;
+		// }
 	}
 }
 
+//удалить
 .fence-top-four-width input {
 	background-color: transparent;
 	border: none;
-	max-width: 55px;
+	max-width: 65px;
 	color: #ffffff;
 	font-size: 14px;
 	@media (min-width: 1200px) {
-		max-width: 50px;
+		max-width: 65px;
 	}
 }
 
